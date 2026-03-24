@@ -1,3 +1,5 @@
-res://Scene/player.tscn
+res://Scene/endflag.gd
+res://Scene/level_1.tscn
 res://Sprites/Tiles/new_tile_set.tres
 res://Scene/player.gd
+res://Scripts/player_stats.gd

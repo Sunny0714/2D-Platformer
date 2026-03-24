@@ -1,1 +1,4 @@
+CollisionShape2D
 Area2D
+Node
+AnimationPlayer

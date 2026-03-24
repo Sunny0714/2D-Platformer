@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var braking : float = 20
 @export var gravity : float = 500
 @export var jump_force : float = 200
-
+@export var health : int = 3
 
 var move_input : float
 
@@ -13,6 +13,7 @@ var move_input : float
 @onready var anim : AnimationPlayer = $AnimationPlayer
 
 func _physics_process(delta):	
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
@@ -25,6 +26,8 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = -jump_force
+	if Input.is_action_just_pressed("back"):
+		get_tree().change_scene_to_file("res://Scene/level_1.tscn")
 	
 	move_and_slide()
 	
@@ -41,3 +44,16 @@ func _manage_animation ():
 		anim.play("move")
 	else:
 		anim.play("idle")
+
+func take_damage (amount : int):
+	health -= amount
+	
+	if health <= 0:
+		call_deferred("game_over")
+		
+func game_over():
+	get_tree().change_scene_to_file("res://Scene/level_1.tscn")
+
+func increase_score (amount : int):
+	PlayerStats.score += amount
+	print("PlayerStats.score")

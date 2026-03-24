@@ -1,13 +1,17 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1773337987
+::res://::1774374666
 icon.svg::CompressedTexture2D::3289145199531581273::1772565092::1772739965::1::::<><><>0<>0<>343fad0238424d9b3d883a3f6e2cfecd<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://Audio 2/::1772739965
 coin.wav::AudioStreamWAV::1104865704300170623::1772566529::1772739965::1::::<><><>0<>0<>2195b88fb4839c34a57a7d24cb3d0d76<>res://.godot/imported/coin.wav-9f8e4e6bbdfd40586b1cda69e0c213b5.sample::
 take_damage.wav::AudioStreamWAV::1043996174712648341::1772566529::1772739965::1::::<><><>0<>0<>591f8d6b0f3c3977d37d3d1a95536b80<>res://.godot/imported/take_damage.wav-0c45971781dd7fe65b0beb472a96497f.sample::
-::res://Scene/::1773169202
-level_1.tscn::PackedScene::8923008847759335568::1773168191::0::1::::<><><>0<>0<><>::uid://daddmg1hkc27d::::res://Sprites/Backgrounds/backgroundForest.png<>uid://bphy4st8ym4ie::::res://Sprites/Tiles/new_tile_set.tres<>uid://bifeidvqnl2bb::::res://Scene/player.tscn
-player.gd::GDScript::8828352359963657811::1773169202::0::1::::<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene::2958510666645709943::1773169177::0::1::::<><><>0<>0<><>::uid://dyq7dh6jlegru::::res://Sprites/Characters/character_0000.png<>uid://dx1rw5uovjk7t::::res://Scene/player.gd
+::res://Scene/::1774292507
+coin.gd::GDScript::4747115901446309128::1774292313::0::1::::<>Area2D<><>0<>0<><>::
+coin.tscn::PackedScene::5974098083936968009::1774292360::0::1::::<><><>0<>0<><>::uid://b8vskm74q2wm7::::res://Scene/coin.gd<>uid://eaw0tcddq6vi::::res://Sprites/Objects/tile_0151.png
+enemy.gd::GDScript::7572320357511240912::1774290131::0::1::::<>Area2D<><>0<>0<><>::
+enemy.tscn::PackedScene::2262420773562578456::1774290365::0::1::::<><><>0<>0<><>::uid://df5dalrnyk1yi::::res://Scene/enemy.gd<>uid://cw8ve08co5tms::::res://Sprites/Characters/character_0024.png<>uid://7j5f58v817vc::::res://Sprites/Characters/character_0025.png<>uid://ccpqftl2qj5by::::res://Sprites/Characters/character_0026.png
+level_1.tscn::PackedScene::8923008847759335568::1774292507::0::1::::<><><>0<>0<><>::uid://daddmg1hkc27d::::res://Sprites/Backgrounds/backgroundForest.png<>uid://bphy4st8ym4ie::::res://Sprites/Tiles/new_tile_set.tres<>uid://bifeidvqnl2bb::::res://Scene/player.tscn<>uid://7h60e8d1s6j1::::res://Scene/enemy.tscn<>uid://cw8ve08co5tms::::res://Sprites/Characters/character_0024.png<>uid://df5dalrnyk1yi::::res://Scene/enemy.gd<>uid://7j5f58v817vc::::res://Sprites/Characters/character_0025.png<>uid://ccpqftl2qj5by::::res://Sprites/Characters/character_0026.png<>uid://crd5r1e5j60mf::::res://Scene/coin.tscn
+player.gd::GDScript::8828352359963657811::1774291744::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::2958510666645709943::1773774182::0::1::::<><><>0<>0<><>::uid://dyq7dh6jlegru::::res://Sprites/Characters/character_0000.png<>uid://dx1rw5uovjk7t::::res://Scene/player.gd<>uid://boym8rwk8fqpe::::res://Sprites/Characters/character_0001.png
 ::res://Scripts/::1772566683
 ::res://Sprites/::1772739902
 ::res://Sprites/Backgrounds/::1772739965
@@ -47,6 +51,6 @@ tile_0067.png::CompressedTexture2D::2023106652865622220::1772566601::1772739965:
 tile_0068.png::CompressedTexture2D::7284733622513143534::1772566601::1772739965::1::::<><><>0<>0<>15ed882d417ce2694ea431a04d0e5e76<>res://.godot/imported/tile_0068.png-6de246b06e14c3f84d2621a9f6b1b36f.ctex::
 tile_0112.png::CompressedTexture2D::8005109786915545796::1772566601::1772739965::1::::<><><>0<>0<>37c7b91505f72d486c56d180ac63ab0b<>res://.godot/imported/tile_0112.png-8fb5b18f987ce35235a3bb8096aff582.ctex::
 tile_0151.png::CompressedTexture2D::282136794414856414::1772566601::1772739965::1::::<><><>0<>0<>b0ede02f3f0a4f6c19f7e517b1418116<>res://.godot/imported/tile_0151.png-eb1ca6b73c70795b386eb70d4ec8c4c6.ctex::
-::res://Sprites/Tiles/::1773166797
-new_tile_set.tres::TileSet::3455213954695175368::1773166797::0::1::::<><><>0<>0<><>::uid://dbpjgcipd6tx8::::res://Sprites/Tiles/tiles_packed.png
+::res://Sprites/Tiles/::1774288632
+new_tile_set.tres::TileSet::3455213954695175368::1774288632::0::1::::<><><>0<>0<><>::uid://dbpjgcipd6tx8::::res://Sprites/Tiles/tiles_packed.png
 tiles_packed.png::CompressedTexture2D::7260973846818476931::1772566601::1772739965::1::::<><><>0<>0<>fad49fbfed6d5284385de16f4e6fcd14<>res://.godot/imported/tiles_packed.png-a1e0c89546b8dfcd2c35f086e2cbf162.ctex::
