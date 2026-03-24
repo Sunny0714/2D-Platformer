@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://d0emwf1mfh12k"]
+[gd_scene load_steps=16 format=4 uid="uid://d0emwf1mfh12k"]
 
 [ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_5exfe"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="1_8ko5r"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ccpqftl2qj5by" path="res://Sprites/Characters/character_0026.png" id="7_3rcer"]
 [ext_resource type="PackedScene" uid="uid://crd5r1e5j60mf" path="res://Scene/coin.tscn" id="9_2ceuy"]
 [ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="10_246mo"]
+[ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="10_sq6mb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_poeaa"]
 radius = 9.0
@@ -54,8 +55,42 @@ _data = {
 
 [node name="Main" type="Node2D"]
 
-[node name="BackgroundSprite" type="Sprite2D" parent="."]
-position = Vector2(297, -162)
+[node name="Backgrounds" type="Node2D" parent="."]
+script = ExtResource("10_sq6mb")
+
+[node name="BackgroundSprite7" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(1016.0049, -45.00003)
+scale = Vector2(0.49804878, 0.49999994)
+texture = ExtResource("1_5exfe")
+
+[node name="BackgroundSprite3" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(-2037, -45)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_5exfe")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(-1018.9951, -45.00003)
+scale = Vector2(0.49804878, 0.49999994)
+texture = ExtResource("1_5exfe")
+
+[node name="BackgroundSprite2" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(-1527.5, -45.000015)
+scale = Vector2(0.49902344, 0.49999997)
+texture = ExtResource("1_5exfe")
+
+[node name="BackgroundSprite4" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(-2, -45)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_5exfe")
+
+[node name="BackgroundSprite5" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(507.5, -45.000015)
+scale = Vector2(0.49902344, 0.49999997)
+texture = ExtResource("1_5exfe")
+
+[node name="BackgroundSprite6" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(-509.75, -45)
+scale = Vector2(0.49951172, 0.5)
 texture = ExtResource("1_5exfe")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -68,24 +103,25 @@ tile_set = ExtResource("1_8ko5r")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("9_2ceuy")]
+position = Vector2(45, -21)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("9_2ceuy")]
 position = Vector2(164, 18)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("9_2ceuy")]
-position = Vector2(129, -31)
+position = Vector2(153, -21)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("9_2ceuy")]
-position = Vector2(232, 0)
+position = Vector2(277, -22)
 
 [node name="Coin5" parent="Coins" instance=ExtResource("9_2ceuy")]
-position = Vector2(280, -1)
+position = Vector2(323, -22)
 
 [node name="Coin6" parent="Coins" instance=ExtResource("9_2ceuy")]
-position = Vector2(414, -18)
+position = Vector2(466, -44)
 
 [node name="Coin7" parent="Coins" instance=ExtResource("9_2ceuy")]
-position = Vector2(455, -45)
+position = Vector2(506, -62)
 
 [node name="Enemys" type="Node" parent="."]
 

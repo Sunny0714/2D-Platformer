@@ -1,8 +1,9 @@
+Node2D
+Node
 Label
 HBoxContainer
 TextureRect
 CanvasLayer
 CollisionShape2D
 Area2D
-Node
 AnimationPlayer

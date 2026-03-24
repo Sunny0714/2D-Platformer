@@ -1,7 +1,7 @@
 extends Area2D
 
 var rotate_speed : float = 3
-var bob_height : float = 1
+var bob_height : float = 5
 var bob_speed : float = 5
 
 @export var start_pos : Vector2 = global_position
@@ -11,9 +11,9 @@ var bob_speed : float = 5
 func _physics_process(delta):
 	var time = Time.get_unix_time_from_system()
 	
-	sprite.scale.x = ((1+sin(time * rotate_speed)) / 2) * bob_height
+	sprite.scale.x = sin(time * rotate_speed)
 	
-	var y_pos = sin(time * bob_speed)
+	var y_pos = ((1+sin(time * bob_speed))/2) * bob_height
 	global_position.y = start_pos.y - y_pos
 
 
