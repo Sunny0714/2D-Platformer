@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://d0emwf1mfh12k"]
+[gd_scene load_steps=15 format=4 uid="uid://d0emwf1mfh12k"]
 
 [ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_5exfe"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="1_8ko5r"]
@@ -9,8 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://7j5f58v817vc" path="res://Sprites/Characters/character_0025.png" id="6_ws63c"]
 [ext_resource type="Texture2D" uid="uid://ccpqftl2qj5by" path="res://Sprites/Characters/character_0026.png" id="7_3rcer"]
 [ext_resource type="PackedScene" uid="uid://crd5r1e5j60mf" path="res://Scene/coin.tscn" id="9_2ceuy"]
-[ext_resource type="Script" uid="uid://hc3lkypivdam" path="res://Scene/endflag.gd" id="10_sq6mb"]
-[ext_resource type="Texture2D" uid="uid://dmby8u4c7otw3" path="res://Sprites/Objects/tile_0112.png" id="11_q8blv"]
+[ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="10_246mo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_poeaa"]
 radius = 9.0
@@ -52,9 +51,6 @@ _data = {
 &"RESET": SubResource("Animation_246mo"),
 &"fly": SubResource("Animation_2ceuy")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6c3k"]
-size = Vector2(18, 18)
 
 [node name="Main" type="Node2D"]
 
@@ -188,19 +184,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_sq6mb")
 }
 
-[node name="Endflag" type="Area2D" parent="."]
+[node name="Endflag" parent="." instance=ExtResource("10_246mo")]
 position = Vector2(686, -26)
-script = ExtResource("10_sq6mb")
-
-[node name="Sprite" type="Sprite2D" parent="Endflag"]
-texture = ExtResource("11_q8blv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Endflag"]
-shape = SubResource("RectangleShape2D_a6c3k")
 
 [connection signal="body_entered" from="Enemys/Enemy3" to="Enemys/Enemy3" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy2" to="Enemys/Enemy2" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy4" to="Enemys/Enemy4" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy6" to="Enemys/Enemy6" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy5" to="Enemys/Enemy5" method="_on_body_entered"]
-[connection signal="body_entered" from="Endflag" to="Endflag" method="_on_body_entered"]
