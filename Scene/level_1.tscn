@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://d0emwf1mfh12k"]
+[gd_scene format=4 uid="uid://d0emwf1mfh12k"]
 
 [ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_5exfe"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="1_8ko5r"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://crd5r1e5j60mf" path="res://Scene/coin.tscn" id="9_2ceuy"]
 [ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="10_246mo"]
 [ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="10_sq6mb"]
+[ext_resource type="PackedScene" uid="uid://blxp43lrr64p2" path="res://Scene/level_2.tscn" id="12_q8blv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_poeaa"]
 radius = 9.0
@@ -53,175 +54,173 @@ _data = {
 &"fly": SubResource("Animation_2ceuy")
 }
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=178737448]
 
-[node name="Backgrounds" type="Node2D" parent="."]
+[node name="Backgrounds" type="Node2D" parent="." unique_id=1766874012]
 script = ExtResource("10_sq6mb")
 
-[node name="BackgroundSprite7" type="Sprite2D" parent="Backgrounds"]
+[node name="BackgroundSprite7" type="Sprite2D" parent="Backgrounds" unique_id=1797662002]
+modulate = Color(0.83137256, 1, 0.88235295, 1)
 position = Vector2(1016.0049, -45.00003)
 scale = Vector2(0.49804878, 0.49999994)
 texture = ExtResource("1_5exfe")
 
-[node name="BackgroundSprite3" type="Sprite2D" parent="Backgrounds"]
+[node name="BackgroundSprite3" type="Sprite2D" parent="Backgrounds" unique_id=813449019]
+modulate = Color(0.83137256, 1, 0.88235295, 1)
 position = Vector2(-2037, -45)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_5exfe")
 
-[node name="BackgroundSprite" type="Sprite2D" parent="Backgrounds"]
+[node name="BackgroundSprite" type="Sprite2D" parent="Backgrounds" unique_id=1936403510]
+modulate = Color(0.83137256, 1, 0.88235295, 1)
 position = Vector2(-1018.9951, -45.00003)
 scale = Vector2(0.49804878, 0.49999994)
 texture = ExtResource("1_5exfe")
 
-[node name="BackgroundSprite2" type="Sprite2D" parent="Backgrounds"]
+[node name="BackgroundSprite2" type="Sprite2D" parent="Backgrounds" unique_id=817142058]
+modulate = Color(0.83137256, 1, 0.88235295, 1)
 position = Vector2(-1527.5, -45.000015)
 scale = Vector2(0.49902344, 0.49999997)
 texture = ExtResource("1_5exfe")
 
-[node name="BackgroundSprite4" type="Sprite2D" parent="Backgrounds"]
+[node name="BackgroundSprite4" type="Sprite2D" parent="Backgrounds" unique_id=458430984]
+modulate = Color(0.83137256, 1, 0.88235295, 1)
 position = Vector2(-2, -45)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_5exfe")
 
-[node name="BackgroundSprite5" type="Sprite2D" parent="Backgrounds"]
+[node name="BackgroundSprite5" type="Sprite2D" parent="Backgrounds" unique_id=691323155]
+modulate = Color(0.83137256, 1, 0.88235295, 1)
 position = Vector2(507.5, -45.000015)
 scale = Vector2(0.49902344, 0.49999997)
 texture = ExtResource("1_5exfe")
 
-[node name="BackgroundSprite6" type="Sprite2D" parent="Backgrounds"]
+[node name="BackgroundSprite6" type="Sprite2D" parent="Backgrounds" unique_id=562831380]
+modulate = Color(0.83137256, 1, 0.88235295, 1)
 position = Vector2(-509.75, -45)
 scale = Vector2(0.49951172, 0.5)
 texture = ExtResource("1_5exfe")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1109339394]
 position = Vector2(2, 1)
 tile_map_data = PackedByteArray("AAD//wAAAAACAAEAAAD//wEAAAACAAYAAAAAAAAAAAACAAEAAAAAAAEAAAACAAYAAAAAAAIAAAACAAcAAAABAAAAAAACAAEAAAABAAEAAAACAAYAAAABAAIAAAADAAcAAAACAAAAAAADAAEAAAACAAEAAAADAAcAAAD8/wAAAAABAAEAAAD8/wEAAAABAAcAAAD9/wAAAAACAAEAAAD9/wEAAAACAAYAAAD9/wIAAAABAAcAAAD+/wAAAAACAAEAAAD+/wEAAAACAAYAAAD+/wIAAAACAAcAAAD//wIAAAACAAcAAAAIAAAAAAABAAQAAAAJAAEAAAABAAcAAAAPAAAAAAABAAAAAAAZAP//AAABAAAAAAAaAP//AAACAAEAAAAaAAAAAAABAAcAAAAbAP//AAACAAEAAAAbAAAAAAACAAYAAAAhAP//AAABAAEAAAAhAAAAAAABAAcAAAAiAP//AAACAAEAAAAiAAAAAAACAAYAAAAiAAEAAAABAAcAAAAjAP//AAACAAEAAAAjAAAAAAACAAYAAAAjAAEAAAACAAcAAAAkAP//AAACAAEAAAAkAAAAAAACAAYAAAAJAAAAAAACAAUAAAAKAAAAAAADAAUAAAAKAAEAAAACAAYAAAAKAAIAAAAAAAYAAAAKAAMAAAAAAAcAAAALAAEAAAADAAQAAAAQAAAAAAACAAEAAAAQAAEAAAABAAYAAAAQAAIAAAAAAAcAAAARAAAAAAADAAEAAAARAAEAAAADAAcAAAAbAAEAAAABAAcAAAAcAP//AAACAAEAAAAcAAAAAAACAAYAAAAcAAEAAAADAAYAAAAcAAIAAAAAAAcAAAAdAP//AAADAAEAAAAdAAAAAAADAAcAAAAeAPr/AAABAAAAAAAfAPr/AAADAAEAAAAfAPv/AAAAAAcAAAAkAAEAAAACAAcAAAAlAP//AAACAAEAAAAlAAAAAAACAAYAAAAlAAEAAAADAAcAAAAmAP//AAADAAEAAAAmAAAAAAADAAcAAAAUAP//AAAAAAEAAAAUAAAAAAAAAAYAAAAUAAEAAAAAAAcAAAA=")
 tile_set = ExtResource("1_8ko5r")
 
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_6544n")]
+[node name="Player" parent="." unique_id=1867424203 groups=["Player"] instance=ExtResource("3_6544n")]
 
-[node name="Coins" type="Node" parent="."]
+[node name="Coins" type="Node" parent="." unique_id=1192241464]
 
-[node name="Coin" parent="Coins" instance=ExtResource("9_2ceuy")]
-position = Vector2(45, -21)
+[node name="Coin" parent="Coins" unique_id=1991167682 instance=ExtResource("9_2ceuy")]
+position = Vector2(44, -15)
 
-[node name="Coin2" parent="Coins" instance=ExtResource("9_2ceuy")]
-position = Vector2(164, 18)
+[node name="Coin2" parent="Coins" unique_id=1995259602 instance=ExtResource("9_2ceuy")]
+position = Vector2(209, 7)
 
-[node name="Coin3" parent="Coins" instance=ExtResource("9_2ceuy")]
-position = Vector2(153, -21)
+[node name="Coin3" parent="Coins" unique_id=453041554 instance=ExtResource("9_2ceuy")]
+position = Vector2(156, -16)
 
-[node name="Coin4" parent="Coins" instance=ExtResource("9_2ceuy")]
-position = Vector2(277, -22)
+[node name="Coin4" parent="Coins" unique_id=922889783 instance=ExtResource("9_2ceuy")]
+position = Vector2(277, -17)
 
-[node name="Coin5" parent="Coins" instance=ExtResource("9_2ceuy")]
-position = Vector2(323, -22)
+[node name="Coin5" parent="Coins" unique_id=1228082865 instance=ExtResource("9_2ceuy")]
+position = Vector2(323, -17)
 
-[node name="Coin6" parent="Coins" instance=ExtResource("9_2ceuy")]
-position = Vector2(466, -44)
+[node name="Coin6" parent="Coins" unique_id=333464995 instance=ExtResource("9_2ceuy")]
+position = Vector2(464, -35)
 
-[node name="Coin7" parent="Coins" instance=ExtResource("9_2ceuy")]
+[node name="Coin7" parent="Coins" unique_id=1385551977 instance=ExtResource("9_2ceuy")]
 position = Vector2(506, -62)
 
-[node name="Enemys" type="Node" parent="."]
+[node name="Enemys" type="Node" parent="." unique_id=1706314073]
 
-[node name="Enemy" parent="Enemys" instance=ExtResource("4_2ceuy")]
+[node name="Enemy" parent="Enemys" unique_id=1927757934 instance=ExtResource("4_2ceuy")]
 
-[node name="Enemy3" type="Area2D" parent="Enemys"]
+[node name="Enemy3" type="Area2D" parent="Enemys" unique_id=2115781978]
 position = Vector2(177, 2)
 script = ExtResource("4_poeaa")
 move_direction = Vector2(0, -200)
 move_speed = 100.0
 
-[node name="Sprite" type="Sprite2D" parent="Enemys/Enemy3"]
+[node name="Sprite" type="Sprite2D" parent="Enemys/Enemy3" unique_id=245593668]
 position = Vector2(241, 71)
 texture = ExtResource("4_6544n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy3" unique_id=1894461126]
 position = Vector2(241, 71)
 shape = SubResource("CircleShape2D_poeaa")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy3"]
-libraries = {
-&"": SubResource("AnimationLibrary_sq6mb")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy3" unique_id=2097068809]
+libraries/ = SubResource("AnimationLibrary_sq6mb")
 
-[node name="Enemy2" type="Area2D" parent="Enemys"]
+[node name="Enemy2" type="Area2D" parent="Enemys" unique_id=495818088]
 position = Vector2(-93, -114)
 script = ExtResource("4_poeaa")
 move_direction = Vector2(-200, 0)
 
-[node name="Sprite" type="Sprite2D" parent="Enemys/Enemy2"]
+[node name="Sprite" type="Sprite2D" parent="Enemys/Enemy2" unique_id=1590645052]
 position = Vector2(241, 71)
 texture = ExtResource("4_6544n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy2" unique_id=1958769695]
 position = Vector2(241, 71)
 shape = SubResource("CircleShape2D_poeaa")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy2"]
-libraries = {
-&"": SubResource("AnimationLibrary_sq6mb")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy2" unique_id=89432512]
+libraries/ = SubResource("AnimationLibrary_sq6mb")
 
-[node name="Enemy4" type="Area2D" parent="Enemys"]
+[node name="Enemy4" type="Area2D" parent="Enemys" unique_id=1615264598]
 position = Vector2(411, -132)
 script = ExtResource("4_poeaa")
 move_direction = Vector2(-200, 0)
 move_speed = 100.0
 
-[node name="Sprite" type="Sprite2D" parent="Enemys/Enemy4"]
+[node name="Sprite" type="Sprite2D" parent="Enemys/Enemy4" unique_id=1001503239]
 position = Vector2(241, 71)
 texture = ExtResource("4_6544n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy4" unique_id=185844142]
 position = Vector2(241, 71)
 shape = SubResource("CircleShape2D_poeaa")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy4"]
-libraries = {
-&"": SubResource("AnimationLibrary_sq6mb")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy4" unique_id=940202514]
+libraries/ = SubResource("AnimationLibrary_sq6mb")
 
-[node name="Enemy6" type="Area2D" parent="Enemys"]
+[node name="Enemy6" type="Area2D" parent="Enemys" unique_id=1209488605]
 position = Vector2(131, -110)
 script = ExtResource("4_poeaa")
 move_direction = Vector2(400, 0)
 move_speed = 125.0
 
-[node name="Sprite" type="Sprite2D" parent="Enemys/Enemy6"]
+[node name="Sprite" type="Sprite2D" parent="Enemys/Enemy6" unique_id=122841740]
 position = Vector2(241, 71)
 texture = ExtResource("4_6544n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy6" unique_id=353035042]
 position = Vector2(241, 71)
 shape = SubResource("CircleShape2D_poeaa")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy6"]
-libraries = {
-&"": SubResource("AnimationLibrary_sq6mb")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy6" unique_id=222097766]
+libraries/ = SubResource("AnimationLibrary_sq6mb")
 
-[node name="Enemy5" type="Area2D" parent="Enemys"]
+[node name="Enemy5" type="Area2D" parent="Enemys" unique_id=921719876]
 position = Vector2(59, -87)
 script = ExtResource("4_poeaa")
 move_speed = 0.0
 
-[node name="Sprite" type="Sprite2D" parent="Enemys/Enemy5"]
+[node name="Sprite" type="Sprite2D" parent="Enemys/Enemy5" unique_id=35404546]
 position = Vector2(241, 71)
 texture = ExtResource("4_6544n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy5" unique_id=1717077379]
 position = Vector2(241, 71)
 shape = SubResource("CircleShape2D_poeaa")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy5"]
-libraries = {
-&"": SubResource("AnimationLibrary_sq6mb")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy5" unique_id=624595592]
+libraries/ = SubResource("AnimationLibrary_sq6mb")
 
-[node name="Endflag" parent="." instance=ExtResource("10_246mo")]
+[node name="Endflag" parent="." unique_id=193935332 instance=ExtResource("10_246mo")]
 position = Vector2(686, -26)
+scene_to_load = ExtResource("12_q8blv")
 
 [connection signal="body_entered" from="Enemys/Enemy3" to="Enemys/Enemy3" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy2" to="Enemys/Enemy2" method="_on_body_entered"]

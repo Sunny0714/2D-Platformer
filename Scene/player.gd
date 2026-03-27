@@ -14,6 +14,10 @@ var move_input : float
 
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
+@onready var audio : AudioStreamPlayer = $AudioStreamPlayer
+
+var take_damage_sfx : AudioStream = preload("res://Audio 2/take_damage.wav")
+var coin_sfx : AudioStream = preload("res://Audio 2/coin.wav")
 
 func _physics_process(delta):	
 	
@@ -30,7 +34,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = -jump_force
 	if Input.is_action_just_pressed("back"):
-		get_tree().change_scene_to_file("res://Scene/level_1.tscn")
+		get_tree().change_scene_to_file("res://Scene/menu.tscn")
 	
 	move_and_slide()
 	
@@ -55,18 +59,26 @@ func take_damage (amount : int):
 	health -= amount
 	OnUpdateHealth.emit(health)
 	_damage_flash()
+	play_sound(take_damage_sfx)
 	
 	if health <= 0:
 		call_deferred("game_over")
 		
 func game_over():
-	get_tree().change_scene_to_file("res://Scene/level_1.tscn")
+	get_tree().change_scene_to_file("res://Scene/menu.tscn")
 
 func increase_score (amount : int):
 	PlayerStats.score += amount
 	OnUpdateScore.emit(PlayerStats.score)
+	play_sound(coin_sfx)
 	
 func _damage_flash ():
 	sprite.modulate = Color.RED
 	await get_tree().create_timer(0.05).timeout
 	sprite.modulate = Color.WHITE
+	
+	
+	
+func play_sound (sound : AudioStream):
+	audio.stream = sound
+	audio.play()

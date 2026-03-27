@@ -1,2 +1,8 @@
-res://Scene/coin.tscn
+res://Scene/level_2.tscn
 res://Sprites/Tiles/new_tile_set.tres
+res://Scene/level_1.tscn
+res://menu.tscn
+res://menu.gd
+res://Scene/player.gd
+res://Scene/menu.tscn
+res://Scene/title.gd

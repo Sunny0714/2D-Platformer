@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://crd5r1e5j60mf"]
+[gd_scene format=3 uid="uid://crd5r1e5j60mf"]
 
 [ext_resource type="Script" uid="uid://b8vskm74q2wm7" path="res://Scene/coin.gd" id="1_5e757"]
 [ext_resource type="Texture2D" uid="uid://eaw0tcddq6vi" path="res://Sprites/Objects/tile_0151.png" id="2_1g4lx"]
@@ -6,13 +6,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ceuy"]
 radius = 6.0
 
-[node name="Coin" type="Area2D"]
+[node name="Coin" type="Area2D" unique_id=2032719106]
 script = ExtResource("1_5e757")
+start_pos = Vector2(0, -10)
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1319670746]
 texture = ExtResource("2_1g4lx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1191065259]
 shape = SubResource("CircleShape2D_2ceuy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,7 +4,7 @@ var rotate_speed : float = 3
 var bob_height : float = 5
 var bob_speed : float = 5
 
-@export var start_pos : Vector2 = global_position
+@onready var start_pos : Vector2 = global_position
 
 @onready var sprite : Sprite2D = $Sprite
 
