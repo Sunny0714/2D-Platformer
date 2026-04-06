@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://bs2pgrucpx0ku" path="res://menu.gd" id="1_ouk20"]
+[ext_resource type="Script" uid="uid://ch6vnil0oe47" path="res://Scene/background.gd" id="3_alu6o"]
 [ext_resource type="Script" uid="uid://du26blakr0hk7" path="res://Scene/title.gd" id="3_u2k45"]
 
 [sub_resource type="SystemFont" id="SystemFont_lti8b"]
@@ -32,6 +33,7 @@ offset_right = 1150.0
 offset_bottom = 896.0
 texture = ExtResource("1_lti8b")
 expand_mode = 4
+script = ExtResource("3_alu6o")
 
 [node name="Title" type="Label" parent="Background" unique_id=1496746393]
 layout_mode = 1

@@ -21,7 +21,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("../Enemy7/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,7 +38,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("../Enemy7/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -152,6 +152,23 @@ shape = SubResource("CircleShape2D_poeaa")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy3" unique_id=2097068809]
 libraries/ = SubResource("AnimationLibrary_sq6mb")
 
+[node name="Enemy7" type="Area2D" parent="Enemys" unique_id=301615935]
+position = Vector2(270, -1684)
+script = ExtResource("4_poeaa")
+move_direction = Vector2(0, 5000)
+move_speed = 1000.0
+
+[node name="Sprite" type="Sprite2D" parent="Enemys/Enemy7" unique_id=1851615618]
+position = Vector2(241, 71)
+texture = ExtResource("4_6544n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy7" unique_id=1482785424]
+position = Vector2(241, 71)
+shape = SubResource("CircleShape2D_poeaa")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy7" unique_id=582287867]
+libraries/ = SubResource("AnimationLibrary_sq6mb")
+
 [node name="Enemy2" type="Area2D" parent="Enemys" unique_id=495818088]
 position = Vector2(-93, -114)
 script = ExtResource("4_poeaa")
@@ -218,12 +235,32 @@ shape = SubResource("CircleShape2D_poeaa")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy5" unique_id=624595592]
 libraries/ = SubResource("AnimationLibrary_sq6mb")
 
+[node name="Enemy8" type="Area2D" parent="Enemys" unique_id=267103770]
+position = Vector2(270, -1680)
+script = ExtResource("4_poeaa")
+move_direction = Vector2(0, 5000)
+move_speed = 1000.0
+
+[node name="Sprite" type="Sprite2D" parent="Enemys/Enemy8" unique_id=1054125209]
+position = Vector2(241, 71)
+texture = ExtResource("4_6544n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy8" unique_id=1517720548]
+position = Vector2(241, 71)
+shape = SubResource("CircleShape2D_poeaa")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy8" unique_id=1510176420]
+root_node = NodePath("../../Enemy8")
+libraries/ = SubResource("AnimationLibrary_sq6mb")
+
 [node name="Endflag" parent="." unique_id=193935332 instance=ExtResource("10_246mo")]
 position = Vector2(686, -26)
 scene_to_load = ExtResource("12_q8blv")
 
 [connection signal="body_entered" from="Enemys/Enemy3" to="Enemys/Enemy3" method="_on_body_entered"]
+[connection signal="body_entered" from="Enemys/Enemy7" to="Enemys/Enemy7" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy2" to="Enemys/Enemy2" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy4" to="Enemys/Enemy4" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy6" to="Enemys/Enemy6" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy5" to="Enemys/Enemy5" method="_on_body_entered"]
+[connection signal="body_entered" from="Enemys/Enemy8" to="Enemys/Enemy8" method="_on_body_entered"]
