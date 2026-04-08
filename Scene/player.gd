@@ -35,7 +35,11 @@ func _physics_process(delta):
 		velocity.y = -jump_force
 	if Input.is_action_just_pressed("back"):
 		get_tree().change_scene_to_file("res://Scene/menu.tscn")
-	
+	if Input.is_action_pressed("double_jump") and not is_on_floor():
+		if PlayerStats.score >= 5:
+			velocity.y = -jump_force
+			PlayerStats.score -= 5
+			OnUpdateScore.emit(PlayerStats.score)
 	move_and_slide()
 	
 func _process(delta):
