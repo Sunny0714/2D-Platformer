@@ -5,7 +5,7 @@ func _ready() -> void:
 	z_index=100
 	var sender = get_parent()
 	if sender:
-		sender.connect("finish", Callable(self, "_on_finish"))
+		sender.connect("finish1", Callable(self, "_on_finish"))
 
 func _on_finish():
 	var camera = get_viewport().get_camera_2d()

@@ -12,31 +12,83 @@
 [ext_resource type="Script" uid="uid://bmtks638g1cmi" path="res://Scene/black_2.gd" id="11_sq6mb"]
 [ext_resource type="PackedScene" uid="uid://blxp43lrr64p2" path="res://Scene/level_2.tscn" id="12_q8blv"]
 
+[sub_resource type="Animation" id="Animation_a6c3k"]
+resource_name = "Finish"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black Finish:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(2.14, 1),
+"update": 0,
+"values": [Vector2(-685, 0), Vector2(-1685, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Black Finish2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(2.14, 1),
+"update": 0,
+"values": [Vector2(-685, 0), Vector2(315, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_sq6mb"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Black2:position")
+tracks/0/path = NodePath("Black Finish2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(350, 0)]
+"values": [Vector2(-686, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Black:position")
+tracks/1/path = NodePath("Black Finish:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-350, 0)]
+"values": [Vector2(-686, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Black:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Black2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_q8blv"]
@@ -45,7 +97,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Black2:position")
+tracks/0/path = NodePath("Black:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -57,7 +109,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Black:position")
+tracks/1/path = NodePath("Black2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -67,10 +119,15 @@ tracks/1/keys = {
 "values": [Vector2(-500, 0), Vector2(-350, 0), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_y4apx"]
+resource_name = "finish"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a6c3k"]
 _data = {
+&"Finish": SubResource("Animation_a6c3k"),
 &"RESET": SubResource("Animation_sq6mb"),
-&"Start": SubResource("Animation_q8blv")
+&"Start": SubResource("Animation_q8blv"),
+&"finish": SubResource("Animation_y4apx")
 }
 
 [node name="Main" type="Node2D" unique_id=178737448]
@@ -126,7 +183,6 @@ tile_map_data = PackedByteArray("AAD//wAAAAACAAEAAAD//wEAAAACAAYAAAAAAAAAAAACAAE
 tile_set = ExtResource("1_8ko5r")
 
 [node name="Player" parent="." unique_id=1867424203 groups=["Player"] instance=ExtResource("3_6544n")]
-position = Vector2(635, -22)
 
 [node name="Coins" type="Node" parent="." unique_id=1192241464]
 
@@ -192,17 +248,27 @@ move_speed = 2000.0
 position = Vector2(686, -26)
 scene_to_load = ExtResource("12_q8blv")
 
-[node name="Black" type="Sprite2D" parent="Endflag" unique_id=2031598712]
-position = Vector2(-350, 0)
+[node name="Black" type="Sprite2D" parent="Endflag" unique_id=1457144582]
+scale = Vector2(1.4359671, 1.9102564)
+texture = ExtResource("9_246mo")
+script = ExtResource("11_sq6mb")
+
+[node name="Black2" type="Sprite2D" parent="Endflag" unique_id=1976073418]
+scale = Vector2(1.4359671, 1.9102564)
+texture = ExtResource("9_246mo")
+script = ExtResource("11_sq6mb")
+
+[node name="Black Finish" type="Sprite2D" parent="Endflag" unique_id=1186652503]
+position = Vector2(-686, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("9_246mo")
 script = ExtResource("10_q8blv")
 
-[node name="Black2" type="Sprite2D" parent="Endflag" unique_id=1976073418]
-position = Vector2(350, 0)
-scale = Vector2(1.4359671, 1.9102564)
+[node name="Black Finish2" type="Sprite2D" parent="Endflag" unique_id=1049473845]
+position = Vector2(-686, 0)
+scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("9_246mo")
-script = ExtResource("11_sq6mb")
+script = ExtResource("10_q8blv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Endflag" unique_id=1610826253]
 libraries/ = SubResource("AnimationLibrary_a6c3k")

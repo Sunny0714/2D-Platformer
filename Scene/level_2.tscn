@@ -6,7 +6,125 @@
 [ext_resource type="PackedScene" uid="uid://bifeidvqnl2bb" path="res://Scene/player.tscn" id="4_ccfm3"]
 [ext_resource type="PackedScene" uid="uid://crd5r1e5j60mf" path="res://Scene/coin.tscn" id="5_nquh6"]
 [ext_resource type="PackedScene" uid="uid://7h60e8d1s6j1" path="res://Scene/enemy.tscn" id="6_vg3ep"]
+[ext_resource type="Script" uid="uid://bxg6cqie72gst" path="res://Scene/endflag2.gd" id="8_2thg8"]
+[ext_resource type="Texture2D" uid="uid://ccailsty8t3y6" path="res://Sprites/Objects/download.webp" id="8_71r3i"]
+[ext_resource type="Script" uid="uid://fa7x5w01q1n2" path="res://Scene/black3.gd" id="10_nwjwq"]
+[ext_resource type="Script" uid="uid://by8je0uj81cfu" path="res://Scene/blackfinish3.gd" id="11_67jix"]
 [ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="11_pn2v1"]
+
+[sub_resource type="Animation" id="Animation_nwjwq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black Finish:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1452, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Black Finish2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1452, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Black:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, 3.0517578e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Black2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_67jix"]
+resource_name = "finish"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black Finish:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1452, 0), Vector2(-2452, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Black Finish2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1452, 0), Vector2(-452, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_f3pwq"]
+resource_name = "start"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(500, 0), Vector2(350, 0), Vector2(-2, 3.0517578e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Black2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-500, -1), Vector2(-350, -1), Vector2(-3, -1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ccfm3"]
+_data = {
+&"RESET": SubResource("Animation_nwjwq"),
+&"finish": SubResource("Animation_67jix"),
+&"start": SubResource("Animation_f3pwq")
+}
 
 [node name="Main" type="Node2D" unique_id=178737448]
 modulate = Color(1, 0.9490196, 0.8, 1)
@@ -53,6 +171,12 @@ texture = ExtResource("2_7sdqy")
 [node name="BackgroundSprite6" type="Sprite2D" parent="Backgrounds" unique_id=562831380]
 modulate = Color(1, 0.9490196, 0.8, 1)
 position = Vector2(-509.75, -45)
+scale = Vector2(0.49951172, 0.5)
+texture = ExtResource("2_7sdqy")
+
+[node name="BackgroundSprite8" type="Sprite2D" parent="Backgrounds" unique_id=739725478]
+modulate = Color(1, 0.9490196, 0.8, 1)
+position = Vector2(1526, -45)
 scale = Vector2(0.49951172, 0.5)
 texture = ExtResource("2_7sdqy")
 
@@ -156,85 +280,113 @@ position = Vector2(1073, -95)
 [node name="Coin30" parent="Coins" unique_id=639538069 instance=ExtResource("5_nquh6")]
 position = Vector2(1202, -55)
 
-[node name="Enemys" type="Node" parent="." unique_id=1706314073]
+[node name="Enemys" type="Node" parent="." unique_id=1706314073 groups=["enemies"]]
 
-[node name="Enemy" parent="Enemys" unique_id=793223414 instance=ExtResource("6_vg3ep")]
+[node name="Enemy" parent="Enemys" unique_id=793223414 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(-358, 33)
 move_speed = 200.0
 
-[node name="Enemy2" parent="Enemys" unique_id=117136995 instance=ExtResource("6_vg3ep")]
+[node name="Enemy2" parent="Enemys" unique_id=117136995 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(-331, 34)
 move_speed = 200.0
 
-[node name="Enemy3" parent="Enemys" unique_id=331604804 instance=ExtResource("6_vg3ep")]
+[node name="Enemy3" parent="Enemys" unique_id=331604804 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(-120, -29)
 move_direction = Vector2(-400, 0)
 move_speed = 400.0
 
-[node name="Enemy4" parent="Enemys" unique_id=656897377 instance=ExtResource("6_vg3ep")]
+[node name="Enemy4" parent="Enemys" unique_id=656897377 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(116, 115)
 move_direction = Vector2(-500, -500)
 move_speed = 500.0
 
-[node name="Enemy5" parent="Enemys" unique_id=2022143476 instance=ExtResource("6_vg3ep")]
+[node name="Enemy5" parent="Enemys" unique_id=2022143476 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(116, 115)
 move_direction = Vector2(0, -700)
 move_speed = 400.0
 
-[node name="Enemy6" parent="Enemys" unique_id=1599444523 instance=ExtResource("6_vg3ep")]
+[node name="Enemy6" parent="Enemys" unique_id=1599444523 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(935, 29)
 move_direction = Vector2(-500, 0)
 move_speed = 400.0
 
-[node name="Enemy7" parent="Enemys" unique_id=163696004 instance=ExtResource("6_vg3ep")]
+[node name="Enemy7" parent="Enemys" unique_id=163696004 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(570, -2)
 move_direction = Vector2(1000, 0)
 move_speed = 700.0
 
-[node name="Enemy8" parent="Enemys" unique_id=1040256047 instance=ExtResource("6_vg3ep")]
+[node name="Enemy8" parent="Enemys" unique_id=1040256047 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(587, -122)
 move_direction = Vector2(900, 0)
 move_speed = 300.0
 
-[node name="Enemy9" parent="Enemys" unique_id=1063132897 instance=ExtResource("6_vg3ep")]
+[node name="Enemy9" parent="Enemys" unique_id=1063132897 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(587, -144)
 move_direction = Vector2(900, 0)
 move_speed = 300.0
 
-[node name="Enemy10" parent="Enemys" unique_id=1035133697 instance=ExtResource("6_vg3ep")]
+[node name="Enemy10" parent="Enemys" unique_id=1035133697 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(588, -167)
 move_direction = Vector2(900, 0)
 move_speed = 300.0
 
-[node name="Enemy11" parent="Enemys" unique_id=1905579241 instance=ExtResource("6_vg3ep")]
+[node name="Enemy11" parent="Enemys" unique_id=1905579241 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(606, -122)
 move_direction = Vector2(900, 0)
 move_speed = 300.0
 
-[node name="Enemy12" parent="Enemys" unique_id=1207097834 instance=ExtResource("6_vg3ep")]
+[node name="Enemy12" parent="Enemys" unique_id=1207097834 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(606, -144)
 move_direction = Vector2(900, 0)
 move_speed = 300.0
 
-[node name="Enemy13" parent="Enemys" unique_id=274413322 instance=ExtResource("6_vg3ep")]
+[node name="Enemy13" parent="Enemys" unique_id=274413322 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(607, -167)
 move_direction = Vector2(900, 0)
 move_speed = 300.0
 
-[node name="Enemy14" parent="Enemys" unique_id=347252613 instance=ExtResource("6_vg3ep")]
+[node name="Enemy14" parent="Enemys" unique_id=347252613 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(552, -111)
 move_direction = Vector2(0, 0)
 move_speed = 0.0
 
-[node name="Enemy15" parent="Enemys" unique_id=1912062991 instance=ExtResource("6_vg3ep")]
+[node name="Enemy15" parent="Enemys" unique_id=1912062991 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(148, -8)
 move_direction = Vector2(0, -300)
 move_speed = 300.0
 
-[node name="Enemy16" parent="Enemys" unique_id=2081054052 instance=ExtResource("6_vg3ep")]
+[node name="Enemy16" parent="Enemys" unique_id=2081054052 groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(270, 22)
 move_direction = Vector2(300, 0)
 move_speed = 200.0
 
-[node name="Endflag" parent="." unique_id=193935332 instance=ExtResource("11_pn2v1")]
+[node name="Endflag2" parent="." unique_id=193935332 instance=ExtResource("11_pn2v1")]
 position = Vector2(1241, -47)
+script = ExtResource("8_2thg8")
+
+[node name="Black" type="Sprite2D" parent="Endflag2" unique_id=1059852209]
+position = Vector2(-2, 3.0517578e-05)
+scale = Vector2(1.4359671, 1.9102564)
+texture = ExtResource("8_71r3i")
+script = ExtResource("10_nwjwq")
+
+[node name="Black2" type="Sprite2D" parent="Endflag2" unique_id=445404718]
+position = Vector2(-3, -1)
+scale = Vector2(1.4359671, 1.9102564)
+texture = ExtResource("8_71r3i")
+script = ExtResource("10_nwjwq")
+
+[node name="Black Finish" type="Sprite2D" parent="Endflag2" unique_id=2050932217]
+position = Vector2(-1452, 0)
+scale = Vector2(1.4441415, 1.9017092)
+texture = ExtResource("8_71r3i")
+script = ExtResource("11_67jix")
+
+[node name="Black Finish2" type="Sprite2D" parent="Endflag2" unique_id=954060565]
+position = Vector2(-1452, 0)
+scale = Vector2(1.4441415, 1.9017092)
+texture = ExtResource("8_71r3i")
+script = ExtResource("11_67jix")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Endflag2" unique_id=843007224]
+libraries/ = SubResource("AnimationLibrary_ccfm3")

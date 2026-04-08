@@ -1,7 +1,8 @@
 res://Scene/level_1.tscn
 res://Sprites/Tiles/new_tile_set.tres
-res://Scene/color_rect.gd
-res://Scene/endflag.gd
 res://Scene/black.gd
-res://Scene/black_2.gd
-res://Scene/player.gd
+res://Scene/endflag.gd
+res://Scene/level_2.tscn
+res://Scene/endflag2.gd
+res://Scene/black3.gd
+res://Scene/blackfinish3.gd
