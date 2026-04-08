@@ -5,9 +5,73 @@
 [ext_resource type="PackedScene" uid="uid://bifeidvqnl2bb" path="res://Scene/player.tscn" id="3_6544n"]
 [ext_resource type="PackedScene" uid="uid://7h60e8d1s6j1" path="res://Scene/enemy.tscn" id="4_2ceuy"]
 [ext_resource type="PackedScene" uid="uid://crd5r1e5j60mf" path="res://Scene/coin.tscn" id="9_2ceuy"]
+[ext_resource type="Texture2D" uid="uid://ccailsty8t3y6" path="res://Sprites/Objects/download.webp" id="9_246mo"]
 [ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="10_246mo"]
+[ext_resource type="Script" uid="uid://1vu8l1pmruhx" path="res://Scene/black.gd" id="10_q8blv"]
 [ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="10_sq6mb"]
+[ext_resource type="Script" uid="uid://bmtks638g1cmi" path="res://Scene/black_2.gd" id="11_sq6mb"]
 [ext_resource type="PackedScene" uid="uid://blxp43lrr64p2" path="res://Scene/level_2.tscn" id="12_q8blv"]
+
+[sub_resource type="Animation" id="Animation_sq6mb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(350, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Black:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-350, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q8blv"]
+resource_name = "Start"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(500, 0), Vector2(350, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Black:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-500, 0), Vector2(-350, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6c3k"]
+_data = {
+&"RESET": SubResource("Animation_sq6mb"),
+&"Start": SubResource("Animation_q8blv")
+}
 
 [node name="Main" type="Node2D" unique_id=178737448]
 
@@ -62,6 +126,7 @@ tile_map_data = PackedByteArray("AAD//wAAAAACAAEAAAD//wEAAAACAAYAAAAAAAAAAAACAAE
 tile_set = ExtResource("1_8ko5r")
 
 [node name="Player" parent="." unique_id=1867424203 groups=["Player"] instance=ExtResource("3_6544n")]
+position = Vector2(635, -22)
 
 [node name="Coins" type="Node" parent="." unique_id=1192241464]
 
@@ -86,39 +151,39 @@ position = Vector2(464, -35)
 [node name="Coin7" parent="Coins" unique_id=1385551977 instance=ExtResource("9_2ceuy")]
 position = Vector2(506, -62)
 
-[node name="Enemys" type="Node" parent="." unique_id=1706314073]
+[node name="Enemys" type="Node" parent="." unique_id=1706314073 groups=["enemies"]]
 
-[node name="Enemy" parent="Enemys" unique_id=1927757934 instance=ExtResource("4_2ceuy")]
+[node name="Enemy" parent="Enemys" unique_id=1927757934 groups=["enemies"] instance=ExtResource("4_2ceuy")]
 
-[node name="Enemy9" parent="Enemys" unique_id=1609066602 instance=ExtResource("4_2ceuy")]
+[node name="Enemy9" parent="Enemys" unique_id=1609066602 groups=["enemies"] instance=ExtResource("4_2ceuy")]
 position = Vector2(411, -132)
 move_direction = Vector2(-200, 0)
 
-[node name="Enemy4" parent="Enemys" unique_id=1595951664 instance=ExtResource("4_2ceuy")]
+[node name="Enemy4" parent="Enemys" unique_id=1595951664 groups=["enemies"] instance=ExtResource("4_2ceuy")]
 position = Vector2(177, 3)
 move_direction = Vector2(0, -200)
 
-[node name="Enemy3" parent="Enemys" unique_id=490363125 instance=ExtResource("4_2ceuy")]
+[node name="Enemy3" parent="Enemys" unique_id=490363125 groups=["enemies"] instance=ExtResource("4_2ceuy")]
 position = Vector2(60, -86)
 move_direction = Vector2(0, 0)
 move_speed = 0.0
 
-[node name="Enemy5" parent="Enemys" unique_id=442555156 instance=ExtResource("4_2ceuy")]
+[node name="Enemy5" parent="Enemys" unique_id=442555156 groups=["enemies"] instance=ExtResource("4_2ceuy")]
 position = Vector2(-92, -114)
 move_direction = Vector2(-200, 0)
 move_speed = 50.0
 
-[node name="Enemy2" parent="Enemys" unique_id=1081448642 instance=ExtResource("4_2ceuy")]
+[node name="Enemy2" parent="Enemys" unique_id=1081448642 groups=["enemies"] instance=ExtResource("4_2ceuy")]
 position = Vector2(132, -110)
 move_direction = Vector2(400, 0)
 move_speed = 125.0
 
-[node name="Enemy6" parent="Enemys" unique_id=921974342 instance=ExtResource("4_2ceuy")]
+[node name="Enemy6" parent="Enemys" unique_id=921974342 groups=["enemies"] instance=ExtResource("4_2ceuy")]
 position = Vector2(271, -1683)
-move_direction = Vector2(0, 5000)
+move_direction = Vector2(0, 13000)
 move_speed = 2000.0
 
-[node name="Enemy10" parent="Enemys" unique_id=1986655283 instance=ExtResource("4_2ceuy")]
+[node name="Enemy10" parent="Enemys" unique_id=1986655283 groups=["enemies"] instance=ExtResource("4_2ceuy")]
 position = Vector2(271, -1683)
 move_direction = Vector2(0, 13000)
 move_speed = 2000.0
@@ -126,3 +191,18 @@ move_speed = 2000.0
 [node name="Endflag" parent="." unique_id=193935332 instance=ExtResource("10_246mo")]
 position = Vector2(686, -26)
 scene_to_load = ExtResource("12_q8blv")
+
+[node name="Black" type="Sprite2D" parent="Endflag" unique_id=2031598712]
+position = Vector2(-350, 0)
+scale = Vector2(1.4441415, 1.9017092)
+texture = ExtResource("9_246mo")
+script = ExtResource("10_q8blv")
+
+[node name="Black2" type="Sprite2D" parent="Endflag" unique_id=1976073418]
+position = Vector2(350, 0)
+scale = Vector2(1.4359671, 1.9102564)
+texture = ExtResource("9_246mo")
+script = ExtResource("11_sq6mb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Endflag" unique_id=1610826253]
+libraries/ = SubResource("AnimationLibrary_a6c3k")
