@@ -23,7 +23,7 @@ func _on_body_entered(body):
 	get_tree().call_group("enemies","set","process_mode", Node.PROCESS_MODE_DISABLED)
 	emit_signal("start1")
 	anim.play("start")
-	await get_tree().create_timer(0.4).timeout
+	$AudioStreamPlayer2.stream = load("res://SlideClose.wav")
+	$AudioStreamPlayer2.play()
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_packed(scene_to_load)
-	
-	

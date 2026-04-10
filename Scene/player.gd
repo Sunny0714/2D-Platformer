@@ -11,6 +11,8 @@ signal OnUpdateScore (score : int)
 @export var health : int = 3
 
 var move_input : float
+var combo_active = false
+
 
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
@@ -36,17 +38,29 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("back"):
 		get_tree().change_scene_to_file("res://Scene/level_1.tscn")
 		PlayerStats.score = 0
-	if Input.is_action_pressed("double_jump") and not is_on_floor():
+	if Input.is_action_just_pressed("double_jump") and not is_on_floor():
 		if PlayerStats.score >= 5:
 			velocity.y = -jump_force
 			PlayerStats.score -= 5
+			await get_tree().create_timer(0.1).timeout
+			anim.play("double")
 			OnUpdateScore.emit(PlayerStats.score)
 	move_and_slide()
 	
 func _process(delta):
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x > 0
+	if Input.is_action_pressed("score1") \
+	and Input.is_action_pressed("score2") \
+	and Input.is_action_pressed("score3") \
+	and Input.is_action_pressed("score4"):
 		
+
+		if not Input.is_action_pressed("false"):
+			PlayerStats.score += 500
+			OnUpdateScore.emit(PlayerStats.score)
+			combo_active = true
+	
 	if global_position.y > 200:
 		game_over()
 
