@@ -34,7 +34,8 @@ func _physics_process(delta):
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = -jump_force
 	if Input.is_action_just_pressed("back"):
-		get_tree().change_scene_to_file("res://Scene/menu.tscn")
+		get_tree().change_scene_to_file("res://Scene/level_1.tscn")
+		PlayerStats.score = 0
 	if Input.is_action_pressed("double_jump") and not is_on_floor():
 		if PlayerStats.score >= 5:
 			velocity.y = -jump_force

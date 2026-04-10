@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://fa7x5w01q1n2" path="res://Scene/black3.gd" id="10_nwjwq"]
 [ext_resource type="Script" uid="uid://by8je0uj81cfu" path="res://Scene/blackfinish3.gd" id="11_67jix"]
 [ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="11_pn2v1"]
+[ext_resource type="AudioStream" uid="uid://byeutnbm7ob1o" path="res://SlideOpen.wav" id="12_67jix"]
 
 [sub_resource type="Animation" id="Animation_nwjwq"]
 length = 0.001
@@ -283,11 +284,11 @@ position = Vector2(1202, -55)
 [node name="Enemys" type="Node" parent="." unique_id=1706314073 groups=["enemies"]]
 
 [node name="Enemy" parent="Enemys" unique_id=793223414 groups=["enemies"] instance=ExtResource("6_vg3ep")]
-position = Vector2(-358, 33)
+position = Vector2(-358, 35)
 move_speed = 200.0
 
 [node name="Enemy2" parent="Enemys" unique_id=117136995 groups=["enemies"] instance=ExtResource("6_vg3ep")]
-position = Vector2(-331, 34)
+position = Vector2(-331, 35)
 move_speed = 200.0
 
 [node name="Enemy3" parent="Enemys" unique_id=331604804 groups=["enemies"] instance=ExtResource("6_vg3ep")]
@@ -390,3 +391,6 @@ script = ExtResource("11_67jix")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Endflag2" unique_id=843007224]
 libraries/ = SubResource("AnimationLibrary_ccfm3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Endflag2" unique_id=1866088931]
+stream = ExtResource("12_67jix")

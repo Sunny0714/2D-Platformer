@@ -1,6 +1,5 @@
 extends Sprite2D
 
-@onready var anim = $AnimationPlayer
 func _ready() -> void:
 	z_index=100
 	var sender = get_parent()

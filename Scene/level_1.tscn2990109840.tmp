@@ -10,9 +10,8 @@
 [ext_resource type="Script" uid="uid://1vu8l1pmruhx" path="res://Scene/black.gd" id="10_q8blv"]
 [ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="10_sq6mb"]
 [ext_resource type="Script" uid="uid://bmtks638g1cmi" path="res://Scene/black_2.gd" id="11_sq6mb"]
-[ext_resource type="AudioStream" uid="uid://byeutnbm7ob1o" path="res://SlideOpen.wav" id="12_a6c3k"]
+[ext_resource type="AudioStream" uid="uid://6h1xh7ek0hn0" path="res://Untitled song (Apr 9, 2026 7_57 PM) (mp3cut.net).wav" id="12_a6c3k"]
 [ext_resource type="PackedScene" uid="uid://blxp43lrr64p2" path="res://Scene/level_2.tscn" id="12_q8blv"]
-[ext_resource type="AudioStream" uid="uid://bsnd86lpwyadr" path="res://SlideClose.wav" id="13_a6c3k"]
 
 [sub_resource type="Animation" id="Animation_a6c3k"]
 resource_name = "Finish"
@@ -277,6 +276,3 @@ libraries/ = SubResource("AnimationLibrary_a6c3k")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Endflag" unique_id=1199602950]
 stream = ExtResource("12_a6c3k")
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Endflag" unique_id=1634657063]
-stream = ExtResource("13_a6c3k")

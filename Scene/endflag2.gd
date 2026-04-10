@@ -9,7 +9,10 @@ func _ready():
 	get_tree().call_group("enemies","set","process_mode", Node.PROCESS_MODE_DISABLED)
 	emit_signal("finish1")
 	anim.play("finish")
-	await get_tree().create_timer(0.4).timeout
+	await get_tree().create_timer(0.1).timeout
+	$AudioStreamPlayer.stream = load("res://SlideOpen.wav")
+	$AudioStreamPlayer.play()
+	await get_tree().create_timer(0.3).timeout
 	get_tree().call_group("enemies","set","process_mode", Node.PROCESS_MODE_INHERIT)
 
 
