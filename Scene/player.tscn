@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://boym8rwk8fqpe" path="res://Sprites/Characters/character_0001.png" id="3_xa75v"]
 [ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="4_58ae2"]
 [ext_resource type="Script" uid="uid://cy0vcue7kre2r" path="res://Scene/canvas_layer.gd" id="4_ivevv"]
+[ext_resource type="Script" uid="uid://dmki70nu0js5t" path="res://Scene/instructions.gd" id="7_p6qlh"]
+[ext_resource type="Texture2D" uid="uid://khhveelo5mav" path="res://Double arrows with SHIFT key icon.png" id="8_2sw5t"]
+[ext_resource type="Script" uid="uid://bjaban7tesvik" path="res://Scene/sprite_2d.gd" id="9_ij4jb"]
+[ext_resource type="Texture2D" uid="uid://dkk7fginxv7gd" path="res://Dash mechanic icon with keypress提示.png" id="10_c31lq"]
+[ext_resource type="Script" uid="uid://himdhdas1bje" path="res://Scene/dash.gd" id="10_c68nv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y8w33"]
 height = 26.0
@@ -79,10 +84,16 @@ _data = {
 &"move": SubResource("Animation_r6jsd")
 }
 
+[sub_resource type="SystemFont" id="SystemFont_p6qlh"]
+font_names = PackedStringArray("Candara")
+
 [sub_resource type="LabelSettings" id="LabelSettings_ivevv"]
 font_size = 38
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 0.7294118)
+
+[sub_resource type="SystemFont" id="SystemFont_r6jsd"]
+font_names = PackedStringArray("Cursive")
 
 [node name="Player" type="CharacterBody2D" unique_id=76362011]
 script = ExtResource("1_y8w33")
@@ -109,10 +120,10 @@ libraries/ = SubResource("AnimationLibrary_2sw5t")
 script = ExtResource("4_ivevv")
 
 [node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1668249399]
-offset_left = 2.0
-offset_top = 4.0
-offset_right = 287.0
-offset_bottom = 61.0
+offset_left = 26.0
+offset_top = 23.0
+offset_right = 270.0
+offset_bottom = 82.0
 
 [node name="Heart" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=696957031]
 layout_mode = 2
@@ -130,9 +141,37 @@ texture = ExtResource("4_58ae2")
 expand_mode = 2
 
 [node name="ScoreText" type="Label" parent="CanvasLayer" unique_id=1495778575]
-offset_left = 5.0
-offset_top = 57.0
-offset_right = 192.0
-offset_bottom = 110.0
+offset_left = 38.0
+offset_top = 101.0
+offset_right = 216.0
+offset_bottom = 176.0
+theme_override_fonts/font = SubResource("SystemFont_p6qlh")
+theme_override_font_sizes/font_size = 20
 text = "Score : 500"
 label_settings = SubResource("LabelSettings_ivevv")
+
+[node name="Instructions" type="Label" parent="CanvasLayer" unique_id=1409407580]
+offset_left = 323.0
+offset_top = 531.0
+offset_right = 823.0
+offset_bottom = 628.0
+theme_override_colors/font_outline_color = Color(0.31, 0.31, 0.31, 0.8039216)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("SystemFont_r6jsd")
+theme_override_font_sizes/font_size = 40
+text = "Press R to reload the level"
+script = ExtResource("7_p6qlh")
+
+[node name="Double" type="Sprite2D" parent="CanvasLayer" unique_id=1764868032]
+modulate = Color(1, 1, 1, 0.7137255)
+position = Vector2(98, 561)
+scale = Vector2(0.18164064, 0.18884283)
+texture = ExtResource("8_2sw5t")
+script = ExtResource("9_ij4jb")
+
+[node name="Dash" type="Sprite2D" parent="CanvasLayer" unique_id=1722852849]
+modulate = Color(1, 1, 1, 0.7137255)
+position = Vector2(224, 490)
+scale = Vector2(0.18908691, 0.19128416)
+texture = ExtResource("10_c31lq")
+script = ExtResource("10_c68nv")

@@ -24,6 +24,10 @@ func _on_body_entered(body):
 	get_tree().call_group("enemies","set","process_mode", Node.PROCESS_MODE_DISABLED)
 	get_tree().call_group("Player","set","process_mode", Node.PROCESS_MODE_DISABLED)
 	emit_signal("start")
+	for p in get_tree().get_nodes_in_group("Player"):
+		p.global_position = global_position
+		p.position.y = -15
+		p.position.x -= 3
 	$AnimationPlayer.play("Start")
 	$AudioStreamPlayer2.stream =load("res://SlideClose.wav")
 	$AudioStreamPlayer2.play()

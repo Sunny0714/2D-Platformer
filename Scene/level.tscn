@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://c6kycbk87ufp8"]
+
+[ext_resource type="Script" uid="uid://ukm2avdu6d7i" path="res://Scene/level1.gd" id="1_or6n4"]
+[ext_resource type="Texture2D" uid="uid://bpkkj4i0lidm8" path="res://Sprites/Backgrounds/backgroundDesert.png" id="2_p7rx0"]
+[ext_resource type="Script" uid="uid://oats8un1qkrf" path="res://Scene/background1.gd" id="3_tut6d"]
+[ext_resource type="Script" uid="uid://v6obpte4k3n2" path="res://Scene/easy_1.gd" id="4_iysjp"]
+[ext_resource type="Script" uid="uid://dx0cq083p67uf" path="res://Scene/normal_1.gd" id="5_hdt71"]
+[ext_resource type="Script" uid="uid://d1m4gdd6f8w7p" path="res://Scene/normal.gd" id="5_tut6d"]
+[ext_resource type="Script" uid="uid://con5vr4huyg7o" path="res://Scene/hard_1.gd" id="6_637vb"]
+[ext_resource type="Script" uid="uid://drqtwq5q4s2hs" path="res://Scene/easy.gd" id="6_p7rx0"]
+[ext_resource type="Script" uid="uid://bqwk0fl7ylyok" path="res://Scene/hard.gd" id="7_iysjp"]
+
+[sub_resource type="SystemFont" id="SystemFont_637vb"]
+font_names = PackedStringArray("Cursive")
+font_weight = 500
+
+[sub_resource type="SystemFont" id="SystemFont_iysjp"]
+font_names = PackedStringArray("Bell MT")
+
+[sub_resource type="SystemFont" id="SystemFont_p7rx0"]
+font_names = PackedStringArray("Bell MT")
+
+[sub_resource type="SystemFont" id="SystemFont_hdt71"]
+font_names = PackedStringArray("Bell MT")
+
+[node name="Difficulty" type="Control" unique_id=937524807]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_or6n4")
+
+[node name="Background" type="TextureRect" parent="." unique_id=981519566]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -256.0
+offset_right = 1150.0
+offset_bottom = 896.0
+texture = ExtResource("2_p7rx0")
+expand_mode = 4
+script = ExtResource("3_tut6d")
+
+[node name="Easy1" type="Label" parent="." unique_id=1872131470]
+modulate = Color(0.22382358, 0.22382358, 0.22382355, 0.8901961)
+self_modulate = Color(0.83137256, 0.83137256, 0.83137256, 1)
+layout_mode = 0
+offset_left = 135.0
+offset_top = 257.0
+offset_right = 446.0
+offset_bottom = 434.0
+theme_override_colors/font_color = Color(0.99, 0.99, 0.99, 1)
+theme_override_fonts/font = SubResource("SystemFont_637vb")
+theme_override_font_sizes/font_size = 40
+text = "- Health 3x
+- Score 15x
+- Revive 1x"
+script = ExtResource("4_iysjp")
+
+[node name="Normal1" type="Label" parent="." unique_id=2120091895]
+modulate = Color(0.22382358, 0.22382358, 0.22382355, 0.8901961)
+self_modulate = Color(0.83137256, 0.83137256, 0.83137256, 1)
+layout_mode = 0
+offset_left = 459.0
+offset_top = 264.0
+offset_right = 770.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0.99, 0.99, 0.99, 1)
+theme_override_colors/font_outline_color = Color(0.99, 0.99, 0.99, 0.9843137)
+theme_override_fonts/font = SubResource("SystemFont_637vb")
+theme_override_font_sizes/font_size = 40
+text = "- Health 3x
+"
+script = ExtResource("5_hdt71")
+
+[node name="Hard1" type="Label" parent="." unique_id=1660231507]
+modulate = Color(0.22382358, 0.22382358, 0.22382355, 0.8901961)
+self_modulate = Color(0.83137256, 0.83137256, 0.83137256, 1)
+layout_mode = 0
+offset_left = 783.0
+offset_top = 265.0
+offset_right = 1094.0
+offset_bottom = 442.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.05, 0.05, 0.05, 0.8627451)
+theme_override_fonts/font = SubResource("SystemFont_637vb")
+theme_override_font_sizes/font_size = 40
+text = "- Health 1x
+"
+script = ExtResource("6_637vb")
+
+[node name="Easy" type="Button" parent="." unique_id=1447995970]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -446.0
+offset_top = -189.0
+offset_right = -200.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_iysjp")
+theme_override_font_sizes/font_size = 40
+text = "EASY"
+script = ExtResource("6_p7rx0")
+
+[node name="Normal" type="Button" parent="." unique_id=2087435787]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -187.0
+offset_right = 125.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_p7rx0")
+theme_override_font_sizes/font_size = 40
+text = "NORMAL"
+script = ExtResource("5_tut6d")
+
+[node name="Hard" type="Button" parent="." unique_id=618349754]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 204.0
+offset_top = -186.0
+offset_right = 445.0
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_hdt71")
+theme_override_font_sizes/font_size = 40
+text = "HARD
+"
+script = ExtResource("7_iysjp")
+
+[connection signal="mouse_entered" from="Easy" to="." method="_on_easy_mouse_entered"]
+[connection signal="mouse_exited" from="Easy" to="." method="_on_easy_mouse_exited"]
+[connection signal="pressed" from="Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="Easy" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="Normal" to="." method="_on_normal_mouse_entered"]
+[connection signal="mouse_exited" from="Normal" to="." method="_on_normal_mouse_exited"]
+[connection signal="pressed" from="Normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="Normal" to="." method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="Hard" to="." method="_on_hard_mouse_entered"]
+[connection signal="mouse_exited" from="Hard" to="." method="_on_hard_mouse_exited"]
+[connection signal="pressed" from="Hard" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="Hard" to="." method="_on_play_button_pressed"]

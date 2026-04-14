@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal OnUpdateHealth (health : int)
 signal OnUpdateScore (score : int)
+signal OnUpdateRevive (revive : int)
 
 @export var move_speed : float = 100
 @export var acceleration : float = 50
@@ -9,20 +10,33 @@ signal OnUpdateScore (score : int)
 @export var gravity : float = 500
 @export var jump_force : float = 200
 @export var health : int = 3
+@export var revive : int = 0
+@export var score : int = 0
 
 var move_input : float
 var combo_active = false
 
-
+@onready var flash : CanvasLayer = $CanvasLayer
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var audio : AudioStreamPlayer = $AudioStreamPlayer
 
 var take_damage_sfx : AudioStream = preload("res://Audio 2/take_damage.wav")
 var coin_sfx : AudioStream = preload("res://Audio 2/coin.wav")
+var revive_sfx : AudioStream = preload("res://Scripts/totem.wav")
+
+
+	
+func _ready():
+	health = PlayerStats.health
+	OnUpdateHealth.emit(health)
+	revive = PlayerStats.revive
+	OnUpdateRevive.emit(revive)
+	score = PlayerStats.score
+	OnUpdateScore.emit(score)
+	
 
 func _physics_process(delta):	
-	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
@@ -38,15 +52,44 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("back"):
 		get_tree().change_scene_to_file("res://Scene/level_1.tscn")
 		PlayerStats.score = 0
+		_check()
+	if Input.is_action_just_pressed("dash"):
+		if PlayerStats.score >= 10:
+			move_input = Input.get_axis("move_left", "move_right")
+			move_input = sign(velocity.x)
+			PlayerStats.score -= 10
+			await get_tree().create_timer(0.1).timeout
+			OnUpdateScore.emit(PlayerStats.score)
+			if move_input !=0:
+				velocity.x = lerp(velocity.x, move_input * move_speed * 25, acceleration * delta)
+			else:
+				move_input = 15
+				velocity.x = lerp(velocity.x, move_input * move_speed, acceleration * delta)
+
+			
+
 	if Input.is_action_just_pressed("double_jump") and not is_on_floor():
 		if PlayerStats.score >= 5:
 			velocity.y = -jump_force
-			PlayerStats.score -= 5
-			await get_tree().create_timer(0.1).timeout
-			anim.play("double")
-			OnUpdateScore.emit(PlayerStats.score)
+			if position.y >= -2000:
+				PlayerStats.score -= 5
+				await get_tree().create_timer(0.1).timeout
+				OnUpdateScore.emit(PlayerStats.score)
+			else:
+				PlayerStats.health = 1
+				health = 1
+				await get_tree().create_timer(0.1).timeout
+				OnUpdateHealth.emit(PlayerStats.health)
+
 	move_and_slide()
 	
+	
+func _check():
+	if revive >= 1:
+		PlayerStats.score = 15
+		score = 15
+		OnUpdateScore.emit(PlayerStats.score)
+
 func _process(delta):
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x > 0
@@ -80,17 +123,64 @@ func take_damage (amount : int):
 	_damage_flash()
 	play_sound(take_damage_sfx)
 	
-	if health <= 0:
-		call_deferred("game_over")
-		
+	if health <= 0 and revive > 0:
+		PlayerStats.health = 1
+		health = 1
+		revive -= 1
+		OnUpdateHealth.emit(PlayerStats.health)
+		OnUpdateRevive.emit(PlayerStats.revive)
+		_on_finish()
+		play_sound(revive_sfx)
+	elif health <=0:
+		call_deferred("game_over")	
+	
+func easy():
+	await get_tree().create_timer(0.1).timeout
+	PlayerStats.revive = 1
+	revive = 1
+	OnUpdateRevive.emit(PlayerStats.revive)
+
+
+func red():
+	flash.color = Color.RED
+	
+
+func flash_red():
+	var tween = create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_method(red, 0, 0.6, 0.2)
+	tween.tween_interval(0.3)
+	tween.tween_method(red, 0.6, 0, 0.4)
+
 func game_over():
+	flash_red()
+	get_tree().paused = true
+	await get_tree().create_timer(0.3).timeout
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scene/menu.tscn")
+	
+func _on_finish():
+	var camera = get_viewport().get_camera_2d()
+	var tween = create_tween()
+	for i in range(10):
+		tween.tween_property(camera, "global_position", camera.global_position + Vector2(randf_range(-10, 10), randf_range(-10, 10)), 0.05)
+	tween.tween_property(camera, "global_position", camera.global_position, 0.05)
+	await get_tree().create_timer(0.8).timeout
+	tween.kill()
+	camera.offset = Vector2.ZERO
+	camera.global_position = global_position + Vector2(0,-23)
 
 func increase_score (amount : int):
 	PlayerStats.score += amount
 	OnUpdateScore.emit(PlayerStats.score)
 	play_sound(coin_sfx)
-	
+
+func increase_health (amount : int):
+	if health < 3:
+		PlayerStats.health += amount
+		health += amount
+		OnUpdateHealth.emit(PlayerStats.health)
+
 func _damage_flash ():
 	sprite.modulate = Color.RED
 	await get_tree().create_timer(0.05).timeout
@@ -101,3 +191,6 @@ func _damage_flash ():
 func play_sound (sound : AudioStream):
 	audio.stream = sound
 	audio.play()
+	
+func _on_update_health(new_health: int):
+	health = new_health

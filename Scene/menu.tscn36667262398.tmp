@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://byr7xwu7f3oj"]
+
+[ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://bs2pgrucpx0ku" path="res://menu.gd" id="1_ouk20"]
+[ext_resource type="Script" uid="uid://ch6vnil0oe47" path="res://Scene/background.gd" id="3_alu6o"]
+[ext_resource type="Script" uid="uid://du26blakr0hk7" path="res://Scene/title.gd" id="3_u2k45"]
+[ext_resource type="Script" uid="uid://cf5i12ewjgoth" path="res://Scene/quit_button.gd" id="5_ffxp3"]
+
+[sub_resource type="SystemFont" id="SystemFont_lti8b"]
+font_names = PackedStringArray("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+generate_mipmaps = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_ouk20"]
+font = SubResource("SystemFont_lti8b")
+font_size = 64
+font_color = Color(3.657937e-06, 0.92945796, 0.2836853, 1)
+outline_size = 5
+shadow_size = 3
+
+[node name="Menu" type="Control" unique_id=937524807]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ouk20")
+
+[node name="Background" type="TextureRect" parent="." unique_id=981519566]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -256.0
+offset_right = 1150.0
+offset_bottom = 896.0
+texture = ExtResource("1_lti8b")
+expand_mode = 4
+script = ExtResource("3_alu6o")
+
+[node name="Title" type="Label" parent="Background" unique_id=1496746393]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -373.5
+offset_top = -236.5
+offset_right = 367.5
+offset_bottom = -95.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "2D PLATFORMER"
+label_settings = SubResource("LabelSettings_ouk20")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_u2k45")
+
+[node name="QuitButton" type="Button" parent="Background/Title" unique_id=2087435787]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = 278.5
+offset_right = 81.5
+offset_bottom = 336.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "QUIT"
+script = ExtResource("5_ffxp3")
+
+[node name="PlayButton" type="Button" parent="Background/Title" unique_id=1447995970]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = 163.5
+offset_right = 81.5
+offset_bottom = 224.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "PLAY"
+
+[connection signal="mouse_entered" from="Background/Title/QuitButton" to="Background/Title" method="_on_quit_button_mouse_entered"]
+[connection signal="mouse_exited" from="Background/Title/QuitButton" to="Background/Title" method="_on_quit_button_mouse_exited"]
+[connection signal="pressed" from="Background/Title/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Background/Title/PlayButton" to="." method="_on_play_button_pressed"]

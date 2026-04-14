@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://bifeidvqnl2bb"]
+
+[ext_resource type="Texture2D" uid="uid://dyq7dh6jlegru" path="res://Sprites/Characters/character_0000.png" id="1_kelma"]
+[ext_resource type="Script" uid="uid://dx1rw5uovjk7t" path="res://Scene/player.gd" id="1_y8w33"]
+[ext_resource type="Script" uid="uid://c11i21nmtjpwy" path="res://Scene/camera_2d.gd" id="3_r6jsd"]
+[ext_resource type="Texture2D" uid="uid://boym8rwk8fqpe" path="res://Sprites/Characters/character_0001.png" id="3_xa75v"]
+[ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="4_58ae2"]
+[ext_resource type="Script" uid="uid://cy0vcue7kre2r" path="res://Scene/canvas_layer.gd" id="4_ivevv"]
+[ext_resource type="Script" uid="uid://dmki70nu0js5t" path="res://Scene/instructions.gd" id="7_p6qlh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y8w33"]
+height = 26.0
+
+[sub_resource type="Animation" id="Animation_ivevv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_kelma")]
+}
+
+[sub_resource type="Animation" id="Animation_58ae2"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_kelma")]
+}
+
+[sub_resource type="Animation" id="Animation_p6qlh"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_xa75v")]
+}
+
+[sub_resource type="Animation" id="Animation_r6jsd"]
+resource_name = "move"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_xa75v"), ExtResource("1_kelma"), ExtResource("3_xa75v"), ExtResource("1_kelma")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2sw5t"]
+_data = {
+&"RESET": SubResource("Animation_ivevv"),
+&"idle": SubResource("Animation_58ae2"),
+&"jump": SubResource("Animation_p6qlh"),
+&"move": SubResource("Animation_r6jsd")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_ivevv"]
+font_size = 38
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.7294118)
+
+[sub_resource type="SystemFont" id="SystemFont_r6jsd"]
+font_names = PackedStringArray("Cursive")
+
+[node name="Player" type="CharacterBody2D" unique_id=76362011]
+script = ExtResource("1_y8w33")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=584433295]
+texture = ExtResource("1_kelma")
+offset = Vector2(0, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1874911936]
+position = Vector2(0, -13)
+shape = SubResource("CapsuleShape2D_y8w33")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1789739313]
+position = Vector2(0, -22)
+zoom = Vector2(3, 3)
+script = ExtResource("3_r6jsd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1938727954]
+libraries/ = SubResource("AnimationLibrary_2sw5t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=926322480]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=60665582]
+script = ExtResource("4_ivevv")
+
+[node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1668249399]
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 287.0
+offset_bottom = 61.0
+
+[node name="Heart" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=696957031]
+layout_mode = 2
+texture = ExtResource("4_58ae2")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=1476473710]
+layout_mode = 2
+texture = ExtResource("4_58ae2")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=1059927390]
+layout_mode = 2
+texture = ExtResource("4_58ae2")
+expand_mode = 2
+
+[node name="ScoreText" type="Label" parent="CanvasLayer" unique_id=1495778575]
+offset_left = 5.0
+offset_top = 57.0
+offset_right = 192.0
+offset_bottom = 110.0
+text = "Score : 500"
+label_settings = SubResource("LabelSettings_ivevv")
+
+[node name="Instructions" type="Label" parent="CanvasLayer" unique_id=1409407580]
+offset_left = 323.0
+offset_top = 509.0
+offset_right = 823.0
+offset_bottom = 606.0
+theme_override_colors/font_outline_color = Color(0.31, 0.31, 0.31, 0.8039216)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("SystemFont_r6jsd")
+theme_override_font_sizes/font_size = 40
+text = "Press R to reload the level"
+script = ExtResource("7_p6qlh")
