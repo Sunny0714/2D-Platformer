@@ -252,26 +252,22 @@ position = Vector2(686, -26)
 scene_to_load = ExtResource("12_q8blv")
 
 [node name="Black" type="Sprite2D" parent="Endflag" unique_id=1457144582]
-visible = false
 scale = Vector2(1.4359671, 1.9102564)
 texture = ExtResource("9_246mo")
 script = ExtResource("11_sq6mb")
 
 [node name="Black2" type="Sprite2D" parent="Endflag" unique_id=1976073418]
-visible = false
 scale = Vector2(1.4359671, 1.9102564)
 texture = ExtResource("9_246mo")
 script = ExtResource("11_sq6mb")
 
 [node name="Black Finish" type="Sprite2D" parent="Endflag" unique_id=1186652503]
-visible = false
 position = Vector2(-686, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("9_246mo")
 script = ExtResource("10_q8blv")
 
 [node name="Black Finish2" type="Sprite2D" parent="Endflag" unique_id=1049473845]
-visible = false
 position = Vector2(-686, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("9_246mo")

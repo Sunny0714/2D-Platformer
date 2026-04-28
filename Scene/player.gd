@@ -20,6 +20,7 @@ signal hide1
 @export var revive : int = 0
 @export var score : int = 0
 
+var shake : int = 1
 var move_input : float
 var combo_active = false
 
@@ -45,8 +46,23 @@ func _ready():
 		show()
 	if move_input !=0:
 		emit_signal("hide1")
+	var sender = get_parent().get_node("EnemyBoss")
+	if sender:
+		sender.connect("stop", Callable(self, "_on_stop"))
 	
 
+func _on_stop():
+	var camera = get_viewport().get_camera_2d()
+	var tween = create_tween()
+	for i in range(10):
+		tween.tween_property(camera, "global_position", camera.global_position + Vector2(randf_range(-10, 10)*shake, shake*randf_range(-10, 10)), 0.05)
+	tween.tween_property(camera, "global_position", camera.global_position, 0.05)
+	await get_tree().create_timer(3).timeout
+	tween.kill()
+	shake = 0
+	camera.offset = Vector2.ZERO
+	camera.global_position = global_position + Vector2(0,-23)
+	
 func _physics_process(delta):	
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -245,3 +261,4 @@ func _on_dash__input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 				Input.action_press("dash")
 				Input.action_release("dash")
+				

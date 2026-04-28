@@ -3,3 +3,8 @@ res://black.gd
 res://black_finish10.gd
 res://level3.tscn
 res://Scene/enemyboss.gd
+res://Scene/player.gd
+res://Scene/level_2.tscn
+res://Scene/level_1.tscn
+res://Scene/perjectile.tscn
+res://Scene/perjectile.gd

@@ -1558,28 +1558,24 @@ position = Vector2(1241, -47)
 script = ExtResource("8_2thg8")
 
 [node name="Black" type="Sprite2D" parent="Endflag2" unique_id=1059852209]
-visible = false
 position = Vector2(-2, 3.0517578e-05)
 scale = Vector2(1.4359671, 1.9102564)
 texture = ExtResource("8_71r3i")
 script = ExtResource("10_nwjwq")
 
 [node name="Black2" type="Sprite2D" parent="Endflag2" unique_id=445404718]
-visible = false
 position = Vector2(-3, -1)
 scale = Vector2(1.4359671, 1.9102564)
 texture = ExtResource("8_71r3i")
 script = ExtResource("10_nwjwq")
 
 [node name="Black Finish" type="Sprite2D" parent="Endflag2" unique_id=2050932217]
-visible = false
 position = Vector2(-1452, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("8_71r3i")
 script = ExtResource("11_67jix")
 
 [node name="Black Finish2" type="Sprite2D" parent="Endflag2" unique_id=954060565]
-visible = false
 position = Vector2(-1452, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("8_71r3i")
