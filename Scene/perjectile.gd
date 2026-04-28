@@ -1,5 +1,7 @@
 extends Area2D
 
+signal hit
+
 var rotate_speed : float = 3
 
 @export var move_direction : Vector2
@@ -20,7 +22,14 @@ func _physics_process(delta):
 
 
 func _on_body_entered(body):
-	if not body.is_in_group("Player"):
-		return
+	if body.is_in_group("Player"):
+		_move_boss()
+	if body.is_in_group("Boss"):
+		emit_signal("hit")
+		queue_free()
+		
+		
+func _move_boss():
+	move_speed = 1000
+	global_position = global_position.move_toward(Vector2(300,-100), move_speed)
 	
-	queue_free()

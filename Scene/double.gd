@@ -1,6 +1,6 @@
 extends Area2D
 
-func _process(delta: float) -> void:
+func _process(float) -> void:
 	if PlayerStats.score >= 5:
 		modulate = Color(1.3, 1.3, 1.3, 0.85)
 	else:
