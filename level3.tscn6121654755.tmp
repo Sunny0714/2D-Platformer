@@ -1,0 +1,191 @@
+[gd_scene format=4 uid="uid://b6qwewfjnw42s"]
+
+[ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="1_ci4mn"]
+[ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_sotx7"]
+[ext_resource type="PackedScene" uid="uid://bifeidvqnl2bb" path="res://Scene/player.tscn" id="3_ymh28"]
+[ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="4_7oc4e"]
+[ext_resource type="PackedScene" uid="uid://blxp43lrr64p2" path="res://Scene/level_2.tscn" id="5_siwpi"]
+[ext_resource type="Texture2D" uid="uid://ccailsty8t3y6" path="res://Sprites/Objects/download.webp" id="6_0m7xm"]
+[ext_resource type="Script" uid="uid://bh3v74of4k6lg" path="res://black.gd" id="7_qoi87"]
+[ext_resource type="Script" uid="uid://dibca6mob3acl" path="res://black_finish10.gd" id="8_i6w5t"]
+[ext_resource type="AudioStream" uid="uid://byeutnbm7ob1o" path="res://SlideOpen.wav" id="9_l2pgs"]
+[ext_resource type="AudioStream" uid="uid://bsnd86lpwyadr" path="res://SlideClose.wav" id="10_2272n"]
+[ext_resource type="PackedScene" uid="uid://7h60e8d1s6j1" path="res://Scene/enemy.tscn" id="11_sotx7"]
+[ext_resource type="Script" uid="uid://dyoxuucy8d0oj" path="res://Scene/enemyboss.gd" id="12_ymh28"]
+
+[sub_resource type="Animation" id="Animation_a6c3k"]
+resource_name = "Finish"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black Finish:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(2.14, 1),
+"update": 0,
+"values": [Vector2(-685, 0), Vector2(-1685, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Black Finish2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(2.14, 1),
+"update": 0,
+"values": [Vector2(-685, 0), Vector2(315, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sq6mb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black Finish2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-686, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Black Finish:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-686, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Black:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Black2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q8blv"]
+resource_name = "Start"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(500, 0), Vector2(350, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Black2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-500, 0), Vector2(-350, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y4apx"]
+resource_name = "finish"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6c3k"]
+_data = {
+&"Finish": SubResource("Animation_a6c3k"),
+&"RESET": SubResource("Animation_sq6mb"),
+&"Start": SubResource("Animation_q8blv"),
+&"finish": SubResource("Animation_y4apx")
+}
+
+[node name="Main" type="Node2D" unique_id=178737448]
+
+[node name="Backgrounds" type="Node2D" parent="." unique_id=1766874012]
+script = ExtResource("1_ci4mn")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1109339394]
+position = Vector2(2, 1)
+tile_map_data = PackedByteArray("AAD0/wAAAAACAAYAAAD1/wAAAAACAAYAAAD2/wAAAAACAAYAAAD3/wAAAAACAAYAAAD4/wAAAAACAAYAAAD4/wEAAAACAAYAAAD5/wEAAAACAAYAAAD5/wAAAAACAAYAAAD6/wAAAAACAAYAAAD7/wAAAAACAAYAAAD8/wAAAAACAAYAAAD9/wAAAAACAAYAAAD+/wAAAAACAAYAAAD//wAAAAACAAYAAAAAAAAAAAACAAYAAAABAAAAAAACAAYAAAACAAAAAAACAAYAAAADAAAAAAACAAYAAAAEAAAAAAACAAYAAAAFAAAAAAACAAYAAAAGAAAAAAACAAYAAAAHAAAAAAACAAYAAAAIAAAAAAACAAYAAAAIAAEAAAACAAYAAAAHAAEAAAACAAYAAAAGAAEAAAACAAYAAAAFAAEAAAACAAYAAAAEAAEAAAACAAYAAAADAAEAAAACAAYAAAACAAEAAAACAAYAAAACAAIAAAACAAYAAAABAAIAAAACAAYAAAAAAAIAAAACAAYAAAD//wIAAAACAAYAAAD+/wIAAAACAAYAAAD9/wIAAAACAAYAAAD9/wEAAAACAAYAAAD8/wEAAAACAAYAAAD7/wEAAAACAAYAAAD6/wEAAAACAAYAAAD3/wEAAAACAAYAAAD2/wEAAAACAAYAAAD1/wEAAAACAAYAAAD0/wEAAAACAAYAAADz/wEAAAACAAYAAADz/wAAAAACAAYAAADz/wIAAAACAAYAAADz/wMAAAACAAYAAAD0/wMAAAACAAYAAAD1/wMAAAACAAYAAAD2/wMAAAACAAYAAAD3/wMAAAACAAYAAAD4/wMAAAACAAYAAAD5/wMAAAACAAYAAAD6/wMAAAACAAYAAAD7/wMAAAACAAYAAAD8/wMAAAACAAYAAAD9/wMAAAACAAYAAAD+/wMAAAACAAYAAAD//wMAAAACAAYAAAAAAAMAAAACAAYAAAABAAMAAAACAAYAAAACAAMAAAACAAYAAAADAAMAAAACAAYAAAAEAAMAAAACAAYAAAAFAAMAAAACAAYAAAAGAAMAAAACAAYAAAAHAAMAAAACAAYAAAAIAAMAAAACAAYAAAAIAAIAAAACAAYAAAAHAAIAAAACAAYAAAAGAAIAAAACAAYAAAAFAAIAAAACAAYAAAAEAAIAAAACAAYAAAADAAIAAAACAAYAAAABAAEAAAACAAYAAAAAAAEAAAACAAYAAAD//wEAAAACAAYAAAD+/wEAAAACAAYAAAD7/wIAAAACAAYAAAD0/wIAAAACAAYAAAD1/wIAAAACAAYAAAD2/wIAAAACAAYAAAD3/wIAAAACAAYAAAD4/wIAAAACAAYAAAD5/wIAAAACAAYAAAD6/wIAAAACAAYAAAD8/wIAAAACAAYAAAAJAAAAAAACAAYAAAAKAAAAAAACAAYAAAALAAAAAAACAAYAAAAMAAAAAAACAAYAAAANAAAAAAACAAYAAAAOAAAAAAACAAYAAAAPAAAAAAACAAYAAAAQAAAAAAACAAYAAAARAAAAAAACAAYAAAASAAAAAAACAAYAAAATAAAAAAACAAYAAAAUAAAAAAACAAYAAAAVAAAAAAACAAYAAAAJAAMAAAACAAYAAAAKAAMAAAACAAYAAAALAAMAAAACAAYAAAAMAAMAAAACAAYAAAANAAMAAAACAAYAAAAOAAMAAAACAAYAAAAPAAMAAAACAAYAAAAQAAMAAAACAAYAAAARAAMAAAACAAYAAAASAAMAAAACAAYAAAATAAMAAAACAAYAAAAUAAMAAAACAAYAAAAVAAMAAAACAAYAAAAVAAIAAAACAAYAAAAVAAEAAAACAAYAAAAJAAEAAAACAAYAAAAKAAEAAAACAAYAAAASAAEAAAACAAYAAAATAAEAAAACAAYAAAAUAAEAAAACAAYAAAARAAEAAAACAAYAAAAQAAIAAAACAAYAAAAPAAIAAAACAAYAAAAOAAIAAAACAAYAAAANAAIAAAACAAYAAAAMAAIAAAACAAYAAAALAAIAAAACAAYAAAAKAAIAAAACAAYAAAALAAEAAAACAAYAAAAMAAEAAAACAAYAAAANAAEAAAACAAYAAAAOAAEAAAACAAYAAAAPAAEAAAACAAYAAAAQAAEAAAACAAYAAAAUAAIAAAACAAYAAAATAAIAAAACAAYAAAASAAIAAAACAAYAAAARAAIAAAACAAYAAAAJAAIAAAACAAYAAAA=")
+tile_set = ExtResource("2_sotx7")
+
+[node name="Player" parent="." unique_id=1867424203 groups=["Player"] instance=ExtResource("3_ymh28")]
+position = Vector2(124, -10)
+
+[node name="Endflag" parent="." unique_id=193935332 instance=ExtResource("4_7oc4e")]
+position = Vector2(686, -26)
+scene_to_load = ExtResource("5_siwpi")
+
+[node name="Black" type="Sprite2D" parent="Endflag" unique_id=1457144582]
+visible = false
+scale = Vector2(1.4359671, 1.9102564)
+texture = ExtResource("6_0m7xm")
+script = ExtResource("7_qoi87")
+
+[node name="Black2" type="Sprite2D" parent="Endflag" unique_id=1976073418]
+visible = false
+scale = Vector2(1.4359671, 1.9102564)
+texture = ExtResource("6_0m7xm")
+script = ExtResource("7_qoi87")
+
+[node name="Black Finish" type="Sprite2D" parent="Endflag" unique_id=1186652503]
+visible = false
+position = Vector2(-686, 0)
+scale = Vector2(1.4441415, 1.9017092)
+texture = ExtResource("6_0m7xm")
+script = ExtResource("8_i6w5t")
+
+[node name="Black Finish2" type="Sprite2D" parent="Endflag" unique_id=1049473845]
+visible = false
+position = Vector2(-686, 0)
+scale = Vector2(1.4441415, 1.9017092)
+texture = ExtResource("6_0m7xm")
+script = ExtResource("8_i6w5t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Endflag" unique_id=1610826253]
+libraries/ = SubResource("AnimationLibrary_a6c3k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Endflag" unique_id=1199602950]
+stream = ExtResource("9_l2pgs")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Endflag" unique_id=1634657063]
+stream = ExtResource("10_2272n")
+
+[node name="EnemyBoss" parent="." unique_id=342939661 instance=ExtResource("11_sotx7")]
+position = Vector2(-2584, -1143)
+scale = Vector2(12, 12)
+script = ExtResource("12_ymh28")
+move_direction = Vector2(0, 200)
+move_speed = 300.0

@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://byeutnbm7ob1o" path="res://SlideOpen.wav" id="12_a6c3k"]
 [ext_resource type="PackedScene" uid="uid://blxp43lrr64p2" path="res://Scene/level_2.tscn" id="12_q8blv"]
 [ext_resource type="AudioStream" uid="uid://bsnd86lpwyadr" path="res://SlideClose.wav" id="13_a6c3k"]
+[ext_resource type="Texture2D" uid="uid://bujojlj613bi5" path="res://Scene/Screenshot 2026-04-23 114316.png" id="14_y4apx"]
 
 [sub_resource type="Animation" id="Animation_a6c3k"]
 resource_name = "Finish"
@@ -251,22 +252,26 @@ position = Vector2(686, -26)
 scene_to_load = ExtResource("12_q8blv")
 
 [node name="Black" type="Sprite2D" parent="Endflag" unique_id=1457144582]
+visible = false
 scale = Vector2(1.4359671, 1.9102564)
 texture = ExtResource("9_246mo")
 script = ExtResource("11_sq6mb")
 
 [node name="Black2" type="Sprite2D" parent="Endflag" unique_id=1976073418]
+visible = false
 scale = Vector2(1.4359671, 1.9102564)
 texture = ExtResource("9_246mo")
 script = ExtResource("11_sq6mb")
 
 [node name="Black Finish" type="Sprite2D" parent="Endflag" unique_id=1186652503]
+visible = false
 position = Vector2(-686, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("9_246mo")
 script = ExtResource("10_q8blv")
 
 [node name="Black Finish2" type="Sprite2D" parent="Endflag" unique_id=1049473845]
+visible = false
 position = Vector2(-686, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("9_246mo")
@@ -280,3 +285,13 @@ stream = ExtResource("12_a6c3k")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Endflag" unique_id=1634657063]
 stream = ExtResource("13_a6c3k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=544071777]
+position = Vector2(-114, 9)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_y4apx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2106736156]
+position = Vector2(-187, -9)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_y4apx")

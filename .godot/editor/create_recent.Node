@@ -1,4 +1,5 @@
 Sprite2D
+CollisionShape2D
 Area2D
 Label
 Node
@@ -11,4 +12,3 @@ ColorRect
 CanvasLayer
 TextureRect
 Control
-HBoxContainer

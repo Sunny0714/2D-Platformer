@@ -3,6 +3,13 @@ extends CharacterBody2D
 signal OnUpdateHealth (health : int)
 signal OnUpdateScore (score : int)
 signal OnUpdateRevive (revive : int)
+signal up3
+signal up4
+signal down3
+signal down4
+signal dash
+signal double
+signal hide1
 
 @export var move_speed : float = 100
 @export var acceleration : float = 50
@@ -34,6 +41,10 @@ func _ready():
 	OnUpdateRevive.emit(revive)
 	score = PlayerStats.score
 	OnUpdateScore.emit(score)
+	if PlayerStats.revive >= 1:
+		show()
+	if move_input !=0:
+		emit_signal("hide1")
 	
 
 func _physics_process(delta):	
@@ -58,6 +69,7 @@ func _physics_process(delta):
 			move_input = Input.get_axis("move_left", "move_right")
 			move_input = sign(velocity.x)
 			PlayerStats.score -= 10
+			emit_signal("double")
 			await get_tree().create_timer(0.1).timeout
 			OnUpdateScore.emit(PlayerStats.score)
 			if move_input !=0:
@@ -71,6 +83,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("double_jump") and not is_on_floor():
 		if PlayerStats.score >= 5:
 			velocity.y = -jump_force
+			emit_signal("dash")
 			if position.y >= -2000:
 				PlayerStats.score -= 5
 				await get_tree().create_timer(0.1).timeout
@@ -83,6 +96,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
+
 	
 func _check():
 	if revive >= 1:
@@ -109,13 +123,21 @@ func _process(delta):
 
 	_manage_animation()
 
+const DASH_THRESHOLD = 300
+
 func _manage_animation ():
-	if not is_on_floor():
-		anim.play("jump")
-	elif move_input !=0:
-		anim.play("move")
+	if abs(velocity.x) > DASH_THRESHOLD:
+		anim.play("dash")
+		await anim.animation_finished
+		return
 	else:
-		anim.play("idle")
+		if not is_on_floor():
+			anim.play("jump")
+		elif move_input !=0:
+			anim.play("move")
+
+		else:
+			anim.play("idle")
 
 func take_damage (amount : int):
 	health -= amount
@@ -194,3 +216,32 @@ func play_sound (sound : AudioStream):
 	
 func _on_update_health(new_health: int):
 	health = new_health
+
+
+func _on_double__mouse_entered() -> void:
+	emit_signal("up3")
+
+
+func _on_dash__mouse_entered() -> void:
+	emit_signal("up4")
+
+
+func _on_double__mouse_exited() -> void:
+	emit_signal("down3")
+
+
+func _on_dash__mouse_exited() -> void:
+	emit_signal("down4")
+
+
+func _on_double__input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			Input.action_press("double_jump")
+			Input.action_release("double_jump")
+
+func _on_dash__input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+		if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+				Input.action_press("dash")
+				Input.action_release("dash")
