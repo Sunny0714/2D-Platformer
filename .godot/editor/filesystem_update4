@@ -1,9 +1,5 @@
+res://Scene/perjectile.gd
 res://level3.tscn
 res://Sprites/Tiles/new_tile_set.tres
-res://Scene/perjectile.gd
-res://Scene/enemyboss.gd
-res://Scene/double.gd
-res://Scene/dash.gd
 res://enemy_boss.gd
-res://enemy_boss.tscn
-res://Scene/perjectile.tscn
+res://Scene/backgrounds.gd

@@ -142,7 +142,7 @@ tile_map_data = PackedByteArray("AAD0/wAAAAACAAYAAAD1/wAAAAACAAYAAAD2/wAAAAACAAY
 tile_set = ExtResource("2_sotx7")
 
 [node name="Player" parent="." unique_id=1867424203 groups=["Player"] instance=ExtResource("3_ymh28")]
-position = Vector2(32, -2)
+position = Vector2(-26, 2)
 
 [node name="Endflag" parent="." unique_id=193935332 instance=ExtResource("4_7oc4e")]
 position = Vector2(686, -26)
@@ -183,13 +183,16 @@ stream = ExtResource("9_l2pgs")
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Endflag" unique_id=1634657063]
 stream = ExtResource("10_2272n")
 
+[node name="EnemyBoss" parent="." unique_id=1626002486 instance=ExtResource("12_ymh28")]
+position = Vector2(-2390, -1516)
+move_direction = Vector2(0, 220)
+
 [node name="Perjectile" parent="." unique_id=2032719106 instance=ExtResource("13_7oc4e")]
 unique_name_in_owner = true
-position = Vector2(74, -124)
+position = Vector2(-107, -155)
 move_direction = Vector2(0, 100)
 move_speed = 60.0
+wait_time = 100.0
 
-[node name="EnemyBoss" parent="." unique_id=1626002486 instance=ExtResource("12_ymh28")]
-position = Vector2(-2229, -1386)
-move_direction = Vector2(0, 140)
-move_speed = 60.0
+[connection signal="area_entered" from="EnemyBoss" to="Perjectile" method="_on_enemy_boss_area_entered"]
+[connection signal="body_entered" from="EnemyBoss" to="Perjectile" method="_on_enemy_boss_body_entered"]

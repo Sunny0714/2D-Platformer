@@ -58,8 +58,9 @@ texture = ExtResource("2_w0l2u")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1064860797]
 libraries/ = SubResource("AnimationLibrary_sq6mb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1196425887 groups=["Boss"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1196425887]
 position = Vector2(215.25, 95.833336)
+scale = Vector2(0.85, 0.85)
 shape = SubResource("CircleShape2D_poeaa")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
