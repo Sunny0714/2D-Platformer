@@ -1,7 +1,9 @@
+Label
+Control
+ProgressBar
 Sprite2D
 CollisionShape2D
 Area2D
-Label
 Node
 Button
 AudioStreamPlayer
@@ -10,5 +12,3 @@ Node2D
 AnimationTree
 ColorRect
 CanvasLayer
-TextureRect
-Control

@@ -47,8 +47,8 @@ _data = {
 radius = 9.0
 
 [node name="EnemyBoss" type="Area2D" unique_id=1626002486 groups=["Boss"]]
-position = Vector2(-2584, -1143)
-scale = Vector2(12, 12)
+position = Vector2(-1727, -763)
+scale = Vector2(8, 8)
 script = ExtResource("1_gguhw")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=2140856185]

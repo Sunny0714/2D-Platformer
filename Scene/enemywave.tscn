@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://7h60e8d1s6j1"]
+[gd_scene format=3 uid="uid://cp3fm463ie6jy"]
 
-[ext_resource type="Script" uid="uid://df5dalrnyk1yi" path="res://Scene/enemy.gd" id="1_n6qjc"]
-[ext_resource type="Texture2D" uid="uid://cw8ve08co5tms" path="res://Sprites/Characters/character_0024.png" id="2_vmi60"]
-[ext_resource type="Texture2D" uid="uid://7j5f58v817vc" path="res://Sprites/Characters/character_0025.png" id="3_hti8k"]
-[ext_resource type="Texture2D" uid="uid://ccpqftl2qj5by" path="res://Sprites/Characters/character_0026.png" id="4_44hyy"]
+[ext_resource type="Script" uid="uid://buwsgpflhv3g6" path="res://Scene/enemywave.gd" id="1_r7ppo"]
+[ext_resource type="Texture2D" uid="uid://cw8ve08co5tms" path="res://Sprites/Characters/character_0024.png" id="2_a5u4e"]
+[ext_resource type="Texture2D" uid="uid://7j5f58v817vc" path="res://Sprites/Characters/character_0025.png" id="3_aju4j"]
+[ext_resource type="Texture2D" uid="uid://ccpqftl2qj5by" path="res://Sprites/Characters/character_0026.png" id="4_yn1f6"]
 
 [sub_resource type="Animation" id="Animation_246mo"]
 length = 0.001
@@ -17,7 +17,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_vmi60")]
+"values": [ExtResource("2_a5u4e")]
 }
 
 [sub_resource type="Animation" id="Animation_2ceuy"]
@@ -34,7 +34,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.13333334, 0.26666668),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("2_vmi60"), ExtResource("3_hti8k"), ExtResource("4_44hyy")]
+"values": [ExtResource("2_a5u4e"), ExtResource("3_aju4j"), ExtResource("4_yn1f6")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sq6mb"]
@@ -46,17 +46,17 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_poeaa"]
 radius = 9.0
 
-[node name="Enemy" type="Area2D" unique_id=1391421617]
-script = ExtResource("1_n6qjc")
+[node name="EnemyWave" type="Area2D" unique_id=532860929]
+script = ExtResource("1_r7ppo")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=365794744]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=830863255]
 position = Vector2(241, 71)
-texture = ExtResource("2_vmi60")
+texture = ExtResource("2_a5u4e")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=102610089]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1355147315]
 libraries/ = SubResource("AnimationLibrary_sq6mb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1327893982]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=957916898]
 position = Vector2(241, 71)
 shape = SubResource("CircleShape2D_poeaa")
 

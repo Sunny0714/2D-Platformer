@@ -24,9 +24,7 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	if not body.is_in_group("Player"):
-		return
-	
-	body.take_damage(3)
+		body.take_damage(3)
 
 func _hit():
 	sprite.modulate = Color.RED
