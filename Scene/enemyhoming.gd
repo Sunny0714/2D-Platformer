@@ -26,7 +26,6 @@ func _ready():
 func _physics_process(delta):
 	alive_time += delta
 
-	# Auto-despawn
 	if alive_time >= despawn_time:
 		queue_free()
 		return

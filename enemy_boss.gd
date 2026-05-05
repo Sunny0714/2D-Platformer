@@ -12,6 +12,7 @@ signal stop
 func _ready (): 
 	$AnimationPlayer.play("fly")
 	connect("hit", Callable(self, "_hit"))
+	connect("dead", Callable(self, "_dead"))
 
 func _physics_process(delta):
 	get_tree().call_group("Player", "set_physics_process", false)
@@ -29,3 +30,6 @@ func _hit():
 	sprite.modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
 	sprite.modulate = Color.WHITE
+
+func _dead():
+	queue_free()

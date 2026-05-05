@@ -1,5 +1,8 @@
 extends ProgressBar
 
+signal half
+signal dead
+
 @onready var health : int = 100
 
 func _ready() -> void:
@@ -12,3 +15,8 @@ func _ready() -> void:
 func damage_():
 	health -= 10
 	value = health
+	if health <= 50:
+		emit_signal("half")
+		add_theme_color_override("fill_color", Color(0.179, 0.004, 0.0, 1.0))
+	if health <= 0:
+		emit_signal("dead")

@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://d22pnnvhcqxwb" path="res://Scene/perjectile.tscn" id="13_7oc4e"]
 [ext_resource type="PackedScene" uid="uid://btkn4anttr8c3" path="res://Scene/attackenemy.tscn" id="13_siwpi"]
 [ext_resource type="PackedScene" uid="uid://cp3fm463ie6jy" path="res://Scene/enemywave.tscn" id="15_gm3vy"]
+[ext_resource type="PackedScene" uid="uid://dvh2oa35qsuxg" path="res://Scene/enemyhoming.tscn" id="16_3jhx7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7oc4e"]
 
@@ -705,11 +706,15 @@ move_direction = Vector2(0, 190)
 
 [node name="Perjectile2" parent="Projectile" unique_id=2032719106 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(28, -362)
-move_direction = Vector2(0, 0)
+move_direction = Vector2(0, 300)
+move_speed = 60.0
+wait_time = 15.0
 
 [node name="Perjectile3" parent="Projectile" unique_id=1871819292 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-166, -314)
-move_direction = Vector2(0, 0)
+move_direction = Vector2(0, 300)
+move_speed = 60.0
+wait_time = 20.0
 
 [node name="Perjectile" parent="Projectile" unique_id=298325252 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-116, -362)
@@ -718,17 +723,42 @@ move_speed = 60.0
 
 [node name="Perjectile4" parent="Projectile" unique_id=1617397065 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-226, -385)
-move_direction = Vector2(0, 300)
-move_speed = 60.0
-wait_time = 20.0
+move_direction = Vector2(0, 0)
 
-[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile" method="_on_enemy_boss_area_entered"]
+[node name="Perjectile5" parent="Projectile" unique_id=186663447 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(-43, -326)
+move_direction = Vector2(0, 0)
+
+[node name="Perjectile6" parent="Projectile" unique_id=407864399 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(-185, -383)
+move_direction = Vector2(0, 0)
+
+[node name="Perjectile7" parent="Projectile" unique_id=2078021643 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(-17, -310)
+move_direction = Vector2(0, 0)
+
+[node name="Homing" type="Node" parent="." unique_id=520749637]
+
+[node name="Enemyhome" parent="Homing" unique_id=1300109489 instance=ExtResource("16_3jhx7")]
+position = Vector2(-96, -112)
+
+[node name="Enemyhome2" parent="Homing" unique_id=400532083 instance=ExtResource("16_3jhx7")]
+position = Vector2(-96, -112)
+
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile2" method="_on_enemy_boss_area_entered"]
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile3" method="_on_enemy_boss_area_entered"]
-[connection signal="body_entered" from="EnemyBoss" to="Projectile/Perjectile" method="_on_enemy_boss_body_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile4" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile5" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile6" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile7" method="_on_enemy_boss_area_entered"]
 [connection signal="body_entered" from="EnemyBoss" to="Projectile/Perjectile2" method="_on_enemy_boss_body_entered"]
 [connection signal="body_entered" from="EnemyBoss" to="Projectile/Perjectile3" method="_on_enemy_boss_body_entered"]
+[connection signal="body_entered" from="EnemyBoss" to="Projectile/Perjectile" method="_on_enemy_boss_body_entered"]
 [connection signal="area_entered" from="Projectile/Perjectile2" to="Projectile/Perjectile2" method="_on_area_entered"]
 [connection signal="area_entered" from="Projectile/Perjectile3" to="Projectile/Perjectile3" method="_on_area_entered"]
 [connection signal="area_entered" from="Projectile/Perjectile" to="Projectile/Perjectile" method="_on_area_entered"]
 [connection signal="area_entered" from="Projectile/Perjectile4" to="Projectile/Perjectile4" method="_on_area_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile5" to="Projectile/Perjectile5" method="_on_area_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile6" to="Projectile/Perjectile6" method="_on_area_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile7" to="Projectile/Perjectile7" method="_on_area_entered"]

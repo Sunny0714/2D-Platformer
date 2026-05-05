@@ -46,7 +46,7 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_poeaa"]
 radius = 9.0
 
-[node name="EnemyWave" type="Area2D" unique_id=532860929]
+[node name="Enemyhome" type="Area2D" unique_id=532860929]
 script = ExtResource("1_rk8jc")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=830863255]
