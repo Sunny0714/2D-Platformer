@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://btkn4anttr8c3" path="res://Scene/attackenemy.tscn" id="13_siwpi"]
 [ext_resource type="PackedScene" uid="uid://cp3fm463ie6jy" path="res://Scene/enemywave.tscn" id="15_gm3vy"]
 [ext_resource type="PackedScene" uid="uid://dvh2oa35qsuxg" path="res://Scene/enemyhoming.tscn" id="16_3jhx7"]
+[ext_resource type="Script" uid="uid://cp6sakpjy6sj8" path="res://Scene/attackenemy1.gd" id="17_00w0g"]
+[ext_resource type="Texture2D" uid="uid://cb5owid16c3nj" path="res://Scene/Screenshot 2026-05-05 153316.png" id="18_c4s5l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7oc4e"]
 
@@ -724,18 +726,32 @@ move_speed = 60.0
 [node name="Perjectile4" parent="Projectile" unique_id=1617397065 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-226, -385)
 move_direction = Vector2(0, 0)
+move_speed = 60.0
+wait_time = 25.0
 
 [node name="Perjectile5" parent="Projectile" unique_id=186663447 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-43, -326)
 move_direction = Vector2(0, 0)
+move_speed = 60.0
+wait_time = 35.0
 
 [node name="Perjectile6" parent="Projectile" unique_id=407864399 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-185, -383)
 move_direction = Vector2(0, 0)
+move_speed = 60.0
+wait_time = 40.0
 
 [node name="Perjectile7" parent="Projectile" unique_id=2078021643 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-17, -310)
 move_direction = Vector2(0, 0)
+move_speed = 60.0
+wait_time = 45.0
+
+[node name="Perjectile8" parent="Projectile" unique_id=2051737187 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(-273, -380)
+move_direction = Vector2(0, 300)
+move_speed = 60.0
+wait_time = 30.0
 
 [node name="Homing" type="Node" parent="." unique_id=520749637]
 
@@ -744,6 +760,19 @@ position = Vector2(-96, -112)
 
 [node name="Enemyhome2" parent="Homing" unique_id=400532083 instance=ExtResource("16_3jhx7")]
 position = Vector2(-96, -112)
+
+[node name="Random" parent="." unique_id=2079159576 instance=ExtResource("13_siwpi")]
+position = Vector2(954, -94)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("17_00w0g")
+move_direction = Vector2(-10000, 0)
+move_speed = 3000.0
+
+[node name="Troll" type="Sprite2D" parent="." unique_id=636775905]
+position = Vector2(-273, -63.000004)
+scale = Vector2(0.07426778, 0.0742678)
+texture = ExtResource("18_c4s5l")
 
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile2" method="_on_enemy_boss_area_entered"]
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile3" method="_on_enemy_boss_area_entered"]
@@ -762,3 +791,4 @@ position = Vector2(-96, -112)
 [connection signal="area_entered" from="Projectile/Perjectile5" to="Projectile/Perjectile5" method="_on_area_entered"]
 [connection signal="area_entered" from="Projectile/Perjectile6" to="Projectile/Perjectile6" method="_on_area_entered"]
 [connection signal="area_entered" from="Projectile/Perjectile7" to="Projectile/Perjectile7" method="_on_area_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile8" to="Projectile/Perjectile8" method="_on_area_entered"]
