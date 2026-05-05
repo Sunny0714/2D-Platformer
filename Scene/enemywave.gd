@@ -48,7 +48,5 @@ func _physics_process(delta):
 			timer = 0
 
 func _on_body_entered(body):
-	if not body.is_in_group("Player") and visible:
-		return
-		
-	body.take_damage(1)
+	if body.is_in_group("Player") and visible:
+		body.take_damage(1)

@@ -11,8 +11,7 @@ signal stop
 
 func _ready (): 
 	$AnimationPlayer.play("fly")
-	for p in get_tree().get_nodes_in_group("Perjectile"):
-		p.connect("hit", Callable(self, "_hit"))
+	connect("hit", Callable(self, "_hit"))
 
 func _physics_process(delta):
 	get_tree().call_group("Player", "set_physics_process", false)
@@ -23,7 +22,7 @@ func _physics_process(delta):
 	get_tree().call_group("Player", "set_physics_process", true)
 
 func _on_body_entered(body):
-	if not body.is_in_group("Player"):
+	if body.is_in_group("Player"):
 		body.take_damage(3)
 
 func _hit():

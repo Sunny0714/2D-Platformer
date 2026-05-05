@@ -1,2 +1,11 @@
 res://Scene/level3.tscn
 res://Sprites/Tiles/new_tile_set.tres
+res://enemy_boss.tscn
+res://Scene/enemywave.gd
+res://enemy_boss.gd
+res://Scene/perjectile.gd
+res://Scene/perjectile1.gd
+res://Scene/perjectile2.gd
+res://progress_bar.gd
+res://Scene/enemyhoming.tscn
+res://Scene/enemyhoming.gd

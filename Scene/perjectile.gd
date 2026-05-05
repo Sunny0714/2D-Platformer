@@ -30,9 +30,10 @@ func _on_body_entered(body):
 
 func _move_boss():
 	var tween = create_tween()
-	tween.tween_property(self, "global_position", Vector2(200, -150), 0.4)
+	tween.tween_property(self, "global_position", Vector2(200, -100), 0.4)
 
 func _on_enemy_boss_area_entered(area: Area2D) -> void:
-	emit_signal("hit")
-	await get_tree().create_timer(0.01).timeout
-	queue_free()
+	if area == self:
+		emit_signal("hit")
+		await get_tree().create_timer(0.01).timeout
+		self.queue_free()
