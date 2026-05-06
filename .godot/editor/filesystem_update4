@@ -1,3 +1,5 @@
 res://Scene/level3.tscn
 res://Sprites/Tiles/new_tile_set.tres
 res://Scene/attackenemy1.gd
+res://Scene/enemyhoming.gd
+res://Scene/player.tscn
