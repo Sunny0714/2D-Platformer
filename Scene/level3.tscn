@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dvh2oa35qsuxg" path="res://Scene/enemyhoming.tscn" id="16_3jhx7"]
 [ext_resource type="Script" uid="uid://cp6sakpjy6sj8" path="res://Scene/attackenemy1.gd" id="17_00w0g"]
 [ext_resource type="Texture2D" uid="uid://cb5owid16c3nj" path="res://Scene/Screenshot 2026-05-05 153316.png" id="18_c4s5l"]
+[ext_resource type="PackedScene" uid="uid://p5kclo767ovs" path="res://Scene/healthpack.tscn" id="19_8tpoo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7oc4e"]
 
@@ -45,6 +46,7 @@ tile_set = ExtResource("2_sotx7")
 position = Vector2(1, 1)
 collision_layer = 3
 collision_mask = 3
+jump_force = 200.0
 
 [node name="Control" type="Control" parent="Player" unique_id=1476368063]
 layout_mode = 3
@@ -773,6 +775,12 @@ move_speed = 3000.0
 position = Vector2(-273, -63.000004)
 scale = Vector2(0.07426778, 0.0742678)
 texture = ExtResource("18_c4s5l")
+
+[node name="Healthpack" parent="." unique_id=128681647 instance=ExtResource("19_8tpoo")]
+position = Vector2(-299, -102)
+
+[node name="Healthpack2" parent="." unique_id=885772131 instance=ExtResource("19_8tpoo")]
+position = Vector2(-154, -126)
 
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile2" method="_on_enemy_boss_area_entered"]
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile3" method="_on_enemy_boss_area_entered"]

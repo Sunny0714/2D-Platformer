@@ -176,7 +176,6 @@ radius = 63.007935
 
 [node name="Player" type="CharacterBody2D" unique_id=76362011]
 script = ExtResource("1_y8w33")
-jump_force = 600.0
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=584433295]
 texture = ExtResource("1_kelma")
