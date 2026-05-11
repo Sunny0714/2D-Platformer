@@ -8,6 +8,7 @@ extends Area2D
 @export var wait_time: float = 5.0
 @export var reset_time: float = 24.0
 
+var spawn : AudioStream = preload("res://Scene/442592__strexet__spawn-space-metal-spaceship-door-opening.wav")
 var start_pos: Vector2
 var start_y: float
 var time := 0.0

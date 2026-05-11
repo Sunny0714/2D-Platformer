@@ -32,7 +32,7 @@ var combo_active = false
 var take_damage_sfx : AudioStream = preload("res://Audio 2/take_damage.wav")
 var coin_sfx : AudioStream = preload("res://Audio 2/coin.wav")
 var revive_sfx : AudioStream = preload("res://Scripts/totem.wav")
-
+var gameover : AudioStream = preload("res://Scene/767605__minimalistiga__gameover-sfx.wav")
 
 	
 func _ready():
@@ -170,6 +170,7 @@ func take_damage (amount : int):
 		_on_finish()
 		play_sound(revive_sfx)
 	elif health <=0:
+		play_sound(gameover)
 		call_deferred("game_over")	
 	
 func easy():
@@ -193,7 +194,7 @@ func flash_red():
 func game_over():
 	flash_red()
 	get_tree().paused = true
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.8).timeout
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scene/menu.tscn")
 	

@@ -50,14 +50,14 @@ radius = 9.0
 script = ExtResource("1_rk8jc")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=830863255]
-position = Vector2(241, 71)
 texture = ExtResource("2_a0eng")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1355147315]
 libraries/ = SubResource("AnimationLibrary_sq6mb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=957916898]
-position = Vector2(241, 71)
 shape = SubResource("CircleShape2D_poeaa")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=182101676]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

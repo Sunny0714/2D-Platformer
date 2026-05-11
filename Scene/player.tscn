@@ -269,6 +269,7 @@ position = Vector2(224, 483)
 shape = SubResource("CircleShape2D_2dof7")
 
 [node name="Revive" type="Sprite2D" parent="." unique_id=1043373586]
+visible = false
 position = Vector2(-56.73822, -7.000001)
 scale = Vector2(0.44444445, 1)
 texture = ExtResource("4_58ae2")

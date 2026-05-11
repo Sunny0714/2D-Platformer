@@ -1,75 +1,42 @@
 extends Area2D
 
-@export var speed: float = 120
-@export var respawn_time: float = 20.0 
-@export var despawn_time: float = 10.0  
-@export var turn_speed: float = 3.0
+var speed = 100
+var player_position
+var target_position
+var chase_player = false
 
-var start_pos: Vector2
-var timer := 0.0
-var alive_time := 0.0
-var state := "idle"
-var velocity: Vector2 = Vector2.ZERO
+@onready var player = get_parent().get_node("Player")
+@export var wait_time : int
 
-var player: Node2D = null
-var activated := false
-
-func _ready():
-	$AnimationPlayer.play("fly")
-	start_pos = global_position
+func _ready() -> void:
 	hide()
+	var sender = get_parent().get_children()[2].get_node("ProgressBar")
+	await get_tree().create_timer(wait_time).timeout
+	if sender:
+		sender.connect("half", Callable(self, "_on_half"))
 
-	player = get_tree().get_first_node_in_group("Player")
-	connect("body_entered", Callable(self, "_on_body_entered"))
-
-	_on_half_signal() 
+func _on_half():
+	chase_player = true
+	show()
+	await get_tree().create_timer(20).timeout
+	hide()
+	chase_player = false
+	await get_tree().create_timer(5).timeout
+	show()
+	chase_player = true
 
 func _physics_process(delta):
-	if state == "idle":
+	await get_tree().create_timer(wait_time).timeout
+	if not chase_player:
 		return
-
-	elif state == "homing":
-		alive_time += delta
-
-		if alive_time >= despawn_time:
-			hide()
-			state = "respawn_wait"
-			timer = 0
-			alive_time = 0
-			return
-
-		if is_instance_valid(player):
-			var to_player = player.global_position - global_position
-			var dist = to_player.length()
-
-			var desired_dir = to_player.normalized()
-
-			var target_speed = speed
-			if dist < 80:
-				target_speed = lerp(20.0, speed, dist / 80.0)
-
-			var desired_velocity = desired_dir * target_speed
-
-			velocity = velocity.lerp(desired_velocity, min(turn_speed * delta, 1.0))
-
-			global_position += velocity * delta
-
-	elif state == "respawn_wait":
-		timer += delta
-		if timer >= respawn_time:
-			global_position = start_pos
-			show()
-			state = "homing"
-			timer = 0
-			velocity = Vector2.ZERO
+	player_position = player.position
+	target_position = (player_position - global_position).normalized()
+	if position.distance_to(player_position) > 1:
+		position += target_position * speed * delta
 
 func _on_body_entered(body):
-	if body.is_in_group("Player") and visible:
+	if not body.is_in_group("Player"):
+		return
+	elif visible:
 		body.take_damage(1)
-
-func _on_half_signal():
-	if not activated:
-		activated = true
-		state = "homing"
-		timer = 0
-		show()
+		hide()

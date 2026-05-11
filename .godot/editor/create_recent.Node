@@ -1,11 +1,11 @@
 Sprite2D
 AudioStreamPlayer
+Label
 CollisionShape2D
 AnimationPlayer
 Area2D
 Node
 Node2D
-Label
 Control
 ProgressBar
 Button
