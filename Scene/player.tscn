@@ -128,8 +128,12 @@ position = Vector2(224, 483)
 shape = SubResource("CircleShape2D_2dof7")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Revive" type="Sprite2D" parent="." unique_id=1043373586]
 visible = false
+=======
+[node name="Revive" type="Sprite2D" parent="."]
+>>>>>>> Stashed changes
 =======
 [node name="Revive" type="Sprite2D" parent="."]
 >>>>>>> Stashed changes

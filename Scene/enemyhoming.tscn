@@ -10,8 +10,11 @@ radius = 9.0
 script = ExtResource("1_rk8jc")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Sprite" type="Sprite2D" parent="." unique_id=830863255]
 =======
+=======
+>>>>>>> Stashed changes
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(241, 71)
 >>>>>>> Stashed changes
@@ -20,8 +23,11 @@ texture = ExtResource("2_a0eng")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=957916898]
 =======
+=======
+>>>>>>> Stashed changes
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(241, 71)
 >>>>>>> Stashed changes

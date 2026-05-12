@@ -1,10 +1,15 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Sprite2D
 AudioStreamPlayer
 Label
 CollisionShape2D
 AnimationPlayer
 Area2D
+=======
+AudioStreamPlayer2D
+AudioListener2D
+>>>>>>> Stashed changes
 =======
 AudioStreamPlayer2D
 AudioListener2D

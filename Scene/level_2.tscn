@@ -18,7 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://bnd87ldqnwx8y" path="res://Scene/portal.tscn" id="15_nquh6"]
 [ext_resource type="Texture2D" uid="uid://bujojlj613bi5" path="res://Scene/Screenshot 2026-04-23 114316.png" id="17_g67xk"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://cnjti8a8iowsd" path="res://Scene/gun.tscn" id="18_st5wq"]
+=======
+[ext_resource type="AudioStream" uid="uid://xtgefx5jk4fe" path="res://Scene/abydos_music-fun-retro-game-175468.mp3" id="18_st5wq"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="AudioStream" uid="uid://xtgefx5jk4fe" path="res://Scene/abydos_music-fun-retro-game-175468.mp3" id="18_st5wq"]
 >>>>>>> Stashed changes
@@ -1204,8 +1208,12 @@ position = Vector2(1241, -47)
 script = ExtResource("8_2thg8")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Black" type="Sprite2D" parent="Endflag2" unique_id=1059852209]
 visible = false
+=======
+[node name="Black" type="Sprite2D" parent="Endflag2"]
+>>>>>>> Stashed changes
 =======
 [node name="Black" type="Sprite2D" parent="Endflag2"]
 >>>>>>> Stashed changes
@@ -1215,8 +1223,12 @@ texture = ExtResource("8_71r3i")
 script = ExtResource("10_nwjwq")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Black2" type="Sprite2D" parent="Endflag2" unique_id=445404718]
 visible = false
+=======
+[node name="Black2" type="Sprite2D" parent="Endflag2"]
+>>>>>>> Stashed changes
 =======
 [node name="Black2" type="Sprite2D" parent="Endflag2"]
 >>>>>>> Stashed changes
@@ -1226,8 +1238,12 @@ texture = ExtResource("8_71r3i")
 script = ExtResource("10_nwjwq")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Black Finish" type="Sprite2D" parent="Endflag2" unique_id=2050932217]
 visible = false
+=======
+[node name="Black Finish" type="Sprite2D" parent="Endflag2"]
+>>>>>>> Stashed changes
 =======
 [node name="Black Finish" type="Sprite2D" parent="Endflag2"]
 >>>>>>> Stashed changes
@@ -1237,8 +1253,12 @@ texture = ExtResource("8_71r3i")
 script = ExtResource("11_67jix")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Black Finish2" type="Sprite2D" parent="Endflag2" unique_id=954060565]
 visible = false
+=======
+[node name="Black Finish2" type="Sprite2D" parent="Endflag2"]
+>>>>>>> Stashed changes
 =======
 [node name="Black Finish2" type="Sprite2D" parent="Endflag2"]
 >>>>>>> Stashed changes
@@ -1274,6 +1294,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("17_g67xk")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Gun" parent="." unique_id=171838479 instance=ExtResource("18_st5wq")]
 position = Vector2(-457, 23)
 
@@ -1290,6 +1311,11 @@ position = Vector2(-654, -10)
 [connection signal="body_entered" from="Gun2" to="Gun2" method="_on_body_entered"]
 [connection signal="body_entered" from="Gun3" to="Gun3" method="_on_body_entered"]
 [connection signal="body_entered" from="Gun4" to="Gun4" method="_on_body_entered"]
+=======
+[node name="Background Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_st5wq")
+autoplay = true
+>>>>>>> Stashed changes
 =======
 [node name="Background Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_st5wq")

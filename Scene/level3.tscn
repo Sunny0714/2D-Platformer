@@ -19,9 +19,14 @@
 [ext_resource type="PackedScene" uid="uid://cp3fm463ie6jy" path="res://Scene/enemywave.tscn" id="15_gm3vy"]
 [ext_resource type="PackedScene" uid="uid://dvh2oa35qsuxg" path="res://Scene/enemyhoming.tscn" id="16_3jhx7"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://cp6sakpjy6sj8" path="res://Scene/attackenemy1.gd" id="17_00w0g"]
 [ext_resource type="Texture2D" uid="uid://cb5owid16c3nj" path="res://Scene/Screenshot 2026-05-05 153316.png" id="18_c4s5l"]
 [ext_resource type="PackedScene" uid="uid://p5kclo767ovs" path="res://Scene/healthpack.tscn" id="19_8tpoo"]
+=======
+[ext_resource type="PackedScene" uid="uid://51u2wq7x45en" path="res://Scene/attackenemy2.tscn" id="17_00w0g"]
+[ext_resource type="AudioStream" uid="uid://du6idnsvwyqvk" path="res://Scene/nickpanekaiassets-chiptune-boss-fight-music-265080.mp3" id="18_c4s5l"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="PackedScene" uid="uid://51u2wq7x45en" path="res://Scene/attackenemy2.tscn" id="17_00w0g"]
 [ext_resource type="AudioStream" uid="uid://du6idnsvwyqvk" path="res://Scene/nickpanekaiassets-chiptune-boss-fight-music-265080.mp3" id="18_c4s5l"]
@@ -55,8 +60,11 @@ collision_layer = 3
 collision_mask = 3
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="ProgressBar" type="ProgressBar" parent="Player" unique_id=1086710734]
 =======
+=======
+>>>>>>> Stashed changes
 [node name="Control" type="Control" parent="Player"]
 layout_mode = 3
 anchors_preset = 0
@@ -64,6 +72,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ProgressBar" type="ProgressBar" parent="Player/Control"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 material = SubResource("ShaderMaterial_7oc4e")
 offset_left = -111.0
@@ -76,7 +87,11 @@ show_percentage = false
 script = ExtResource("4_siwpi")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Label" type="Label" parent="Player/ProgressBar" unique_id=1042635921]
+=======
+[node name="Label" type="Label" parent="Player/Control/ProgressBar"]
+>>>>>>> Stashed changes
 =======
 [node name="Label" type="Label" parent="Player/Control/ProgressBar"]
 >>>>>>> Stashed changes
@@ -88,6 +103,7 @@ offset_bottom = -3.0
 theme_override_fonts/font = SubResource("SystemFont_837br")
 text = "Lord Of The Night"
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 [node name="Sprite2D" type="Sprite2D" parent="Player/ProgressBar" unique_id=974732296]
 modulate = Color(0.37, 0.1517, 0.1517, 0.31764707)
@@ -102,6 +118,10 @@ script = ExtResource("6_5p8bu")
 [node name="Homing" type="Node" parent="Player/Control/ProgressBar"]
 >>>>>>> Stashed changes
 
+=======
+[node name="Homing" type="Node" parent="Player/Control/ProgressBar"]
+
+>>>>>>> Stashed changes
 [node name="Enemyhome" parent="Player/Control/ProgressBar/Homing" instance=ExtResource("16_3jhx7")]
 position = Vector2(-96, -112)
 
@@ -783,6 +803,7 @@ move_speed = 60.0
 wait_time = 45.0
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Perjectile8" parent="Projectile" unique_id=2051737187 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-273, -380)
 move_direction = Vector2(0, 300)
@@ -814,6 +835,15 @@ wait_time = 5
 
 [node name="Enemyhome2" parent="." unique_id=400532083 instance=ExtResource("16_3jhx7")]
 position = Vector2(156, -19)
+=======
+[node name="Attack" parent="." instance=ExtResource("17_00w0g")]
+position = Vector2(-298, -77)
+move_speed = 50.0
+
+[node name="BossMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_c4s5l")
+autoplay = true
+>>>>>>> Stashed changes
 =======
 [node name="Attack" parent="." instance=ExtResource("17_00w0g")]
 position = Vector2(-298, -77)

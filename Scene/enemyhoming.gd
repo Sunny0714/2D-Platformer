@@ -11,6 +11,7 @@ var chase_player = false
 func _ready() -> void:
 	hide()
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	var sender = get_parent().get_children()[2].get_node("ProgressBar")
 	await get_tree().create_timer(wait_time).timeout
 	if sender:
@@ -26,10 +27,15 @@ func _on_half():
 	show()
 	chase_player = true
 =======
+=======
+>>>>>>> Stashed changes
 	player = get_tree().get_first_node_in_group("Player")
 	var sender = get_parent().get_parent()
 	if sender:
 		sender.connect("half", Callable(self, "_on_half_signal"))
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 func _physics_process(delta):
