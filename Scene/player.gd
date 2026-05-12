@@ -263,6 +263,3 @@ func _on_dash__input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 				Input.action_press("dash")
 				Input.action_release("dash")
 				
-
-func Audio():
-	$BossMusic.play

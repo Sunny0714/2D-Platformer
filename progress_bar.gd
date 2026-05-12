@@ -17,7 +17,6 @@ func damage_():
 	value = health
 	if health <= 50:
 		emit_signal("half")
-		print("a")
 		add_theme_color_override("fill_color", Color(0.179, 0.004, 0.0, 1.0))
 	if health <= 0:
 		emit_signal("dead")

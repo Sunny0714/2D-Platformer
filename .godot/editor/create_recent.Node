@@ -1,22 +1,14 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 Sprite2D
 AudioStreamPlayer
 Label
 CollisionShape2D
 AnimationPlayer
 Area2D
-=======
-AudioStreamPlayer2D
-AudioListener2D
->>>>>>> Stashed changes
-=======
-AudioStreamPlayer2D
-AudioListener2D
->>>>>>> Stashed changes
 Node
 Node2D
 Control
 ProgressBar
 Button
 AnimationTree
+ColorRect
+CanvasLayer
