@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b6qwewfjnw42s"]
+[gd_scene load_steps=22 format=4 uid="uid://b6qwewfjnw42s"]
 
 [ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="1_ci4mn"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_sotx7"]
@@ -18,9 +18,14 @@
 [ext_resource type="PackedScene" uid="uid://btkn4anttr8c3" path="res://Scene/attackenemy.tscn" id="13_siwpi"]
 [ext_resource type="PackedScene" uid="uid://cp3fm463ie6jy" path="res://Scene/enemywave.tscn" id="15_gm3vy"]
 [ext_resource type="PackedScene" uid="uid://dvh2oa35qsuxg" path="res://Scene/enemyhoming.tscn" id="16_3jhx7"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://cp6sakpjy6sj8" path="res://Scene/attackenemy1.gd" id="17_00w0g"]
 [ext_resource type="Texture2D" uid="uid://cb5owid16c3nj" path="res://Scene/Screenshot 2026-05-05 153316.png" id="18_c4s5l"]
 [ext_resource type="PackedScene" uid="uid://p5kclo767ovs" path="res://Scene/healthpack.tscn" id="19_8tpoo"]
+=======
+[ext_resource type="PackedScene" uid="uid://51u2wq7x45en" path="res://Scene/attackenemy2.tscn" id="17_00w0g"]
+[ext_resource type="AudioStream" uid="uid://du6idnsvwyqvk" path="res://Scene/nickpanekaiassets-chiptune-boss-fight-music-265080.mp3" id="18_c4s5l"]
+>>>>>>> Stashed changes
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7oc4e"]
 
@@ -34,22 +39,32 @@ corner_radius_bottom_left = 12
 [sub_resource type="SystemFont" id="SystemFont_837br"]
 font_names = PackedStringArray("Agency FB")
 
-[node name="Main" type="Node2D" unique_id=1372394327]
+[node name="Main" type="Node2D"]
 
-[node name="Backgrounds" type="Node2D" parent="." unique_id=1493275177]
+[node name="Backgrounds" type="Node2D" parent="."]
 script = ExtResource("1_ci4mn")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1422804116]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(2, 1)
 tile_map_data = PackedByteArray("AAD0/wAAAAACAAYAAAD1/wAAAAACAAYAAAD2/wAAAAACAAYAAAD3/wAAAAACAAYAAAD4/wAAAAACAAYAAAD4/wEAAAACAAYAAAD5/wEAAAACAAYAAAD5/wAAAAACAAYAAAD6/wAAAAACAAYAAAD7/wAAAAACAAYAAAD8/wAAAAACAAYAAAD9/wAAAAACAAYAAAD+/wAAAAACAAYAAAD//wAAAAACAAYAAAAAAAAAAAACAAYAAAABAAAAAAACAAYAAAACAAAAAAACAAYAAAADAAAAAAACAAYAAAAEAAAAAAACAAYAAAAFAAAAAAACAAYAAAAGAAAAAAACAAYAAAAHAAAAAAACAAYAAAAIAAAAAAACAAYAAAAIAAEAAAACAAYAAAAHAAEAAAACAAYAAAAGAAEAAAACAAYAAAAFAAEAAAACAAYAAAAEAAEAAAACAAYAAAADAAEAAAACAAYAAAACAAEAAAACAAYAAAACAAIAAAACAAYAAAABAAIAAAACAAYAAAAAAAIAAAACAAYAAAD//wIAAAACAAYAAAD+/wIAAAACAAYAAAD9/wIAAAACAAYAAAD9/wEAAAACAAYAAAD8/wEAAAACAAYAAAD7/wEAAAACAAYAAAD6/wEAAAACAAYAAAD3/wEAAAACAAYAAAD2/wEAAAACAAYAAAD1/wEAAAACAAYAAAD0/wEAAAACAAYAAADz/wEAAAACAAYAAADz/wAAAAACAAYAAADz/wIAAAACAAYAAADz/wMAAAACAAYAAAD0/wMAAAACAAYAAAD1/wMAAAACAAYAAAD2/wMAAAACAAYAAAD3/wMAAAACAAYAAAD4/wMAAAACAAYAAAD5/wMAAAACAAYAAAD6/wMAAAACAAYAAAD7/wMAAAACAAYAAAD8/wMAAAACAAYAAAD9/wMAAAACAAYAAAD+/wMAAAACAAYAAAD//wMAAAACAAYAAAAAAAMAAAACAAYAAAABAAMAAAACAAYAAAACAAMAAAACAAYAAAADAAMAAAACAAYAAAAEAAMAAAACAAYAAAAFAAMAAAACAAYAAAAGAAMAAAACAAYAAAAHAAMAAAACAAYAAAAIAAMAAAACAAYAAAAIAAIAAAACAAYAAAAHAAIAAAACAAYAAAAGAAIAAAACAAYAAAAFAAIAAAACAAYAAAAEAAIAAAACAAYAAAADAAIAAAACAAYAAAABAAEAAAACAAYAAAAAAAEAAAACAAYAAAD//wEAAAACAAYAAAD+/wEAAAACAAYAAAD7/wIAAAACAAYAAAD0/wIAAAACAAYAAAD1/wIAAAACAAYAAAD2/wIAAAACAAYAAAD3/wIAAAACAAYAAAD4/wIAAAACAAYAAAD5/wIAAAACAAYAAAD6/wIAAAACAAYAAAD8/wIAAAACAAYAAAAJAAAAAAACAAYAAAAKAAAAAAACAAYAAAALAAAAAAACAAYAAAAMAAAAAAACAAYAAAANAAAAAAACAAYAAAAOAAAAAAACAAYAAAAPAAAAAAACAAYAAAAQAAAAAAACAAYAAAARAAAAAAACAAYAAAASAAAAAAACAAYAAAATAAAAAAACAAYAAAAUAAAAAAACAAYAAAAVAAAAAAACAAYAAAAJAAMAAAACAAYAAAAKAAMAAAACAAYAAAALAAMAAAACAAYAAAAMAAMAAAACAAYAAAANAAMAAAACAAYAAAAOAAMAAAACAAYAAAAPAAMAAAACAAYAAAAQAAMAAAACAAYAAAARAAMAAAACAAYAAAASAAMAAAACAAYAAAATAAMAAAACAAYAAAAUAAMAAAACAAYAAAAVAAMAAAACAAYAAAAVAAIAAAACAAYAAAAVAAEAAAACAAYAAAAJAAEAAAACAAYAAAAKAAEAAAACAAYAAAASAAEAAAACAAYAAAATAAEAAAACAAYAAAAUAAEAAAACAAYAAAARAAEAAAACAAYAAAAQAAIAAAACAAYAAAAPAAIAAAACAAYAAAAOAAIAAAACAAYAAAANAAIAAAACAAYAAAAMAAIAAAACAAYAAAALAAIAAAACAAYAAAAKAAIAAAACAAYAAAALAAEAAAACAAYAAAAMAAEAAAACAAYAAAANAAEAAAACAAYAAAAOAAEAAAACAAYAAAAPAAEAAAACAAYAAAAQAAEAAAACAAYAAAAUAAIAAAACAAYAAAATAAIAAAACAAYAAAASAAIAAAACAAYAAAARAAIAAAACAAYAAAAJAAIAAAACAAYAAAD4//3/AAACAAYAAAD5//3/AAACAAYAAAD6//3/AAACAAYAAAAAAP3/AAACAAYAAAABAP3/AAACAAYAAAACAP3/AAACAAYAAAD1//z/AAACAAYAAAD0//z/AAACAAYAAADz//z/AAACAAYAAAD9////AAACAAYAAAAWAAAAAAACAAYAAAAXAAAAAAACAAYAAAAYAAAAAAACAAYAAAAZAAAAAAACAAYAAAAaAAAAAAACAAYAAAAbAAAAAAACAAYAAAAcAAAAAAACAAYAAAAdAAAAAAACAAYAAAAeAAAAAAACAAYAAAAfAAAAAAACAAYAAAAgAAAAAAACAAYAAAAhAAAAAAACAAYAAAAiAAAAAAACAAYAAAAjAAAAAAACAAYAAAAkAAAAAAACAAYAAAAlAAAAAAACAAYAAAAmAAAAAAACAAYAAAAmAAEAAAACAAYAAAAmAAIAAAACAAYAAAAlAAMAAAACAAYAAAAlAAQAAAACAAYAAAAmAAMAAAACAAYAAAAmAAQAAAACAAYAAAAkAAQAAAACAAYAAAAjAAQAAAACAAYAAAAiAAQAAAACAAYAAAAhAAQAAAACAAYAAAAgAAQAAAACAAYAAAAfAAQAAAACAAYAAAAeAAQAAAACAAYAAAAdAAQAAAACAAYAAAAcAAQAAAACAAYAAAAcAAMAAAACAAYAAAAbAAMAAAACAAYAAAAaAAMAAAACAAYAAAAZAAMAAAACAAYAAAAYAAMAAAACAAYAAAAXAAMAAAACAAYAAAAWAAMAAAACAAYAAAAWAAIAAAACAAYAAAAWAAEAAAACAAYAAAAXAAEAAAACAAYAAAAYAAEAAAACAAYAAAAZAAEAAAACAAYAAAAaAAEAAAACAAYAAAAbAAEAAAACAAYAAAAcAAEAAAACAAYAAAAdAAEAAAACAAYAAAAeAAEAAAACAAYAAAAfAAEAAAACAAYAAAAgAAEAAAACAAYAAAAhAAEAAAACAAYAAAAiAAEAAAACAAYAAAAlAAEAAAACAAYAAAAkAAIAAAACAAYAAAAkAAEAAAACAAYAAAAjAAEAAAACAAYAAAAlAAIAAAACAAYAAAAkAAMAAAACAAYAAAAjAAMAAAACAAYAAAAiAAMAAAACAAYAAAAiAAIAAAACAAYAAAAhAAIAAAACAAYAAAAgAAIAAAACAAYAAAAfAAIAAAACAAYAAAAeAAIAAAACAAYAAAAdAAIAAAACAAYAAAAcAAIAAAACAAYAAAAbAAIAAAACAAYAAAAaAAIAAAACAAYAAAAZAAIAAAACAAYAAAAYAAIAAAACAAYAAAAXAAIAAAACAAYAAAAdAAMAAAACAAYAAAAeAAMAAAACAAYAAAAfAAMAAAACAAYAAAAgAAMAAAACAAYAAAAhAAMAAAACAAYAAAAjAAIAAAACAAYAAAAbAAQAAAACAAYAAAAaAAQAAAACAAYAAAAZAAQAAAACAAYAAAAYAAQAAAACAAYAAAAXAAQAAAACAAYAAAAWAAQAAAACAAYAAAAVAAQAAAACAAYAAAAUAAQAAAACAAYAAAATAAQAAAACAAYAAAASAAQAAAACAAYAAAARAAQAAAACAAYAAAAQAAQAAAACAAYAAADz/wQAAAACAAYAAAD0/wQAAAACAAYAAAD1/wQAAAACAAYAAAD2/wQAAAACAAYAAAD3/wQAAAACAAYAAAD4/wQAAAACAAYAAAD5/wQAAAACAAYAAAD6/wQAAAACAAYAAAD7/wQAAAACAAYAAAD8/wQAAAACAAYAAAAPAAQAAAACAAYAAAAOAAQAAAACAAYAAAANAAQAAAACAAYAAAAMAAQAAAACAAYAAAALAAQAAAACAAYAAAAKAAQAAAACAAYAAAAJAAQAAAACAAYAAAAIAAQAAAACAAYAAAAHAAQAAAACAAYAAAAGAAQAAAACAAYAAAAFAAQAAAACAAYAAAAEAAQAAAACAAYAAAADAAQAAAACAAYAAAACAAQAAAACAAYAAAABAAQAAAACAAYAAAAAAAQAAAACAAYAAAD//wQAAAACAAYAAAD+/wQAAAACAAYAAAD9/wQAAAACAAYAAAA=")
 tile_set = ExtResource("2_sotx7")
 
-[node name="Player" parent="." unique_id=1188005712 groups=["Player"] instance=ExtResource("3_ymh28")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_ymh28")]
 position = Vector2(1, 1)
 collision_layer = 3
 collision_mask = 3
 
+<<<<<<< Updated upstream
 [node name="ProgressBar" type="ProgressBar" parent="Player" unique_id=1086710734]
+=======
+[node name="Control" type="Control" parent="Player"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Player/Control"]
+>>>>>>> Stashed changes
 material = SubResource("ShaderMaterial_7oc4e")
 offset_left = -111.0
 offset_top = -102.0
@@ -60,7 +75,11 @@ value = 100.0
 show_percentage = false
 script = ExtResource("4_siwpi")
 
+<<<<<<< Updated upstream
 [node name="Label" type="Label" parent="Player/ProgressBar" unique_id=1042635921]
+=======
+[node name="Label" type="Label" parent="Player/Control/ProgressBar"]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 64.0
 offset_top = -26.0
@@ -69,6 +88,7 @@ offset_bottom = -3.0
 theme_override_fonts/font = SubResource("SystemFont_837br")
 text = "Lord Of The Night"
 
+<<<<<<< Updated upstream
 [node name="Sprite2D" type="Sprite2D" parent="Player/ProgressBar" unique_id=974732296]
 modulate = Color(0.37, 0.1517, 0.1517, 0.31764707)
 self_modulate = Color(1, 0.39999998, 0.39999998, 1)
@@ -78,8 +98,19 @@ texture = ExtResource("5_bg65o")
 script = ExtResource("6_5p8bu")
 
 [node name="WaveEnemy" type="Node" parent="." unique_id=413077030]
+=======
+[node name="Homing" type="Node" parent="Player/Control/ProgressBar"]
+>>>>>>> Stashed changes
 
-[node name="EnemyWave4" parent="WaveEnemy" unique_id=532860929 instance=ExtResource("15_gm3vy")]
+[node name="Enemyhome" parent="Player/Control/ProgressBar/Homing" instance=ExtResource("16_3jhx7")]
+position = Vector2(-96, -112)
+
+[node name="Enemyhome2" parent="Player/Control/ProgressBar/Homing" instance=ExtResource("16_3jhx7")]
+position = Vector2(-96, -112)
+
+[node name="WaveEnemy" type="Node" parent="."]
+
+[node name="EnemyWave4" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -90,7 +121,7 @@ direction = Vector2(-2, 0)
 wait_time = 7.0
 reset_time = 30.0
 
-[node name="EnemyWave5" parent="WaveEnemy" unique_id=1879951951 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave5" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -101,7 +132,7 @@ direction = Vector2(-2, 0)
 wait_time = 7.5
 reset_time = 30.0
 
-[node name="EnemyWave6" parent="WaveEnemy" unique_id=159558666 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave6" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -112,7 +143,7 @@ direction = Vector2(-2, 0)
 wait_time = 8.0
 reset_time = 30.0
 
-[node name="EnemyWave7" parent="WaveEnemy" unique_id=680184649 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave7" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -123,7 +154,7 @@ direction = Vector2(-2, 0)
 wait_time = 8.5
 reset_time = 30.0
 
-[node name="EnemyWave8" parent="WaveEnemy" unique_id=690765898 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave8" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -134,7 +165,7 @@ direction = Vector2(-2, 0)
 wait_time = 9.0
 reset_time = 30.0
 
-[node name="EnemyWave9" parent="WaveEnemy" unique_id=868300932 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave9" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -145,7 +176,7 @@ direction = Vector2(-2, 0)
 wait_time = 9.5
 reset_time = 30.0
 
-[node name="EnemyWave" parent="WaveEnemy" unique_id=2078977254 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -113)
 collision_layer = 2
 collision_mask = 2
@@ -156,7 +187,7 @@ direction = Vector2(-2, 0)
 wait_time = 11.0
 reset_time = 30.0
 
-[node name="EnemyWave2" parent="WaveEnemy" unique_id=802896589 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave2" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -167,7 +198,7 @@ direction = Vector2(-2, 0)
 wait_time = 11.2
 reset_time = 30.0
 
-[node name="EnemyWave3" parent="WaveEnemy" unique_id=812283734 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave3" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -178,7 +209,7 @@ direction = Vector2(-2, 0)
 wait_time = 11.4
 reset_time = 30.0
 
-[node name="EnemyWave10" parent="WaveEnemy" unique_id=1053185770 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave10" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -113)
 collision_layer = 2
 collision_mask = 2
@@ -189,7 +220,7 @@ direction = Vector2(-2, 0)
 wait_time = 23.0
 reset_time = 30.0
 
-[node name="EnemyWave11" parent="WaveEnemy" unique_id=147409910 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave11" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -200,7 +231,7 @@ direction = Vector2(-2, 0)
 wait_time = 23.1
 reset_time = 30.0
 
-[node name="EnemyWave12" parent="WaveEnemy" unique_id=1762302917 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave12" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -211,7 +242,7 @@ direction = Vector2(-2, 0)
 wait_time = 23.2
 reset_time = 30.0
 
-[node name="EnemyWave13" parent="WaveEnemy" unique_id=541299241 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave13" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -113)
 collision_layer = 2
 collision_mask = 2
@@ -222,7 +253,7 @@ direction = Vector2(-2, 0)
 wait_time = 23.3
 reset_time = 30.0
 
-[node name="EnemyWave14" parent="WaveEnemy" unique_id=1429067870 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave14" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -233,7 +264,7 @@ direction = Vector2(-2, 0)
 wait_time = 23.4
 reset_time = 30.0
 
-[node name="EnemyWave15" parent="WaveEnemy" unique_id=1911047388 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave15" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -244,7 +275,7 @@ direction = Vector2(-2, 0)
 wait_time = 23.5
 reset_time = 30.0
 
-[node name="EnemyWave2316" parent="WaveEnemy" unique_id=134227664 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave2316" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -113)
 collision_layer = 2
 collision_mask = 2
@@ -255,7 +286,7 @@ direction = Vector2(-2, 0)
 wait_time = 18.0
 reset_time = 30.0
 
-[node name="EnemyWave17" parent="WaveEnemy" unique_id=181368726 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave17" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -266,7 +297,7 @@ direction = Vector2(-2, 0)
 wait_time = 18.1
 reset_time = 30.0
 
-[node name="EnemyWave18" parent="WaveEnemy" unique_id=2049536741 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave18" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -277,7 +308,7 @@ direction = Vector2(-2, 0)
 wait_time = 18.2
 reset_time = 30.0
 
-[node name="EnemyWave19" parent="WaveEnemy" unique_id=67579744 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave19" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -113)
 collision_layer = 2
 collision_mask = 2
@@ -288,7 +319,7 @@ direction = Vector2(-2, 0)
 wait_time = 18.3
 reset_time = 30.0
 
-[node name="EnemyWave20" parent="WaveEnemy" unique_id=1640289317 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave20" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -299,7 +330,7 @@ direction = Vector2(-2, 0)
 wait_time = 18.4
 reset_time = 30.0
 
-[node name="EnemyWave21" parent="WaveEnemy" unique_id=1042721141 instance=ExtResource("15_gm3vy")]
+[node name="EnemyWave21" parent="WaveEnemy" instance=ExtResource("15_gm3vy")]
 position = Vector2(-97, -112)
 collision_layer = 2
 collision_mask = 2
@@ -310,9 +341,9 @@ direction = Vector2(-2, 0)
 wait_time = 18.5
 reset_time = 30.0
 
-[node name="Enemy" type="Node" parent="." unique_id=395089872]
+[node name="Enemy" type="Node" parent="."]
 
-[node name="Enemy15" parent="Enemy" unique_id=1254409699 instance=ExtResource("13_siwpi")]
+[node name="Enemy15" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-488, -106)
 collision_layer = 2
 collision_mask = 2
@@ -320,7 +351,7 @@ move_direction = Vector2(600, 0)
 move_speed = 200.0
 _wait_time = 30.0
 
-[node name="Enemy6" parent="Enemy" unique_id=1328656551 instance=ExtResource("13_siwpi")]
+[node name="Enemy6" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-75, -218)
 collision_layer = 2
 collision_mask = 2
@@ -328,7 +359,7 @@ move_direction = Vector2(-300, 150)
 move_speed = 200.0
 _wait_time = 25.0
 
-[node name="Enemy" parent="Enemy" unique_id=461845922 instance=ExtResource("13_siwpi")]
+[node name="Enemy" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-465, -56)
 collision_layer = 2
 collision_mask = 2
@@ -336,7 +367,7 @@ move_direction = Vector2(0, -200)
 move_speed = 200.0
 _wait_time = 20.0
 
-[node name="Enemy2" parent="Enemy" unique_id=308893051 instance=ExtResource("13_siwpi")]
+[node name="Enemy2" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-440, -56)
 collision_layer = 2
 collision_mask = 2
@@ -344,7 +375,7 @@ move_direction = Vector2(0, -200)
 move_speed = 200.0
 _wait_time = 20.0
 
-[node name="Enemy3" parent="Enemy" unique_id=1396341245 instance=ExtResource("13_siwpi")]
+[node name="Enemy3" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-387, -56)
 collision_layer = 2
 collision_mask = 2
@@ -352,7 +383,7 @@ move_direction = Vector2(0, -200)
 move_speed = 200.0
 _wait_time = 20.0
 
-[node name="Enemy4" parent="Enemy" unique_id=358964567 instance=ExtResource("13_siwpi")]
+[node name="Enemy4" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-303, -56)
 collision_layer = 2
 collision_mask = 2
@@ -360,7 +391,7 @@ move_direction = Vector2(0, -200)
 move_speed = 200.0
 _wait_time = 20.0
 
-[node name="Enemy5" parent="Enemy" unique_id=1706766212 instance=ExtResource("13_siwpi")]
+[node name="Enemy5" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-279, -56)
 collision_layer = 2
 collision_mask = 2
@@ -368,7 +399,7 @@ move_direction = Vector2(0, -200)
 move_speed = 200.0
 _wait_time = 20.0
 
-[node name="Enemy7" parent="Enemy" unique_id=1939889383 instance=ExtResource("13_siwpi")]
+[node name="Enemy7" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-488, -194)
 collision_layer = 2
 collision_mask = 2
@@ -376,7 +407,7 @@ move_direction = Vector2(600, 300)
 move_speed = 200.0
 _wait_time = 25.0
 
-[node name="Enemy8" parent="Enemy" unique_id=1006863326 instance=ExtResource("13_siwpi")]
+[node name="Enemy8" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-89, -232)
 collision_layer = 2
 collision_mask = 2
@@ -384,7 +415,7 @@ move_direction = Vector2(-600, 300)
 move_speed = 200.0
 _wait_time = 25.0
 
-[node name="Enemy9" parent="Enemy" unique_id=360392435 instance=ExtResource("13_siwpi")]
+[node name="Enemy9" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-498, -181)
 collision_layer = 2
 collision_mask = 2
@@ -392,7 +423,7 @@ move_direction = Vector2(600, 300)
 move_speed = 200.0
 _wait_time = 25.0
 
-[node name="Enemy10" parent="Enemy" unique_id=860183833 instance=ExtResource("13_siwpi")]
+[node name="Enemy10" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-391, -221)
 collision_layer = 2
 collision_mask = 2
@@ -400,7 +431,7 @@ move_direction = Vector2(0, 600)
 move_speed = 200.0
 _wait_time = 30.0
 
-[node name="Enemy11" parent="Enemy" unique_id=236160945 instance=ExtResource("13_siwpi")]
+[node name="Enemy11" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-315, -219)
 collision_layer = 2
 collision_mask = 2
@@ -408,7 +439,7 @@ move_direction = Vector2(0, 600)
 move_speed = 200.0
 _wait_time = 30.0
 
-[node name="Enemy12" parent="Enemy" unique_id=1987841897 instance=ExtResource("13_siwpi")]
+[node name="Enemy12" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-225, -218)
 collision_layer = 2
 collision_mask = 2
@@ -416,7 +447,7 @@ move_direction = Vector2(0, 600)
 move_speed = 200.0
 _wait_time = 30.0
 
-[node name="Enemy13" parent="Enemy" unique_id=747827152 instance=ExtResource("13_siwpi")]
+[node name="Enemy13" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-148, -218)
 collision_layer = 2
 collision_mask = 2
@@ -424,7 +455,7 @@ move_direction = Vector2(0, 600)
 move_speed = 200.0
 _wait_time = 30.0
 
-[node name="Enemy14" parent="Enemy" unique_id=9589175 instance=ExtResource("13_siwpi")]
+[node name="Enemy14" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-487, -93)
 collision_layer = 2
 collision_mask = 2
@@ -432,7 +463,7 @@ move_direction = Vector2(600, 0)
 move_speed = 200.0
 _wait_time = 28.0
 
-[node name="Enemy16" parent="Enemy" unique_id=321387851 instance=ExtResource("13_siwpi")]
+[node name="Enemy16" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-55, -105)
 collision_layer = 2
 collision_mask = 2
@@ -440,7 +471,7 @@ move_direction = Vector2(-600, 0)
 move_speed = 200.0
 _wait_time = 30.0
 
-[node name="Enemy18" parent="Enemy" unique_id=2098176515 instance=ExtResource("13_siwpi")]
+[node name="Enemy18" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-29, -153)
 collision_layer = 2
 collision_mask = 2
@@ -448,7 +479,7 @@ move_direction = Vector2(-600, 300)
 move_speed = 200.0
 _wait_time = 25.0
 
-[node name="Enemy19" parent="Enemy" unique_id=1167992106 instance=ExtResource("13_siwpi")]
+[node name="Enemy19" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-19, -136)
 collision_layer = 2
 collision_mask = 2
@@ -456,7 +487,7 @@ move_direction = Vector2(-600, 300)
 move_speed = 200.0
 _wait_time = 25.0
 
-[node name="Enemy20" parent="Enemy" unique_id=237024885 instance=ExtResource("13_siwpi")]
+[node name="Enemy20" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-100, -243)
 collision_layer = 2
 collision_mask = 2
@@ -464,7 +495,7 @@ move_direction = Vector2(-600, 300)
 move_speed = 200.0
 _wait_time = 25.0
 
-[node name="Enemy21" parent="Enemy" unique_id=253457198 instance=ExtResource("13_siwpi")]
+[node name="Enemy21" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-147, -293)
 collision_layer = 2
 collision_mask = 2
@@ -472,7 +503,7 @@ move_direction = Vector2(-600, 300)
 move_speed = 200.0
 _wait_time = 40.0
 
-[node name="Enemy22" parent="Enemy" unique_id=1496067510 instance=ExtResource("13_siwpi")]
+[node name="Enemy22" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-477, -208)
 collision_layer = 2
 collision_mask = 2
@@ -480,7 +511,7 @@ move_direction = Vector2(600, 300)
 move_speed = 200.0
 _wait_time = 25.0
 
-[node name="Enemy23" parent="Enemy" unique_id=2093842483 instance=ExtResource("13_siwpi")]
+[node name="Enemy23" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-508, -168)
 collision_layer = 2
 collision_mask = 2
@@ -488,7 +519,7 @@ move_direction = Vector2(600, 300)
 move_speed = 200.0
 _wait_time = 25.0
 
-[node name="Enemy24" parent="Enemy" unique_id=72990031 instance=ExtResource("13_siwpi")]
+[node name="Enemy24" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-443, -251)
 collision_layer = 2
 collision_mask = 2
@@ -496,7 +527,7 @@ move_direction = Vector2(600, 300)
 move_speed = 200.0
 _wait_time = 25.0
 
-[node name="Enemy25" parent="Enemy" unique_id=1800319768 instance=ExtResource("13_siwpi")]
+[node name="Enemy25" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-403, -296)
 collision_layer = 2
 collision_mask = 2
@@ -504,7 +535,7 @@ move_direction = Vector2(600, 300)
 move_speed = 200.0
 _wait_time = 25.0
 
-[node name="Enemy26" parent="Enemy" unique_id=1221566032 instance=ExtResource("13_siwpi")]
+[node name="Enemy26" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-216, -56)
 collision_layer = 2
 collision_mask = 2
@@ -512,7 +543,7 @@ move_direction = Vector2(0, -200)
 move_speed = 200.0
 _wait_time = 20.0
 
-[node name="Enemy27" parent="Enemy" unique_id=96430000 instance=ExtResource("13_siwpi")]
+[node name="Enemy27" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-183, -58)
 collision_layer = 2
 collision_mask = 2
@@ -520,7 +551,7 @@ move_direction = Vector2(0, -200)
 move_speed = 200.0
 _wait_time = 20.0
 
-[node name="Enemy28" parent="Enemy" unique_id=1320078709 instance=ExtResource("13_siwpi")]
+[node name="Enemy28" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-136, -58)
 collision_layer = 2
 collision_mask = 2
@@ -528,7 +559,7 @@ move_direction = Vector2(0, -200)
 move_speed = 200.0
 _wait_time = 20.0
 
-[node name="Enemy29" parent="Enemy" unique_id=303956978 instance=ExtResource("13_siwpi")]
+[node name="Enemy29" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-130, -269)
 collision_layer = 2
 collision_mask = 2
@@ -536,7 +567,7 @@ move_direction = Vector2(-600, 300)
 move_speed = 200.0
 _wait_time = 40.0
 
-[node name="Enemyd" parent="Enemy" unique_id=1214988475 instance=ExtResource("13_siwpi")]
+[node name="Enemyd" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-4, -199)
 collision_layer = 2
 collision_mask = 2
@@ -544,7 +575,7 @@ move_direction = Vector2(-300, 150)
 move_speed = 300.0
 _wait_time = 14.0
 
-[node name="Enemy31" parent="Enemy" unique_id=774957355 instance=ExtResource("13_siwpi")]
+[node name="Enemy31" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-38, -199)
 collision_layer = 2
 collision_mask = 2
@@ -552,7 +583,7 @@ move_direction = Vector2(300, 150)
 move_speed = 300.0
 _wait_time = 15.0
 
-[node name="Enemy32" parent="Enemy" unique_id=1963257707 instance=ExtResource("13_siwpi")]
+[node name="Enemy32" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-70, -198)
 collision_layer = 2
 collision_mask = 2
@@ -560,7 +591,7 @@ move_direction = Vector2(-300, 150)
 move_speed = 300.0
 _wait_time = 14.0
 
-[node name="Enemy33" parent="Enemy" unique_id=1856326495 instance=ExtResource("13_siwpi")]
+[node name="Enemy33" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-104, -198)
 collision_layer = 2
 collision_mask = 2
@@ -568,7 +599,7 @@ move_direction = Vector2(300, 150)
 move_speed = 300.0
 _wait_time = 15.0
 
-[node name="Enemy34" parent="Enemy" unique_id=1433425909 instance=ExtResource("13_siwpi")]
+[node name="Enemy34" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-140, -198)
 collision_layer = 2
 collision_mask = 2
@@ -576,7 +607,7 @@ move_direction = Vector2(-300, 150)
 move_speed = 300.0
 _wait_time = 14.0
 
-[node name="Enemy35" parent="Enemy" unique_id=463716949 instance=ExtResource("13_siwpi")]
+[node name="Enemy35" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-174, -198)
 collision_layer = 2
 collision_mask = 2
@@ -584,7 +615,7 @@ move_direction = Vector2(300, 150)
 move_speed = 300.0
 _wait_time = 15.0
 
-[node name="Enemy36" parent="Enemy" unique_id=1790020195 instance=ExtResource("13_siwpi")]
+[node name="Enemy36" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-206, -197)
 collision_layer = 2
 collision_mask = 2
@@ -592,7 +623,7 @@ move_direction = Vector2(-300, 150)
 move_speed = 300.0
 _wait_time = 14.0
 
-[node name="Enemy37" parent="Enemy" unique_id=1680412997 instance=ExtResource("13_siwpi")]
+[node name="Enemy37" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-240, -197)
 collision_layer = 2
 collision_mask = 2
@@ -600,7 +631,7 @@ move_direction = Vector2(300, 150)
 move_speed = 300.0
 _wait_time = 15.0
 
-[node name="Enemy38" parent="Enemy" unique_id=1284796892 instance=ExtResource("13_siwpi")]
+[node name="Enemy38" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-277, -197)
 collision_layer = 2
 collision_mask = 2
@@ -608,7 +639,7 @@ move_direction = Vector2(-300, 150)
 move_speed = 300.0
 _wait_time = 14.0
 
-[node name="Enemy39" parent="Enemy" unique_id=826807765 instance=ExtResource("13_siwpi")]
+[node name="Enemy39" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-311, -197)
 collision_layer = 2
 collision_mask = 2
@@ -616,7 +647,7 @@ move_direction = Vector2(300, 150)
 move_speed = 300.0
 _wait_time = 15.0
 
-[node name="Enemy40" parent="Enemy" unique_id=1202055315 instance=ExtResource("13_siwpi")]
+[node name="Enemy40" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-343, -196)
 collision_layer = 2
 collision_mask = 2
@@ -624,7 +655,7 @@ move_direction = Vector2(-300, 150)
 move_speed = 300.0
 _wait_time = 14.0
 
-[node name="Enemy41" parent="Enemy" unique_id=1722539472 instance=ExtResource("13_siwpi")]
+[node name="Enemy41" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-377, -196)
 collision_layer = 2
 collision_mask = 2
@@ -632,7 +663,7 @@ move_direction = Vector2(300, 150)
 move_speed = 300.0
 _wait_time = 15.0
 
-[node name="Enemy42" parent="Enemy" unique_id=1137167428 instance=ExtResource("13_siwpi")]
+[node name="Enemy42" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-413, -196)
 collision_layer = 2
 collision_mask = 2
@@ -640,7 +671,7 @@ move_direction = Vector2(-300, 150)
 move_speed = 300.0
 _wait_time = 14.0
 
-[node name="Enemy43" parent="Enemy" unique_id=208411086 instance=ExtResource("13_siwpi")]
+[node name="Enemy43" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-447, -196)
 collision_layer = 2
 collision_mask = 2
@@ -648,7 +679,7 @@ move_direction = Vector2(300, 150)
 move_speed = 300.0
 _wait_time = 15.0
 
-[node name="Enemy44" parent="Enemy" unique_id=1103887810 instance=ExtResource("13_siwpi")]
+[node name="Enemy44" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-479, -195)
 collision_layer = 2
 collision_mask = 2
@@ -656,7 +687,7 @@ move_direction = Vector2(-300, 150)
 move_speed = 300.0
 _wait_time = 14.0
 
-[node name="Enemy45" parent="Enemy" unique_id=1765477259 instance=ExtResource("13_siwpi")]
+[node name="Enemy45" parent="Enemy" instance=ExtResource("13_siwpi")]
 position = Vector2(-513, -195)
 collision_layer = 2
 collision_mask = 2
@@ -664,93 +695,94 @@ move_direction = Vector2(300, 150)
 move_speed = 300.0
 _wait_time = 15.0
 
-[node name="Endflag" parent="." unique_id=1075355339 instance=ExtResource("4_7oc4e")]
+[node name="Endflag" parent="." instance=ExtResource("4_7oc4e")]
 position = Vector2(686, -26)
 scene_to_load = ExtResource("5_siwpi")
 
-[node name="Black" type="Sprite2D" parent="Endflag" unique_id=1827909352]
+[node name="Black" type="Sprite2D" parent="Endflag"]
 visible = false
 scale = Vector2(1.4359671, 1.9102564)
 texture = ExtResource("6_0m7xm")
 script = ExtResource("7_qoi87")
 
-[node name="Black2" type="Sprite2D" parent="Endflag" unique_id=68721726]
+[node name="Black2" type="Sprite2D" parent="Endflag"]
 visible = false
 scale = Vector2(1.4359671, 1.9102564)
 texture = ExtResource("6_0m7xm")
 script = ExtResource("7_qoi87")
 
-[node name="Black Finish" type="Sprite2D" parent="Endflag" unique_id=1930913770]
+[node name="Black Finish" type="Sprite2D" parent="Endflag"]
 visible = false
 position = Vector2(-686, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("6_0m7xm")
 script = ExtResource("8_i6w5t")
 
-[node name="Black Finish2" type="Sprite2D" parent="Endflag" unique_id=932984294]
+[node name="Black Finish2" type="Sprite2D" parent="Endflag"]
 visible = false
 position = Vector2(-686, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("6_0m7xm")
 script = ExtResource("8_i6w5t")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Endflag" unique_id=1775917705]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Endflag"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Endflag" unique_id=2112464502]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Endflag"]
 stream = ExtResource("9_l2pgs")
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Endflag" unique_id=988601300]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Endflag"]
 stream = ExtResource("10_2272n")
 
-[node name="EnemyBoss" parent="." unique_id=601344382 instance=ExtResource("12_ymh28")]
+[node name="EnemyBoss" parent="." instance=ExtResource("12_ymh28")]
 position = Vector2(-1571, -1043)
 collision_layer = 65281
 collision_mask = 65281
 move_direction = Vector2(0, 190)
 
-[node name="Projectile" type="Node" parent="." unique_id=766033449]
+[node name="Projectile" type="Node" parent="."]
 
-[node name="Perjectile2" parent="Projectile" unique_id=2032719106 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+[node name="Perjectile2" parent="Projectile" groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(28, -362)
 move_direction = Vector2(0, 300)
 move_speed = 60.0
 wait_time = 15.0
 
-[node name="Perjectile3" parent="Projectile" unique_id=1871819292 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+[node name="Perjectile3" parent="Projectile" groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-166, -314)
 move_direction = Vector2(0, 300)
 move_speed = 60.0
 wait_time = 20.0
 
-[node name="Perjectile" parent="Projectile" unique_id=298325252 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+[node name="Perjectile" parent="Projectile" groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-116, -362)
 move_direction = Vector2(0, 300)
 move_speed = 60.0
 
-[node name="Perjectile4" parent="Projectile" unique_id=1617397065 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+[node name="Perjectile4" parent="Projectile" groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-226, -385)
 move_direction = Vector2(0, 0)
 move_speed = 60.0
 wait_time = 25.0
 
-[node name="Perjectile5" parent="Projectile" unique_id=186663447 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+[node name="Perjectile5" parent="Projectile" groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-43, -326)
 move_direction = Vector2(0, 0)
 move_speed = 60.0
 wait_time = 35.0
 
-[node name="Perjectile6" parent="Projectile" unique_id=407864399 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+[node name="Perjectile6" parent="Projectile" groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-185, -383)
 move_direction = Vector2(0, 0)
 move_speed = 60.0
 wait_time = 40.0
 
-[node name="Perjectile7" parent="Projectile" unique_id=2078021643 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+[node name="Perjectile7" parent="Projectile" groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-17, -310)
 move_direction = Vector2(0, 0)
 move_speed = 60.0
 wait_time = 45.0
 
+<<<<<<< Updated upstream
 [node name="Perjectile8" parent="Projectile" unique_id=2051737187 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-273, -380)
 move_direction = Vector2(0, 300)
@@ -782,6 +814,15 @@ wait_time = 5
 
 [node name="Enemyhome2" parent="." unique_id=400532083 instance=ExtResource("16_3jhx7")]
 position = Vector2(156, -19)
+=======
+[node name="Attack" parent="." instance=ExtResource("17_00w0g")]
+position = Vector2(-298, -77)
+move_speed = 50.0
+
+[node name="BossMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_c4s5l")
+autoplay = true
+>>>>>>> Stashed changes
 
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile2" method="_on_enemy_boss_area_entered"]
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile3" method="_on_enemy_boss_area_entered"]

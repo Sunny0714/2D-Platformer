@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://blxp43lrr64p2"]
+[gd_scene load_steps=19 format=4 uid="uid://blxp43lrr64p2"]
 
 [ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="1_nwjwq"]
 [ext_resource type="Texture2D" uid="uid://bpkkj4i0lidm8" path="res://Sprites/Backgrounds/backgroundDesert.png" id="2_7sdqy"]
@@ -17,1357 +17,1263 @@
 [ext_resource type="PackedScene" uid="uid://p5kclo767ovs" path="res://Scene/healthpack.tscn" id="14_ccfm3"]
 [ext_resource type="PackedScene" uid="uid://bnd87ldqnwx8y" path="res://Scene/portal.tscn" id="15_nquh6"]
 [ext_resource type="Texture2D" uid="uid://bujojlj613bi5" path="res://Scene/Screenshot 2026-04-23 114316.png" id="17_g67xk"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://cnjti8a8iowsd" path="res://Scene/gun.tscn" id="18_st5wq"]
+=======
+[ext_resource type="AudioStream" uid="uid://xtgefx5jk4fe" path="res://Scene/abydos_music-fun-retro-game-175468.mp3" id="18_st5wq"]
+>>>>>>> Stashed changes
 
-[sub_resource type="Animation" id="Animation_nwjwq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Black Finish:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1452, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Black Finish2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1452, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Black:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2, 3.0517578e-05)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Black2:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-3, -1)]
-}
-
-[sub_resource type="Animation" id="Animation_67jix"]
-resource_name = "finish"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Black Finish:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-1452, 0), Vector2(-2452, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Black Finish2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-1452, 0), Vector2(-452, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_f3pwq"]
-resource_name = "start"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Black:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(500, 0), Vector2(350, 0), Vector2(-2, 3.0517578e-05)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Black2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-500, -1), Vector2(-350, -1), Vector2(-3, -1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ccfm3"]
-_data = {
-&"RESET": SubResource("Animation_nwjwq"),
-&"finish": SubResource("Animation_67jix"),
-&"start": SubResource("Animation_f3pwq")
-}
-
-[node name="Main" type="Node2D" unique_id=178737448]
+[node name="Main" type="Node2D"]
 modulate = Color(1, 0.9490196, 0.8, 1)
 
-[node name="Background2" type="Sprite2D" parent="." unique_id=835294110]
+[node name="Background2" type="Sprite2D" parent="."]
 position = Vector2(-145.5, -2326)
 scale = Vector2(0.7, 0.619)
 texture = ExtResource("3_vg3ep")
 
-[node name="Background3" type="Sprite2D" parent="." unique_id=1092381970]
+[node name="Background3" type="Sprite2D" parent="."]
 position = Vector2(568, -2326)
 scale = Vector2(0.7, 0.619)
 texture = ExtResource("3_vg3ep")
 
-[node name="Background4" type="Sprite2D" parent="." unique_id=1105634045]
+[node name="Background4" type="Sprite2D" parent="."]
 position = Vector2(1283, -2326)
 scale = Vector2(0.7, 0.619)
 texture = ExtResource("3_vg3ep")
 
-[node name="Background5" type="Sprite2D" parent="." unique_id=2075091026]
+[node name="Background5" type="Sprite2D" parent="."]
 position = Vector2(1976.9999, -2326)
 scale = Vector2(0.7, 0.619)
 texture = ExtResource("3_vg3ep")
 
-[node name="Backgrounds" type="Node2D" parent="." unique_id=1766874012]
+[node name="Backgrounds" type="Node2D" parent="."]
 script = ExtResource("1_nwjwq")
 
-[node name="BackgroundSprite7" type="Sprite2D" parent="Backgrounds" unique_id=1797662002]
+[node name="BackgroundSprite7" type="Sprite2D" parent="Backgrounds"]
 modulate = Color(1, 0.9490196, 0.8, 1)
 position = Vector2(1016.0049, -45.00003)
 scale = Vector2(0.49804878, 0.49999994)
 texture = ExtResource("2_7sdqy")
 
-[node name="BackgroundSprite3" type="Sprite2D" parent="Backgrounds" unique_id=813449019]
+[node name="BackgroundSprite3" type="Sprite2D" parent="Backgrounds"]
 modulate = Color(1, 0.9490196, 0.8, 1)
 position = Vector2(-2037, -45)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_7sdqy")
 
-[node name="BackgroundSprite" type="Sprite2D" parent="Backgrounds" unique_id=1936403510]
+[node name="BackgroundSprite" type="Sprite2D" parent="Backgrounds"]
 modulate = Color(1, 0.9490196, 0.8, 1)
 position = Vector2(-1018.9951, -45.00003)
 scale = Vector2(0.49804878, 0.49999994)
 texture = ExtResource("2_7sdqy")
 
-[node name="BackgroundSprite2" type="Sprite2D" parent="Backgrounds" unique_id=817142058]
+[node name="BackgroundSprite2" type="Sprite2D" parent="Backgrounds"]
 modulate = Color(1, 0.9490196, 0.8, 1)
 position = Vector2(-1527.5, -45.000015)
 scale = Vector2(0.49902344, 0.49999997)
 texture = ExtResource("2_7sdqy")
 
-[node name="BackgroundSprite4" type="Sprite2D" parent="Backgrounds" unique_id=458430984]
+[node name="BackgroundSprite4" type="Sprite2D" parent="Backgrounds"]
 modulate = Color(1, 0.9490196, 0.8, 1)
 position = Vector2(-2, -45)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_7sdqy")
 
-[node name="BackgroundSprite5" type="Sprite2D" parent="Backgrounds" unique_id=691323155]
+[node name="BackgroundSprite5" type="Sprite2D" parent="Backgrounds"]
 modulate = Color(1, 0.9490196, 0.8, 1)
 position = Vector2(507.5, -45.000015)
 scale = Vector2(0.49902344, 0.49999997)
 texture = ExtResource("2_7sdqy")
 
-[node name="BackgroundSprite6" type="Sprite2D" parent="Backgrounds" unique_id=562831380]
+[node name="BackgroundSprite6" type="Sprite2D" parent="Backgrounds"]
 modulate = Color(1, 0.9490196, 0.8, 1)
 position = Vector2(-509.75, -45)
 scale = Vector2(0.49951172, 0.5)
 texture = ExtResource("2_7sdqy")
 
-[node name="BackgroundSprite8" type="Sprite2D" parent="Backgrounds" unique_id=739725478]
+[node name="BackgroundSprite8" type="Sprite2D" parent="Backgrounds"]
 modulate = Color(1, 0.9490196, 0.8, 1)
 position = Vector2(1526, -45)
 scale = Vector2(0.49951172, 0.5)
 texture = ExtResource("2_7sdqy")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1109339394]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(524, 123)
 tile_map_data = PackedByteArray("AADV//z/AAABAAIAAADW//z/AAACAAMAAADW//3/AAABAAcAAADX//z/AAACAAMAAADX//3/AAACAAYAAADX//7/AAAAAAYAAADX////AAAAAAcAAADY//z/AAACAAMAAADY//3/AAADAAcAAADZ//z/AAACAAIAAADa//z/AAADAAIAAADg//z/AAAAAAIAAADm//z/AAABAAIAAADn//z/AAADAAIAAADu//7/AAAAAAIAAADx//z/AAAAAAIAAADy//T/AAABAAIAAADz//T/AAACAAIAAADz//j/AAABAAIAAAD0//T/AAACAAIAAAD0//j/AAACAAIAAAD1//T/AAACAAIAAAD1//j/AAADAAIAAAD1//v/AAAAAAIAAAD2//T/AAACAAIAAAD3//D/AAABAAMAAAD3//H/AAABAAcAAAD3//T/AAADAAIAAAD4//D/AAACAAMAAAD4//H/AAADAAcAAAD5//D/AAADAAIAAAD5//T/AAABAAIAAAD5//n/AAAAAAIAAAD6//T/AAACAAIAAAD7//T/AAADAAIAAAAIAP//AAABAAMAAAAJAP//AAACAAMAAAAKAP//AAACAAMAAAALAP//AAADAAMAAAAKAAAAAAACAAYAAAAKAAEAAAACAAYAAAAKAAIAAAADAAYAAAAKAAMAAAAAAAcAAAALAAEAAAADAAcAAAALAAAAAAADAAYAAAAJAAAAAAACAAYAAAAJAAEAAAABAAYAAAAJAAIAAAABAAcAAAAIAAAAAAABAAcAAAARAP//AAABAAIAAAASAP//AAACAAIAAAATAP//AAACAAIAAAAUAP//AAACAAIAAAAVAP//AAACAAIAAAAWAP//AAACAAIAAAAXAP//AAACAAIAAAAYAP//AAACAAIAAAAZAP//AAACAAIAAAAaAP//AAACAAIAAAAbAP//AAACAAIAAAAcAP//AAACAAIAAAAdAP//AAACAAIAAAAeAP//AAACAAIAAAAfAP//AAACAAIAAAAgAP//AAACAAIAAAAhAP//AAACAAIAAAAiAP//AAADAAIAAAAjAP3/AAAAAAIAAAAgAPv/AAACAAIAAAAhAPv/AAADAAIAAAAeAPv/AAACAAIAAAAfAPv/AAACAAIAAAAdAPv/AAACAAIAAAAcAPv/AAACAAIAAAAaAPv/AAACAAIAAAAbAPv/AAACAAIAAAAZAPv/AAACAAIAAAAYAPv/AAACAAIAAAAWAPv/AAACAAIAAAAXAPv/AAACAAIAAAAVAPv/AAACAAIAAAATAPv/AAACAAIAAAAUAPv/AAACAAIAAAASAPv/AAACAAIAAAARAPv/AAABAAIAAAADAAAAAAAAAAIAAAARAPf/AAABAAIAAAASAPf/AAACAAIAAAATAPf/AAACAAIAAAAUAPf/AAACAAIAAAAVAPf/AAACAAIAAAAWAPf/AAACAAIAAAAXAPf/AAACAAIAAAAYAPf/AAACAAIAAAAZAPf/AAACAAIAAAAaAPf/AAACAAIAAAAbAPf/AAACAAIAAAAcAPf/AAACAAIAAAAdAPf/AAACAAIAAAAeAPf/AAACAAIAAAAfAPf/AAACAAIAAAAgAPf/AAACAAIAAAAhAPf/AAACAAIAAAAiAPf/AAACAAIAAAAjAPf/AAACAAIAAAAkAPf/AAACAAIAAAAlAPf/AAACAAIAAAAmAPf/AAACAAIAAAAnAPf/AAADAAIAAAAPAPn/AAAAAAIAAADv//b/AAAAAAIAAADd/3r/AAACAAAAAADc/3r/AAACAAAAAADe/3r/AAACAAAAAADf/3r/AAADAAAAAADb/3r/AAABAAAAAADf/4X/AAACAAAAAADg/4X/AAACAAAAAADh/4X/AAACAAAAAADi/4X/AAACAAAAAADj/4X/AAACAAAAAADk/4X/AAACAAAAAADl/4X/AAACAAAAAADm/4X/AAACAAAAAADn/4X/AAACAAAAAADo/4X/AAACAAAAAADp/4X/AAACAAAAAADq/4X/AAACAAAAAADr/4X/AAACAAAAAADs/4X/AAACAAAAAADt/4X/AAACAAAAAADu/4X/AAACAAAAAADv/4X/AAACAAAAAADw/4X/AAACAAAAAADx/4X/AAACAAAAAADy/4X/AAACAAAAAADz/4X/AAACAAAAAAD0/4X/AAACAAAAAAD1/4X/AAACAAAAAAD2/4X/AAACAAAAAAD3/4X/AAACAAAAAAD4/4X/AAACAAAAAAD5/4X/AAACAAAAAAD6/4X/AAACAAAAAAD7/4X/AAACAAAAAAD8/4X/AAACAAAAAAD9/4X/AAACAAAAAAD+/4X/AAACAAAAAAD//4X/AAACAAAAAAAAAIX/AAACAAAAAAABAIX/AAACAAAAAAACAIX/AAACAAAAAAADAIX/AAACAAAAAAAEAIX/AAACAAAAAAAFAIX/AAACAAAAAAAGAIX/AAACAAAAAAAHAIX/AAACAAAAAAAIAIX/AAACAAAAAAAJAIX/AAACAAAAAAAKAIX/AAACAAAAAAALAIX/AAACAAAAAAAMAIX/AAACAAAAAAANAIX/AAACAAAAAAAOAIX/AAACAAAAAAAPAIX/AAACAAAAAAAQAIX/AAACAAAAAAARAIX/AAACAAAAAAASAIX/AAACAAAAAAATAIX/AAACAAAAAAAUAIX/AAACAAAAAAAVAIX/AAACAAAAAAAWAIX/AAACAAAAAAAXAIX/AAACAAAAAAAYAIX/AAACAAAAAAAZAIX/AAACAAAAAAAaAIX/AAACAAAAAAAbAIX/AAACAAAAAAAcAIX/AAACAAAAAAAdAIX/AAACAAAAAAAeAIX/AAACAAAAAAAfAIX/AAACAAAAAAAgAIX/AAACAAAAAAAhAIX/AAACAAAAAAAiAIX/AAACAAAAAAAkAIX/AAACAAAAAAAjAIX/AAACAAAAAAAlAIX/AAADAAAAAADj/2//AAACAAAAAADk/2//AAACAAAAAADl/2//AAACAAAAAADm/2//AAACAAAAAADn/2//AAACAAAAAADo/2//AAACAAAAAADp/2//AAACAAAAAADq/2//AAACAAAAAADr/2//AAACAAAAAADs/2//AAACAAAAAADt/2//AAACAAAAAADu/2//AAACAAAAAADv/2//AAACAAAAAADw/2//AAACAAAAAADx/2//AAACAAAAAADy/2//AAACAAAAAADz/2//AAACAAAAAAD0/2//AAACAAAAAAD1/2//AAACAAAAAAD2/2//AAACAAAAAAD3/2//AAACAAAAAAD4/2//AAACAAAAAAD5/2//AAACAAAAAAD6/2//AAACAAAAAAD7/2//AAACAAAAAAD8/2//AAACAAAAAAD9/2//AAACAAAAAAD+/2//AAACAAAAAAD//2//AAACAAAAAAAAAG//AAACAAAAAAABAG//AAACAAAAAAACAG//AAACAAAAAAADAG//AAACAAAAAAAEAG//AAACAAAAAAAFAG//AAACAAAAAAAGAG//AAACAAAAAAAHAG//AAACAAAAAAAIAG//AAACAAAAAAAJAG//AAACAAAAAAAKAG//AAACAAAAAAALAG//AAACAAAAAAAMAG//AAACAAAAAAANAG//AAACAAAAAAAOAG//AAACAAAAAAAPAG//AAACAAAAAAAQAG//AAACAAAAAAARAG//AAACAAAAAAAUAG//AAACAAAAAAAVAG//AAACAAAAAAATAG//AAACAAAAAAASAG//AAACAAAAAAAWAG//AAACAAAAAAAXAG//AAACAAAAAAAYAG//AAACAAAAAAAZAG//AAACAAAAAAAaAG//AAACAAAAAAAbAG//AAACAAAAAAAcAG//AAACAAAAAAAdAG//AAACAAAAAAAeAG//AAACAAAAAAAfAG//AAACAAAAAAAgAG//AAACAAAAAAAhAG//AAACAAAAAAAiAG//AAACAAAAAAAjAG//AAACAAAAAAAkAG//AAACAAAAAAAlAG//AAACAAAAAAAmAG//AAACAAAAAAAnAG//AAACAAAAAAAoAG//AAACAAAAAAApAG//AAACAAAAAAAqAG//AAACAAAAAAArAG//AAACAAAAAAAsAG//AAACAAAAAAAtAG//AAACAAAAAAAuAG//AAACAAAAAAAvAG//AAACAAAAAAAwAG//AAACAAAAAAAxAG//AAACAAAAAAAyAG//AAACAAAAAAAzAG//AAACAAAAAAA0AG//AAACAAAAAAA1AG//AAACAAAAAAA2AG//AAACAAAAAAA3AG//AAACAAAAAAA4AG//AAACAAAAAAA5AG//AAACAAAAAAA6AG//AAACAAAAAAA7AG//AAACAAAAAAA8AG//AAACAAAAAAA9AG//AAACAAAAAAA+AG//AAACAAAAAAA/AG//AAACAAAAAABAAG//AAACAAAAAABBAG//AAACAAAAAABCAG//AAACAAAAAABDAG//AAACAAAAAABEAG//AAACAAAAAABFAG//AAACAAAAAABGAG//AAACAAAAAABHAG//AAACAAAAAABIAG//AAACAAAAAABJAG//AAADAAEAAABJAHD/AAAAAAYAAABJAHH/AAAAAAYAAABJAHL/AAAAAAYAAABJAHP/AAAAAAYAAABJAHT/AAAAAAYAAABJAHX/AAAAAAYAAABJAHb/AAAAAAYAAABJAHf/AAAAAAYAAABJAHj/AAAAAAYAAABJAHn/AAAAAAYAAABJAHr/AAAAAAYAAABJAHv/AAAAAAYAAABJAHz/AAAAAAYAAABJAH3/AAAAAAYAAABJAH7/AAAAAAYAAABJAH//AAAAAAYAAABJAID/AAAAAAYAAABJAIH/AAAAAAYAAABJAIL/AAAAAAYAAABJAIP/AAAAAAYAAABJAIT/AAAAAAYAAABJAIX/AAADAAcAAABIAIX/AAACAAAAAABHAIX/AAACAAAAAABGAIX/AAACAAAAAABFAIX/AAACAAAAAABEAIX/AAACAAAAAABDAIX/AAACAAAAAABCAIX/AAACAAAAAABBAIX/AAACAAAAAABAAIX/AAACAAAAAAA/AIX/AAACAAAAAAA+AIX/AAACAAAAAAA9AIX/AAACAAAAAAA8AIX/AAACAAAAAAA7AIX/AAACAAAAAAA6AIX/AAACAAAAAAA5AIX/AAACAAAAAAA4AIX/AAACAAAAAAA3AIX/AAACAAAAAAA2AIX/AAACAAAAAAA1AIX/AAACAAAAAAA0AIX/AAACAAAAAAAzAIX/AAACAAAAAAAyAIX/AAACAAAAAAAxAIX/AAACAAAAAAAwAIX/AAACAAAAAAAvAIX/AAACAAAAAAAuAIX/AAACAAAAAAAtAIX/AAACAAAAAAAsAIX/AAACAAAAAAArAIX/AAACAAAAAAAqAIX/AAACAAAAAAApAIX/AAABAAAAAADi/2//AAACAAAAAADh/2//AAACAAAAAADg/2//AAACAAAAAADf/2//AAACAAAAAADe/2//AAACAAAAAADd/2//AAACAAAAAADc/2//AAACAAAAAADb/2//AAACAAAAAADa/2//AAACAAAAAADZ/2//AAACAAAAAADY/2//AAACAAAAAADX/2//AAACAAAAAADW/2//AAACAAAAAADV/2//AAABAAEAAADe/4X/AAACAAAAAADd/4X/AAACAAAAAADc/4X/AAACAAAAAADb/4X/AAACAAAAAADa/4X/AAACAAAAAADZ/4X/AAACAAAAAADY/4X/AAACAAAAAADX/4X/AAACAAAAAADV/3D/AAAAAAYAAADV/3H/AAAAAAYAAADV/3L/AAAAAAYAAADV/3P/AAAAAAYAAADV/3T/AAAAAAYAAADV/3X/AAAAAAYAAADV/3b/AAAAAAYAAADV/3f/AAAAAAYAAADV/3j/AAAAAAYAAADV/3n/AAAAAAYAAADV/3r/AAAAAAYAAADV/3v/AAAAAAYAAADV/3z/AAAAAAYAAADV/33/AAAAAAYAAADV/37/AAAAAAYAAADV/3//AAAAAAYAAADV/4D/AAAAAAYAAADV/4H/AAAAAAYAAADV/4L/AAAAAAYAAADV/4P/AAAAAAYAAADV/4T/AAAAAAYAAADV/4X/AAABAAcAAADW/4X/AAACAAAAAADY//D/AAAAAAIAAADT//r/AAAAAAAAAADJ//r/AAAAAAAAAADF//r/AAAAAAAAAADC//n/AAAAAAAAAAC+//j/AAAAAAAAAAA=")
 tile_set = ExtResource("3_f3pwq")
 
-[node name="Player" parent="." unique_id=1867424203 groups=["Player"] instance=ExtResource("4_ccfm3")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("4_ccfm3")]
 position = Vector2(-206, 44)
 
-[node name="Coins" type="Node" parent="." unique_id=1192241464]
+[node name="Coins" type="Node" parent="."]
 
-[node name="Coin7" parent="Coins" unique_id=2032719106 instance=ExtResource("5_nquh6")]
+[node name="Coin7" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(335, -35)
 
-[node name="Coin8" parent="Coins" unique_id=1150224958 instance=ExtResource("5_nquh6")]
+[node name="Coin8" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(228, -70)
 
-[node name="Coin9" parent="Coins" unique_id=2109591632 instance=ExtResource("5_nquh6")]
+[node name="Coin9" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(282, -105)
 
-[node name="Coin10" parent="Coins" unique_id=687114462 instance=ExtResource("5_nquh6")]
+[node name="Coin10" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(370, -107)
 
-[node name="Coin11" parent="Coins" unique_id=654696944 instance=ExtResource("5_nquh6")]
+[node name="Coin11" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(444, -107)
 
-[node name="Coin12" parent="Coins" unique_id=1181656400 instance=ExtResource("5_nquh6")]
+[node name="Coin12" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(587, 108)
 
-[node name="Coin13" parent="Coins" unique_id=1760972461 instance=ExtResource("5_nquh6")]
+[node name="Coin13" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(564, 69)
 
-[node name="Coin14" parent="Coins" unique_id=337526944 instance=ExtResource("5_nquh6")]
+[node name="Coin14" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(544, 19)
 
-[node name="Coin15" parent="Coins" unique_id=346693668 instance=ExtResource("5_nquh6")]
+[node name="Coin15" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(523, -29)
 
-[node name="Coin16" parent="Coins" unique_id=1590735686 instance=ExtResource("5_nquh6")]
+[node name="Coin16" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(501, -81)
 
-[node name="Coin17" parent="Coins" unique_id=1000019410 instance=ExtResource("5_nquh6")]
+[node name="Coin17" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(479, -126)
 
-[node name="Coin18" parent="Coins" unique_id=721606867 instance=ExtResource("5_nquh6")]
+[node name="Coin18" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(702, 94)
 
-[node name="Coin19" parent="Coins" unique_id=1915979372 instance=ExtResource("5_nquh6")]
+[node name="Coin19" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(837, 88)
 
-[node name="Coin20" parent="Coins" unique_id=1470966053 instance=ExtResource("5_nquh6")]
+[node name="Coin20" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(945, 87)
 
-[node name="Coin21" parent="Coins" unique_id=478504888 instance=ExtResource("5_nquh6")]
+[node name="Coin21" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(1050, 88)
 
-[node name="Coin22" parent="Coins" unique_id=244883253 instance=ExtResource("5_nquh6")]
+[node name="Coin22" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(1135, 88)
 
-[node name="Coin23" parent="Coins" unique_id=394986006 instance=ExtResource("5_nquh6")]
+[node name="Coin23" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(861, 16)
 
-[node name="Coin24" parent="Coins" unique_id=852209656 instance=ExtResource("5_nquh6")]
+[node name="Coin24" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(952, 15)
 
-[node name="Coin25" parent="Coins" unique_id=1880481978 instance=ExtResource("5_nquh6")]
+[node name="Coin25" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(1041, 14)
 
-[node name="Coin" parent="Coins" unique_id=344739339 instance=ExtResource("5_nquh6")]
+[node name="Coin" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(-153, 39)
 
-[node name="Coin2" parent="Coins" unique_id=599213193 instance=ExtResource("5_nquh6")]
+[node name="Coin2" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(-43, 37)
 
-[node name="Coin3" parent="Coins" unique_id=324559208 instance=ExtResource("5_nquh6")]
+[node name="Coin3" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(83, 2)
 
-[node name="Coin4" parent="Coins" unique_id=300230070 instance=ExtResource("5_nquh6")]
+[node name="Coin4" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(209, 75)
 
-[node name="Coin5" parent="Coins" unique_id=1285120621 instance=ExtResource("5_nquh6")]
+[node name="Coin5" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(262, 41)
 
-[node name="Coin6" parent="Coins" unique_id=1360378876 instance=ExtResource("5_nquh6")]
+[node name="Coin6" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(334, 22)
 
-[node name="Coin26" parent="Coins" unique_id=1008227430 instance=ExtResource("5_nquh6")]
+[node name="Coin26" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(889, -56)
 
-[node name="Coin28" parent="Coins" unique_id=293200082 instance=ExtResource("5_nquh6")]
+[node name="Coin28" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(991, -56)
 
-[node name="Coin29" parent="Coins" unique_id=1327494454 instance=ExtResource("5_nquh6")]
+[node name="Coin29" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(1073, -95)
 
-[node name="Coin30" parent="Coins" unique_id=639538069 instance=ExtResource("5_nquh6")]
+[node name="Coin30" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(1202, -55)
 
-[node name="Coin27" parent="Coins" unique_id=1591256405 instance=ExtResource("5_nquh6")]
+[node name="Coin27" parent="Coins" instance=ExtResource("5_nquh6")]
 position = Vector2(-351, 7)
 
-[node name="Enemys" type="Node" parent="." unique_id=1706314073 groups=["enemies"]]
+[node name="Enemys" type="Node" parent="." groups=["enemies"]]
 
-[node name="Enemy" parent="Enemys" unique_id=793223414 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(-358, 35)
 move_speed = 200.0
 
-[node name="Enemy2" parent="Enemys" unique_id=117136995 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy2" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(-331, 35)
 move_speed = 200.0
 
-[node name="Enemy3" parent="Enemys" unique_id=331604804 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy3" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(-120, -29)
 move_direction = Vector2(-400, 0)
 move_speed = 400.0
 
-[node name="Enemy4" parent="Enemys" unique_id=656897377 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy4" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(116, 115)
 move_direction = Vector2(-500, -500)
 move_speed = 500.0
 
-[node name="Enemy5" parent="Enemys" unique_id=2022143476 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy5" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(116, 115)
 move_direction = Vector2(0, -700)
 move_speed = 400.0
 
-[node name="Enemy6" parent="Enemys" unique_id=1599444523 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy6" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(935, 29)
 move_direction = Vector2(-500, 0)
 move_speed = 400.0
 
-[node name="Enemy7" parent="Enemys" unique_id=163696004 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy7" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(570, -2)
 move_direction = Vector2(1000, 0)
 move_speed = 700.0
 
-[node name="Enemy8" parent="Enemys" unique_id=1040256047 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy8" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(587, -122)
 move_direction = Vector2(900, 0)
 move_speed = 300.0
 
-[node name="Enemy9" parent="Enemys" unique_id=1063132897 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy9" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(587, -144)
 move_direction = Vector2(900, 0)
 move_speed = 300.0
 
-[node name="Enemy10" parent="Enemys" unique_id=1035133697 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy10" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(588, -167)
 move_direction = Vector2(900, 0)
 move_speed = 300.0
 
-[node name="Enemy11" parent="Enemys" unique_id=1905579241 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy11" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(606, -122)
 move_direction = Vector2(900, 0)
 move_speed = 300.0
 
-[node name="Enemy12" parent="Enemys" unique_id=1207097834 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy12" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(606, -144)
 move_direction = Vector2(900, 0)
 move_speed = 300.0
 
-[node name="Enemy13" parent="Enemys" unique_id=274413322 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy13" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(607, -167)
 move_direction = Vector2(900, 0)
 move_speed = 300.0
 
-[node name="Enemy14" parent="Enemys" unique_id=347252613 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy14" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(552, -111)
 move_speed = 0.0
 
-[node name="Enemy15" parent="Enemys" unique_id=1912062991 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy15" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(148, -8)
 move_direction = Vector2(0, -300)
 move_speed = 300.0
 
-[node name="Enemy16" parent="Enemys" unique_id=2081054052 groups=["enemies"] instance=ExtResource("6_vg3ep")]
+[node name="Enemy16" parent="Enemys" groups=["enemies"] instance=ExtResource("6_vg3ep")]
 position = Vector2(270, 22)
 move_direction = Vector2(300, 0)
 move_speed = 200.0
 
-[node name="Enemy17" parent="Enemys" unique_id=1344007311 instance=ExtResource("6_vg3ep")]
+[node name="Enemy17" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2214)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy18" parent="Enemys" unique_id=1540208235 instance=ExtResource("6_vg3ep")]
+[node name="Enemy18" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2192)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy19" parent="Enemys" unique_id=61313666 instance=ExtResource("6_vg3ep")]
+[node name="Enemy19" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2171)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy20" parent="Enemys" unique_id=608547418 instance=ExtResource("6_vg3ep")]
+[node name="Enemy20" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2281)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy21" parent="Enemys" unique_id=1627161169 instance=ExtResource("6_vg3ep")]
+[node name="Enemy21" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2259)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy22" parent="Enemys" unique_id=2127665866 instance=ExtResource("6_vg3ep")]
+[node name="Enemy22" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2238)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy23" parent="Enemys" unique_id=70108739 instance=ExtResource("6_vg3ep")]
+[node name="Enemy23" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2348)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy24" parent="Enemys" unique_id=1628875132 instance=ExtResource("6_vg3ep")]
+[node name="Enemy24" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2326)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy25" parent="Enemys" unique_id=463595491 instance=ExtResource("6_vg3ep")]
+[node name="Enemy25" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2305)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy26" parent="Enemys" unique_id=893733442 instance=ExtResource("6_vg3ep")]
+[node name="Enemy26" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2409)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy27" parent="Enemys" unique_id=1344855690 instance=ExtResource("6_vg3ep")]
+[node name="Enemy27" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2387)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy28" parent="Enemys" unique_id=728476954 instance=ExtResource("6_vg3ep")]
+[node name="Enemy28" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2366)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy29" parent="Enemys" unique_id=370726742 instance=ExtResource("6_vg3ep")]
+[node name="Enemy29" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2476)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy30" parent="Enemys" unique_id=922008589 instance=ExtResource("6_vg3ep")]
+[node name="Enemy30" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2454)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy31" parent="Enemys" unique_id=261213735 instance=ExtResource("6_vg3ep")]
+[node name="Enemy31" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2433)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy32" parent="Enemys" unique_id=86283853 instance=ExtResource("6_vg3ep")]
+[node name="Enemy32" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2543)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy33" parent="Enemys" unique_id=1203469766 instance=ExtResource("6_vg3ep")]
+[node name="Enemy33" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2521)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy34" parent="Enemys" unique_id=811071823 instance=ExtResource("6_vg3ep")]
+[node name="Enemy34" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2500)
 move_direction = Vector2(1600, 0)
 
-[node name="Enemy35" parent="Enemys" unique_id=774130810 instance=ExtResource("6_vg3ep")]
+[node name="Enemy35" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-251, -2160)
 move_speed = 0.0
 
-[node name="Enemy36" parent="Enemys" unique_id=1528168025 instance=ExtResource("6_vg3ep")]
+[node name="Enemy36" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-232, -2160)
 move_speed = 0.0
 
-[node name="Enemy37" parent="Enemys" unique_id=1115420515 instance=ExtResource("6_vg3ep")]
+[node name="Enemy37" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-213, -2160)
 move_speed = 0.0
 
-[node name="Enemy38" parent="Enemys" unique_id=1246979815 instance=ExtResource("6_vg3ep")]
+[node name="Enemy38" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-194, -2160)
 move_speed = 0.0
 
-[node name="Enemy39" parent="Enemys" unique_id=1795325507 instance=ExtResource("6_vg3ep")]
+[node name="Enemy39" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-177, -2160)
 move_speed = 0.0
 
-[node name="Enemy40" parent="Enemys" unique_id=1144955359 instance=ExtResource("6_vg3ep")]
+[node name="Enemy40" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-158, -2160)
 move_speed = 0.0
 
-[node name="Enemy41" parent="Enemys" unique_id=6605497 instance=ExtResource("6_vg3ep")]
+[node name="Enemy41" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-139, -2160)
 move_speed = 0.0
 
-[node name="Enemy42" parent="Enemys" unique_id=896655421 instance=ExtResource("6_vg3ep")]
+[node name="Enemy42" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-120, -2160)
 move_speed = 0.0
 
-[node name="Enemy43" parent="Enemys" unique_id=283754494 instance=ExtResource("6_vg3ep")]
+[node name="Enemy43" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-401, -2160)
 move_speed = 0.0
 
-[node name="Enemy44" parent="Enemys" unique_id=2073750377 instance=ExtResource("6_vg3ep")]
+[node name="Enemy44" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-382, -2160)
 move_speed = 0.0
 
-[node name="Enemy45" parent="Enemys" unique_id=1410212709 instance=ExtResource("6_vg3ep")]
+[node name="Enemy45" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-363, -2160)
 move_speed = 0.0
 
-[node name="Enemy46" parent="Enemys" unique_id=206442268 instance=ExtResource("6_vg3ep")]
+[node name="Enemy46" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-344, -2160)
 move_speed = 0.0
 
-[node name="Enemy47" parent="Enemys" unique_id=344175398 instance=ExtResource("6_vg3ep")]
+[node name="Enemy47" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-327, -2160)
 move_speed = 0.0
 
-[node name="Enemy48" parent="Enemys" unique_id=1470460733 instance=ExtResource("6_vg3ep")]
+[node name="Enemy48" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-308, -2160)
 move_speed = 0.0
 
-[node name="Enemy49" parent="Enemys" unique_id=84272274 instance=ExtResource("6_vg3ep")]
+[node name="Enemy49" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-289, -2160)
 move_speed = 0.0
 
-[node name="Enemy50" parent="Enemys" unique_id=1630291380 instance=ExtResource("6_vg3ep")]
+[node name="Enemy50" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-270, -2160)
 move_speed = 0.0
 
-[node name="Enemy51" parent="Enemys" unique_id=1453708642 instance=ExtResource("6_vg3ep")]
+[node name="Enemy51" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-458, -2160)
 move_speed = 0.0
 
-[node name="Enemy52" parent="Enemys" unique_id=1070958224 instance=ExtResource("6_vg3ep")]
+[node name="Enemy52" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-439, -2160)
 move_speed = 0.0
 
-[node name="Enemy53" parent="Enemys" unique_id=148165270 instance=ExtResource("6_vg3ep")]
+[node name="Enemy53" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-420, -2160)
 move_speed = 0.0
 
-[node name="Enemy54" parent="Enemys" unique_id=16537190 instance=ExtResource("6_vg3ep")]
+[node name="Enemy54" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-401, -2160)
 move_speed = 0.0
 
-[node name="Enemy55" parent="Enemys" unique_id=697933162 instance=ExtResource("6_vg3ep")]
+[node name="Enemy55" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-327, -2160)
 move_speed = 0.0
 
-[node name="Enemy56" parent="Enemys" unique_id=79074030 instance=ExtResource("6_vg3ep")]
+[node name="Enemy56" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(106, -2160)
 move_speed = 0.0
 
-[node name="Enemy57" parent="Enemys" unique_id=1180473927 instance=ExtResource("6_vg3ep")]
+[node name="Enemy57" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(125, -2160)
 move_speed = 0.0
 
-[node name="Enemy58" parent="Enemys" unique_id=270428030 instance=ExtResource("6_vg3ep")]
+[node name="Enemy58" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(144, -2160)
 move_speed = 0.0
 
-[node name="Enemy59" parent="Enemys" unique_id=1987941974 instance=ExtResource("6_vg3ep")]
+[node name="Enemy59" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2160)
 move_speed = 0.0
 
-[node name="Enemy60" parent="Enemys" unique_id=1485229490 instance=ExtResource("6_vg3ep")]
+[node name="Enemy60" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(180, -2160)
 move_speed = 0.0
 
-[node name="Enemy61" parent="Enemys" unique_id=1785710594 instance=ExtResource("6_vg3ep")]
+[node name="Enemy61" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(199, -2160)
 move_speed = 0.0
 
-[node name="Enemy62" parent="Enemys" unique_id=1579275281 instance=ExtResource("6_vg3ep")]
+[node name="Enemy62" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(218, -2160)
 move_speed = 0.0
 
-[node name="Enemy63" parent="Enemys" unique_id=1134826363 instance=ExtResource("6_vg3ep")]
+[node name="Enemy63" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(237, -2160)
 move_speed = 0.0
 
-[node name="Enemy64" parent="Enemys" unique_id=168981063 instance=ExtResource("6_vg3ep")]
+[node name="Enemy64" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-44, -2160)
 move_speed = 0.0
 
-[node name="Enemy65" parent="Enemys" unique_id=1743160148 instance=ExtResource("6_vg3ep")]
+[node name="Enemy65" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-25, -2160)
 move_speed = 0.0
 
-[node name="Enemy66" parent="Enemys" unique_id=436579629 instance=ExtResource("6_vg3ep")]
+[node name="Enemy66" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-6, -2160)
 move_speed = 0.0
 
-[node name="Enemy67" parent="Enemys" unique_id=831175772 instance=ExtResource("6_vg3ep")]
+[node name="Enemy67" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(13, -2160)
 move_speed = 0.0
 
-[node name="Enemy68" parent="Enemys" unique_id=1283146575 instance=ExtResource("6_vg3ep")]
+[node name="Enemy68" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(30, -2160)
 move_speed = 0.0
 
-[node name="Enemy69" parent="Enemys" unique_id=1207008822 instance=ExtResource("6_vg3ep")]
+[node name="Enemy69" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(49, -2160)
 move_speed = 0.0
 
-[node name="Enemy70" parent="Enemys" unique_id=2068253778 instance=ExtResource("6_vg3ep")]
+[node name="Enemy70" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(68, -2160)
 move_speed = 0.0
 
-[node name="Enemy71" parent="Enemys" unique_id=1512126509 instance=ExtResource("6_vg3ep")]
+[node name="Enemy71" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(87, -2160)
 move_speed = 0.0
 
-[node name="Enemy72" parent="Enemys" unique_id=299262676 instance=ExtResource("6_vg3ep")]
+[node name="Enemy72" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-101, -2160)
 move_speed = 0.0
 
-[node name="Enemy73" parent="Enemys" unique_id=1977450337 instance=ExtResource("6_vg3ep")]
+[node name="Enemy73" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-82, -2160)
 move_speed = 0.0
 
-[node name="Enemy74" parent="Enemys" unique_id=933738124 instance=ExtResource("6_vg3ep")]
+[node name="Enemy74" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-63, -2160)
 move_speed = 0.0
 
-[node name="Enemy75" parent="Enemys" unique_id=814862622 instance=ExtResource("6_vg3ep")]
+[node name="Enemy75" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-44, -2160)
 move_speed = 0.0
 
-[node name="Enemy76" parent="Enemys" unique_id=1749973109 instance=ExtResource("6_vg3ep")]
+[node name="Enemy76" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(30, -2160)
 move_speed = 0.0
 
-[node name="Enemy77" parent="Enemys" unique_id=2043933946 instance=ExtResource("6_vg3ep")]
+[node name="Enemy77" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(463, -2160)
 move_speed = 0.0
 
-[node name="Enemy78" parent="Enemys" unique_id=270038673 instance=ExtResource("6_vg3ep")]
+[node name="Enemy78" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(482, -2160)
 move_speed = 0.0
 
-[node name="Enemy79" parent="Enemys" unique_id=1849971353 instance=ExtResource("6_vg3ep")]
+[node name="Enemy79" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(501, -2160)
 move_speed = 0.0
 
-[node name="Enemy80" parent="Enemys" unique_id=2094102428 instance=ExtResource("6_vg3ep")]
+[node name="Enemy80" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(520, -2160)
 move_speed = 0.0
 
-[node name="Enemy81" parent="Enemys" unique_id=1418321025 instance=ExtResource("6_vg3ep")]
+[node name="Enemy81" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(537, -2160)
 move_speed = 0.0
 
-[node name="Enemy82" parent="Enemys" unique_id=175678043 instance=ExtResource("6_vg3ep")]
+[node name="Enemy82" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(556, -2160)
 move_speed = 0.0
 
-[node name="Enemy83" parent="Enemys" unique_id=63580133 instance=ExtResource("6_vg3ep")]
+[node name="Enemy83" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(575, -2160)
 move_speed = 0.0
 
-[node name="Enemy84" parent="Enemys" unique_id=1611465744 instance=ExtResource("6_vg3ep")]
+[node name="Enemy84" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(594, -2160)
 move_speed = 0.0
 
-[node name="Enemy85" parent="Enemys" unique_id=985656566 instance=ExtResource("6_vg3ep")]
+[node name="Enemy85" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(313, -2160)
 move_speed = 0.0
 
-[node name="Enemy86" parent="Enemys" unique_id=2026111785 instance=ExtResource("6_vg3ep")]
+[node name="Enemy86" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(332, -2160)
 move_speed = 0.0
 
-[node name="Enemy87" parent="Enemys" unique_id=504206884 instance=ExtResource("6_vg3ep")]
+[node name="Enemy87" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(351, -2160)
 move_speed = 0.0
 
-[node name="Enemy88" parent="Enemys" unique_id=188689366 instance=ExtResource("6_vg3ep")]
+[node name="Enemy88" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(370, -2160)
 move_speed = 0.0
 
-[node name="Enemy89" parent="Enemys" unique_id=1854999961 instance=ExtResource("6_vg3ep")]
+[node name="Enemy89" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(387, -2160)
 move_speed = 0.0
 
-[node name="Enemy90" parent="Enemys" unique_id=1368679041 instance=ExtResource("6_vg3ep")]
+[node name="Enemy90" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(406, -2160)
 move_speed = 0.0
 
-[node name="Enemy91" parent="Enemys" unique_id=1762759634 instance=ExtResource("6_vg3ep")]
+[node name="Enemy91" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(425, -2160)
 move_speed = 0.0
 
-[node name="Enemy92" parent="Enemys" unique_id=617759144 instance=ExtResource("6_vg3ep")]
+[node name="Enemy92" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(444, -2160)
 move_speed = 0.0
 
-[node name="Enemy93" parent="Enemys" unique_id=1533748428 instance=ExtResource("6_vg3ep")]
+[node name="Enemy93" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(256, -2160)
 move_speed = 0.0
 
-[node name="Enemy94" parent="Enemys" unique_id=1868306021 instance=ExtResource("6_vg3ep")]
+[node name="Enemy94" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(275, -2160)
 move_speed = 0.0
 
-[node name="Enemy95" parent="Enemys" unique_id=18494156 instance=ExtResource("6_vg3ep")]
+[node name="Enemy95" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(294, -2160)
 move_speed = 0.0
 
-[node name="Enemy96" parent="Enemys" unique_id=543970091 instance=ExtResource("6_vg3ep")]
+[node name="Enemy96" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(313, -2160)
 move_speed = 0.0
 
-[node name="Enemy97" parent="Enemys" unique_id=114207631 instance=ExtResource("6_vg3ep")]
+[node name="Enemy97" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(387, -2160)
 move_speed = 0.0
 
-[node name="Enemy98" parent="Enemys" unique_id=1993872536 instance=ExtResource("6_vg3ep")]
+[node name="Enemy98" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(820, -2160)
 move_speed = 0.0
 
-[node name="Enemy99" parent="Enemys" unique_id=469528051 instance=ExtResource("6_vg3ep")]
+[node name="Enemy99" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(839, -2160)
 move_speed = 0.0
 
-[node name="Enemy100" parent="Enemys" unique_id=430068809 instance=ExtResource("6_vg3ep")]
+[node name="Enemy100" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(858, -2160)
 move_speed = 0.0
 
-[node name="Enemy101" parent="Enemys" unique_id=159273411 instance=ExtResource("6_vg3ep")]
+[node name="Enemy101" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(877, -2160)
 move_speed = 0.0
 
-[node name="Enemy102" parent="Enemys" unique_id=590260310 instance=ExtResource("6_vg3ep")]
+[node name="Enemy102" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(894, -2160)
 move_speed = 0.0
 
-[node name="Enemy103" parent="Enemys" unique_id=662188611 instance=ExtResource("6_vg3ep")]
+[node name="Enemy103" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(913, -2160)
 move_speed = 0.0
 
-[node name="Enemy104" parent="Enemys" unique_id=978029062 instance=ExtResource("6_vg3ep")]
+[node name="Enemy104" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(932, -2160)
 move_speed = 0.0
 
-[node name="Enemy105" parent="Enemys" unique_id=1121792954 instance=ExtResource("6_vg3ep")]
+[node name="Enemy105" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(951, -2160)
 move_speed = 0.0
 
-[node name="Enemy106" parent="Enemys" unique_id=1184142966 instance=ExtResource("6_vg3ep")]
+[node name="Enemy106" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(670, -2160)
 move_speed = 0.0
 
-[node name="Enemy107" parent="Enemys" unique_id=1628604816 instance=ExtResource("6_vg3ep")]
+[node name="Enemy107" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(689, -2160)
 move_speed = 0.0
 
-[node name="Enemy108" parent="Enemys" unique_id=651753924 instance=ExtResource("6_vg3ep")]
+[node name="Enemy108" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(708, -2160)
 move_speed = 0.0
 
-[node name="Enemy109" parent="Enemys" unique_id=1184510291 instance=ExtResource("6_vg3ep")]
+[node name="Enemy109" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(727, -2160)
 move_speed = 0.0
 
-[node name="Enemy110" parent="Enemys" unique_id=852690767 instance=ExtResource("6_vg3ep")]
+[node name="Enemy110" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(744, -2160)
 move_speed = 0.0
 
-[node name="Enemy111" parent="Enemys" unique_id=1884071051 instance=ExtResource("6_vg3ep")]
+[node name="Enemy111" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(763, -2160)
 move_speed = 0.0
 
-[node name="Enemy112" parent="Enemys" unique_id=974888087 instance=ExtResource("6_vg3ep")]
+[node name="Enemy112" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(782, -2160)
 move_speed = 0.0
 
-[node name="Enemy113" parent="Enemys" unique_id=1794842343 instance=ExtResource("6_vg3ep")]
+[node name="Enemy113" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(801, -2160)
 move_speed = 0.0
 
-[node name="Enemy114" parent="Enemys" unique_id=1725429273 instance=ExtResource("6_vg3ep")]
+[node name="Enemy114" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(613, -2160)
 move_speed = 0.0
 
-[node name="Enemy115" parent="Enemys" unique_id=141308779 instance=ExtResource("6_vg3ep")]
+[node name="Enemy115" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(632, -2160)
 move_speed = 0.0
 
-[node name="Enemy116" parent="Enemys" unique_id=921502003 instance=ExtResource("6_vg3ep")]
+[node name="Enemy116" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(651, -2160)
 move_speed = 0.0
 
-[node name="Enemy117" parent="Enemys" unique_id=1408850847 instance=ExtResource("6_vg3ep")]
+[node name="Enemy117" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(670, -2160)
 move_speed = 0.0
 
-[node name="Enemy118" parent="Enemys" unique_id=269476700 instance=ExtResource("6_vg3ep")]
+[node name="Enemy118" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(744, -2160)
 move_speed = 0.0
 
-[node name="Enemy119" parent="Enemys" unique_id=742443194 instance=ExtResource("6_vg3ep")]
+[node name="Enemy119" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1237, -2160)
 move_speed = 0.0
 
-[node name="Enemy120" parent="Enemys" unique_id=1989130676 instance=ExtResource("6_vg3ep")]
+[node name="Enemy120" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1256, -2160)
 move_speed = 0.0
 
-[node name="Enemy121" parent="Enemys" unique_id=1132869059 instance=ExtResource("6_vg3ep")]
+[node name="Enemy121" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1275, -2160)
 move_speed = 0.0
 
-[node name="Enemy122" parent="Enemys" unique_id=2053311435 instance=ExtResource("6_vg3ep")]
+[node name="Enemy122" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1294, -2160)
 move_speed = 0.0
 
-[node name="Enemy123" parent="Enemys" unique_id=1283532933 instance=ExtResource("6_vg3ep")]
+[node name="Enemy123" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1311, -2160)
 move_speed = 0.0
 
-[node name="Enemy124" parent="Enemys" unique_id=2144768367 instance=ExtResource("6_vg3ep")]
+[node name="Enemy124" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1330, -2160)
 move_speed = 0.0
 
-[node name="Enemy125" parent="Enemys" unique_id=1213539877 instance=ExtResource("6_vg3ep")]
+[node name="Enemy125" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1349, -2160)
 move_speed = 0.0
 
-[node name="Enemy126" parent="Enemys" unique_id=1517664122 instance=ExtResource("6_vg3ep")]
+[node name="Enemy126" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1368, -2160)
 move_speed = 0.0
 
-[node name="Enemy127" parent="Enemys" unique_id=434646322 instance=ExtResource("6_vg3ep")]
+[node name="Enemy127" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1087, -2160)
 move_speed = 0.0
 
-[node name="Enemy128" parent="Enemys" unique_id=326522090 instance=ExtResource("6_vg3ep")]
+[node name="Enemy128" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1106, -2160)
 move_speed = 0.0
 
-[node name="Enemy129" parent="Enemys" unique_id=1343799118 instance=ExtResource("6_vg3ep")]
+[node name="Enemy129" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1125, -2160)
 move_speed = 0.0
 
-[node name="Enemy130" parent="Enemys" unique_id=542547778 instance=ExtResource("6_vg3ep")]
+[node name="Enemy130" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1144, -2160)
 move_speed = 0.0
 
-[node name="Enemy131" parent="Enemys" unique_id=530652097 instance=ExtResource("6_vg3ep")]
+[node name="Enemy131" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1161, -2160)
 move_speed = 0.0
 
-[node name="Enemy132" parent="Enemys" unique_id=37746208 instance=ExtResource("6_vg3ep")]
+[node name="Enemy132" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1180, -2160)
 move_speed = 0.0
 
-[node name="Enemy133" parent="Enemys" unique_id=1608237305 instance=ExtResource("6_vg3ep")]
+[node name="Enemy133" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1199, -2160)
 move_speed = 0.0
 
-[node name="Enemy134" parent="Enemys" unique_id=224879528 instance=ExtResource("6_vg3ep")]
+[node name="Enemy134" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1218, -2160)
 move_speed = 0.0
 
-[node name="Enemy135" parent="Enemys" unique_id=636290005 instance=ExtResource("6_vg3ep")]
+[node name="Enemy135" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1030, -2160)
 move_speed = 0.0
 
-[node name="Enemy136" parent="Enemys" unique_id=590134966 instance=ExtResource("6_vg3ep")]
+[node name="Enemy136" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1049, -2160)
 move_speed = 0.0
 
-[node name="Enemy137" parent="Enemys" unique_id=1575256206 instance=ExtResource("6_vg3ep")]
+[node name="Enemy137" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1068, -2160)
 move_speed = 0.0
 
-[node name="Enemy138" parent="Enemys" unique_id=2129697224 instance=ExtResource("6_vg3ep")]
+[node name="Enemy138" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1087, -2160)
 move_speed = 0.0
 
-[node name="Enemy139" parent="Enemys" unique_id=1404197759 instance=ExtResource("6_vg3ep")]
+[node name="Enemy139" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1161, -2160)
 move_speed = 0.0
 
-[node name="Enemy140" parent="Enemys" unique_id=1108030210 instance=ExtResource("6_vg3ep")]
+[node name="Enemy140" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1594, -2160)
 move_speed = 0.0
 
-[node name="Enemy141" parent="Enemys" unique_id=365497587 instance=ExtResource("6_vg3ep")]
+[node name="Enemy141" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1444, -2160)
 move_speed = 0.0
 
-[node name="Enemy142" parent="Enemys" unique_id=1010179357 instance=ExtResource("6_vg3ep")]
+[node name="Enemy142" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1463, -2160)
 move_speed = 0.0
 
-[node name="Enemy143" parent="Enemys" unique_id=741985405 instance=ExtResource("6_vg3ep")]
+[node name="Enemy143" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1482, -2160)
 move_speed = 0.0
 
-[node name="Enemy144" parent="Enemys" unique_id=1518677696 instance=ExtResource("6_vg3ep")]
+[node name="Enemy144" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1501, -2160)
 move_speed = 0.0
 
-[node name="Enemy145" parent="Enemys" unique_id=642521528 instance=ExtResource("6_vg3ep")]
+[node name="Enemy145" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1518, -2160)
 move_speed = 0.0
 
-[node name="Enemy146" parent="Enemys" unique_id=1655209023 instance=ExtResource("6_vg3ep")]
+[node name="Enemy146" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1537, -2160)
 move_speed = 0.0
 
-[node name="Enemy147" parent="Enemys" unique_id=231328533 instance=ExtResource("6_vg3ep")]
+[node name="Enemy147" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1556, -2160)
 move_speed = 0.0
 
-[node name="Enemy148" parent="Enemys" unique_id=614492503 instance=ExtResource("6_vg3ep")]
+[node name="Enemy148" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1575, -2160)
 move_speed = 0.0
 
-[node name="Enemy149" parent="Enemys" unique_id=805769170 instance=ExtResource("6_vg3ep")]
+[node name="Enemy149" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1387, -2160)
 move_speed = 0.0
 
-[node name="Enemy150" parent="Enemys" unique_id=2110318333 instance=ExtResource("6_vg3ep")]
+[node name="Enemy150" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1406, -2160)
 move_speed = 0.0
 
-[node name="Enemy151" parent="Enemys" unique_id=1464755939 instance=ExtResource("6_vg3ep")]
+[node name="Enemy151" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1425, -2160)
 move_speed = 0.0
 
-[node name="Enemy152" parent="Enemys" unique_id=297567065 instance=ExtResource("6_vg3ep")]
+[node name="Enemy152" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1444, -2160)
 move_speed = 0.0
 
-[node name="EnemyGround" parent="Enemys" unique_id=1046966385 instance=ExtResource("6_vg3ep")]
+[node name="EnemyGround" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(1518, -2160)
 move_speed = 0.0
 
-[node name="Enemy154" parent="Enemys" unique_id=1304023139 instance=ExtResource("6_vg3ep")]
+[node name="Enemy154" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2214)
 
-[node name="Enemy155" parent="Enemys" unique_id=621076681 instance=ExtResource("6_vg3ep")]
+[node name="Enemy155" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2192)
 
-[node name="Enemy156" parent="Enemys" unique_id=993992062 instance=ExtResource("6_vg3ep")]
+[node name="Enemy156" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2171)
 
-[node name="Enemy157" parent="Enemys" unique_id=290396678 instance=ExtResource("6_vg3ep")]
+[node name="Enemy157" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2281)
 
-[node name="Enemy158" parent="Enemys" unique_id=757537116 instance=ExtResource("6_vg3ep")]
+[node name="Enemy158" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2259)
 
-[node name="Enemy159" parent="Enemys" unique_id=979027277 instance=ExtResource("6_vg3ep")]
+[node name="Enemy159" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2238)
 
-[node name="Enemy160" parent="Enemys" unique_id=214417411 instance=ExtResource("6_vg3ep")]
+[node name="Enemy160" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2348)
 
-[node name="Enemy161" parent="Enemys" unique_id=185876345 instance=ExtResource("6_vg3ep")]
+[node name="Enemy161" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2326)
 
-[node name="Enemy162" parent="Enemys" unique_id=2092646041 instance=ExtResource("6_vg3ep")]
+[node name="Enemy162" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2305)
 
-[node name="Enemy166" parent="Enemys" unique_id=1965294550 instance=ExtResource("6_vg3ep")]
+[node name="Enemy166" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2476)
 
-[node name="Enemy167" parent="Enemys" unique_id=2137396936 instance=ExtResource("6_vg3ep")]
+[node name="Enemy167" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2454)
 
-[node name="Enemy168" parent="Enemys" unique_id=2104825191 instance=ExtResource("6_vg3ep")]
+[node name="Enemy168" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2433)
 
-[node name="Enemy169" parent="Enemys" unique_id=1229042090 instance=ExtResource("6_vg3ep")]
+[node name="Enemy169" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2543)
 
-[node name="Enemy170" parent="Enemys" unique_id=1886220628 instance=ExtResource("6_vg3ep")]
+[node name="Enemy170" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2521)
 
-[node name="Enemy171" parent="Enemys" unique_id=120634798 instance=ExtResource("6_vg3ep")]
+[node name="Enemy171" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(-118, -2500)
 
-[node name="Enemy173" parent="Enemys" unique_id=1455404457 instance=ExtResource("6_vg3ep")]
+[node name="Enemy173" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2192)
 
-[node name="Enemy174" parent="Enemys" unique_id=115634632 instance=ExtResource("6_vg3ep")]
+[node name="Enemy174" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2171)
 
-[node name="Enemy175" parent="Enemys" unique_id=1340076853 instance=ExtResource("6_vg3ep")]
+[node name="Enemy175" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2281)
 
-[node name="Enemy176" parent="Enemys" unique_id=856649271 instance=ExtResource("6_vg3ep")]
+[node name="Enemy176" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2259)
 
-[node name="Enemy178" parent="Enemys" unique_id=1496331373 instance=ExtResource("6_vg3ep")]
+[node name="Enemy178" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2348)
 
-[node name="Enemy179" parent="Enemys" unique_id=773717352 instance=ExtResource("6_vg3ep")]
+[node name="Enemy179" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2326)
 
-[node name="Enemy180" parent="Enemys" unique_id=1988855278 instance=ExtResource("6_vg3ep")]
+[node name="Enemy180" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2305)
 
-[node name="Enemy181" parent="Enemys" unique_id=259821655 instance=ExtResource("6_vg3ep")]
+[node name="Enemy181" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2409)
 
-[node name="Enemy182" parent="Enemys" unique_id=363302392 instance=ExtResource("6_vg3ep")]
+[node name="Enemy182" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2387)
 
-[node name="Enemy183" parent="Enemys" unique_id=35454277 instance=ExtResource("6_vg3ep")]
+[node name="Enemy183" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2366)
 
-[node name="Enemy184" parent="Enemys" unique_id=174930596 instance=ExtResource("6_vg3ep")]
+[node name="Enemy184" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2476)
 
-[node name="Enemy185" parent="Enemys" unique_id=535887170 instance=ExtResource("6_vg3ep")]
+[node name="Enemy185" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2454)
 
-[node name="Enemy186" parent="Enemys" unique_id=853875268 instance=ExtResource("6_vg3ep")]
+[node name="Enemy186" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2433)
 
-[node name="Enemy187" parent="Enemys" unique_id=830418049 instance=ExtResource("6_vg3ep")]
+[node name="Enemy187" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2543)
 
-[node name="Enemy188" parent="Enemys" unique_id=390961291 instance=ExtResource("6_vg3ep")]
+[node name="Enemy188" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2521)
 
-[node name="Enemy189" parent="Enemys" unique_id=739240998 instance=ExtResource("6_vg3ep")]
+[node name="Enemy189" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(27, -2500)
 
-[node name="Enemy190" parent="Enemys" unique_id=847472623 instance=ExtResource("6_vg3ep")]
+[node name="Enemy190" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2214)
 
-[node name="Enemy191" parent="Enemys" unique_id=296778657 instance=ExtResource("6_vg3ep")]
+[node name="Enemy191" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2192)
 
-[node name="Enemy192" parent="Enemys" unique_id=704444484 instance=ExtResource("6_vg3ep")]
+[node name="Enemy192" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2171)
 
-[node name="Enemy193" parent="Enemys" unique_id=1977831919 instance=ExtResource("6_vg3ep")]
+[node name="Enemy193" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2281)
 
-[node name="Enemy194" parent="Enemys" unique_id=1205854959 instance=ExtResource("6_vg3ep")]
+[node name="Enemy194" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2259)
 
-[node name="Enemy195" parent="Enemys" unique_id=896849327 instance=ExtResource("6_vg3ep")]
+[node name="Enemy195" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2238)
 
-[node name="Enemy198" parent="Enemys" unique_id=2100058090 instance=ExtResource("6_vg3ep")]
+[node name="Enemy198" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2305)
 
-[node name="Enemy199" parent="Enemys" unique_id=1188126033 instance=ExtResource("6_vg3ep")]
+[node name="Enemy199" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2409)
 
-[node name="Enemy200" parent="Enemys" unique_id=2010381675 instance=ExtResource("6_vg3ep")]
+[node name="Enemy200" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2387)
 
-[node name="Enemy202" parent="Enemys" unique_id=1443844184 instance=ExtResource("6_vg3ep")]
+[node name="Enemy202" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2476)
 
-[node name="Enemy203" parent="Enemys" unique_id=1194179006 instance=ExtResource("6_vg3ep")]
+[node name="Enemy203" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2454)
 
-[node name="Enemy204" parent="Enemys" unique_id=127078107 instance=ExtResource("6_vg3ep")]
+[node name="Enemy204" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2433)
 
-[node name="Enemy205" parent="Enemys" unique_id=1779490193 instance=ExtResource("6_vg3ep")]
+[node name="Enemy205" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2543)
 
-[node name="Enemy206" parent="Enemys" unique_id=585958110 instance=ExtResource("6_vg3ep")]
+[node name="Enemy206" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2521)
 
-[node name="Enemy207" parent="Enemys" unique_id=666376205 instance=ExtResource("6_vg3ep")]
+[node name="Enemy207" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(163, -2500)
 
-[node name="Enemy208" parent="Enemys" unique_id=2024482297 instance=ExtResource("6_vg3ep")]
+[node name="Enemy208" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2214)
 
-[node name="Enemy209" parent="Enemys" unique_id=139841792 instance=ExtResource("6_vg3ep")]
+[node name="Enemy209" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2192)
 
-[node name="Enemy210" parent="Enemys" unique_id=1224262154 instance=ExtResource("6_vg3ep")]
+[node name="Enemy210" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2171)
 
-[node name="Enemy211" parent="Enemys" unique_id=1658046152 instance=ExtResource("6_vg3ep")]
+[node name="Enemy211" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2281)
 
-[node name="Enemy212" parent="Enemys" unique_id=912568577 instance=ExtResource("6_vg3ep")]
+[node name="Enemy212" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2259)
 
-[node name="Enemy213" parent="Enemys" unique_id=1861596109 instance=ExtResource("6_vg3ep")]
+[node name="Enemy213" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2238)
 
-[node name="Enemy216" parent="Enemys" unique_id=1085101841 instance=ExtResource("6_vg3ep")]
+[node name="Enemy216" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2305)
 
-[node name="Enemy217" parent="Enemys" unique_id=1214083990 instance=ExtResource("6_vg3ep")]
+[node name="Enemy217" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2409)
 
-[node name="Enemy218" parent="Enemys" unique_id=1244792144 instance=ExtResource("6_vg3ep")]
+[node name="Enemy218" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2387)
 
-[node name="Enemy220" parent="Enemys" unique_id=1027293269 instance=ExtResource("6_vg3ep")]
+[node name="Enemy220" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2476)
 
-[node name="Enemy221" parent="Enemys" unique_id=1223969618 instance=ExtResource("6_vg3ep")]
+[node name="Enemy221" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2454)
 
-[node name="Enemy222" parent="Enemys" unique_id=823202560 instance=ExtResource("6_vg3ep")]
+[node name="Enemy222" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2433)
 
-[node name="Enemy223" parent="Enemys" unique_id=369100755 instance=ExtResource("6_vg3ep")]
+[node name="Enemy223" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2543)
 
-[node name="Enemy224" parent="Enemys" unique_id=1075788857 instance=ExtResource("6_vg3ep")]
+[node name="Enemy224" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2521)
 
-[node name="Enemy225" parent="Enemys" unique_id=398499033 instance=ExtResource("6_vg3ep")]
+[node name="Enemy225" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(184, -2500)
 
-[node name="Enemy226" parent="Enemys" unique_id=961433968 instance=ExtResource("6_vg3ep")]
+[node name="Enemy226" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2214)
 
-[node name="Enemy227" parent="Enemys" unique_id=671784867 instance=ExtResource("6_vg3ep")]
+[node name="Enemy227" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2192)
 
-[node name="Enemy228" parent="Enemys" unique_id=290875554 instance=ExtResource("6_vg3ep")]
+[node name="Enemy228" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2171)
 
-[node name="Enemy229" parent="Enemys" unique_id=458019343 instance=ExtResource("6_vg3ep")]
+[node name="Enemy229" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2281)
 
-[node name="Enemy232" parent="Enemys" unique_id=1878908331 instance=ExtResource("6_vg3ep")]
+[node name="Enemy232" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2348)
 
-[node name="Enemy233" parent="Enemys" unique_id=1457823267 instance=ExtResource("6_vg3ep")]
+[node name="Enemy233" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2326)
 
-[node name="Enemy234" parent="Enemys" unique_id=1865418638 instance=ExtResource("6_vg3ep")]
+[node name="Enemy234" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2305)
 
-[node name="Enemy235" parent="Enemys" unique_id=1696541331 instance=ExtResource("6_vg3ep")]
+[node name="Enemy235" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2409)
 
-[node name="Enemy236" parent="Enemys" unique_id=788298409 instance=ExtResource("6_vg3ep")]
+[node name="Enemy236" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2387)
 
-[node name="Enemy237" parent="Enemys" unique_id=111332824 instance=ExtResource("6_vg3ep")]
+[node name="Enemy237" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2366)
 
-[node name="Enemy238" parent="Enemys" unique_id=1348841508 instance=ExtResource("6_vg3ep")]
+[node name="Enemy238" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2476)
 
-[node name="Enemy239" parent="Enemys" unique_id=1594769671 instance=ExtResource("6_vg3ep")]
+[node name="Enemy239" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2454)
 
-[node name="Enemy240" parent="Enemys" unique_id=1944371384 instance=ExtResource("6_vg3ep")]
+[node name="Enemy240" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2433)
 
-[node name="Enemy241" parent="Enemys" unique_id=1560145697 instance=ExtResource("6_vg3ep")]
+[node name="Enemy241" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2543)
 
-[node name="Enemy242" parent="Enemys" unique_id=1053489183 instance=ExtResource("6_vg3ep")]
+[node name="Enemy242" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2521)
 
-[node name="Enemy243" parent="Enemys" unique_id=2067863781 instance=ExtResource("6_vg3ep")]
+[node name="Enemy243" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(285, -2500)
 
-[node name="Enemy244" parent="Enemys" unique_id=135073690 instance=ExtResource("6_vg3ep")]
+[node name="Enemy244" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2214)
 
-[node name="Enemy245" parent="Enemys" unique_id=1480277311 instance=ExtResource("6_vg3ep")]
+[node name="Enemy245" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2192)
 
-[node name="Enemy246" parent="Enemys" unique_id=2073481394 instance=ExtResource("6_vg3ep")]
+[node name="Enemy246" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2171)
 
-[node name="Enemy247" parent="Enemys" unique_id=543862140 instance=ExtResource("6_vg3ep")]
+[node name="Enemy247" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2303)
 
-[node name="Enemy249" parent="Enemys" unique_id=1960814605 instance=ExtResource("6_vg3ep")]
+[node name="Enemy249" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2238)
 
-[node name="Enemy250" parent="Enemys" unique_id=333367244 instance=ExtResource("6_vg3ep")]
+[node name="Enemy250" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2348)
 
-[node name="Enemy251" parent="Enemys" unique_id=1935074291 instance=ExtResource("6_vg3ep")]
+[node name="Enemy251" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2326)
 
-[node name="Enemy253" parent="Enemys" unique_id=325846493 instance=ExtResource("6_vg3ep")]
+[node name="Enemy253" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2409)
 
-[node name="Enemy254" parent="Enemys" unique_id=1363108305 instance=ExtResource("6_vg3ep")]
+[node name="Enemy254" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2387)
 
-[node name="Enemy255" parent="Enemys" unique_id=1980880591 instance=ExtResource("6_vg3ep")]
+[node name="Enemy255" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2366)
 
-[node name="Enemy256" parent="Enemys" unique_id=597572064 instance=ExtResource("6_vg3ep")]
+[node name="Enemy256" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2476)
 
-[node name="Enemy257" parent="Enemys" unique_id=78698679 instance=ExtResource("6_vg3ep")]
+[node name="Enemy257" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2454)
 
-[node name="Enemy258" parent="Enemys" unique_id=172805545 instance=ExtResource("6_vg3ep")]
+[node name="Enemy258" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2433)
 
-[node name="Enemy259" parent="Enemys" unique_id=1277671612 instance=ExtResource("6_vg3ep")]
+[node name="Enemy259" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2543)
 
-[node name="Enemy260" parent="Enemys" unique_id=1227746915 instance=ExtResource("6_vg3ep")]
+[node name="Enemy260" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2521)
 
-[node name="Enemy261" parent="Enemys" unique_id=1819267190 instance=ExtResource("6_vg3ep")]
+[node name="Enemy261" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(342, -2500)
 
-[node name="Enemy262" parent="Enemys" unique_id=1637196318 instance=ExtResource("6_vg3ep")]
+[node name="Enemy262" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2214)
 
-[node name="Enemy263" parent="Enemys" unique_id=1667138112 instance=ExtResource("6_vg3ep")]
+[node name="Enemy263" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2192)
 
-[node name="Enemy264" parent="Enemys" unique_id=187113629 instance=ExtResource("6_vg3ep")]
+[node name="Enemy264" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2171)
 
-[node name="Enemy266" parent="Enemys" unique_id=1868707642 instance=ExtResource("6_vg3ep")]
+[node name="Enemy266" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2259)
 
-[node name="Enemy267" parent="Enemys" unique_id=433607469 instance=ExtResource("6_vg3ep")]
+[node name="Enemy267" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2238)
 
-[node name="Enemy268" parent="Enemys" unique_id=629401960 instance=ExtResource("6_vg3ep")]
+[node name="Enemy268" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2348)
 
-[node name="Enemy269" parent="Enemys" unique_id=498283860 instance=ExtResource("6_vg3ep")]
+[node name="Enemy269" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2326)
 
-[node name="Enemy271" parent="Enemys" unique_id=2038226292 instance=ExtResource("6_vg3ep")]
+[node name="Enemy271" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2409)
 
-[node name="Enemy272" parent="Enemys" unique_id=1665616193 instance=ExtResource("6_vg3ep")]
+[node name="Enemy272" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2387)
 
-[node name="Enemy273" parent="Enemys" unique_id=1927972956 instance=ExtResource("6_vg3ep")]
+[node name="Enemy273" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2366)
 
-[node name="Enemy274" parent="Enemys" unique_id=767067741 instance=ExtResource("6_vg3ep")]
+[node name="Enemy274" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2476)
 
-[node name="Enemy275" parent="Enemys" unique_id=1447791926 instance=ExtResource("6_vg3ep")]
+[node name="Enemy275" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2454)
 
-[node name="Enemy276" parent="Enemys" unique_id=399996093 instance=ExtResource("6_vg3ep")]
+[node name="Enemy276" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2433)
 
-[node name="Enemy277" parent="Enemys" unique_id=582081869 instance=ExtResource("6_vg3ep")]
+[node name="Enemy277" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2543)
 
-[node name="Enemy278" parent="Enemys" unique_id=54601628 instance=ExtResource("6_vg3ep")]
+[node name="Enemy278" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2521)
 
-[node name="Enemy279" parent="Enemys" unique_id=1815263370 instance=ExtResource("6_vg3ep")]
+[node name="Enemy279" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(483, -2500)
 
-[node name="Enemy280" parent="Enemys" unique_id=462185247 instance=ExtResource("6_vg3ep")]
+[node name="Enemy280" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2214)
 
-[node name="Enemy281" parent="Enemys" unique_id=1646801218 instance=ExtResource("6_vg3ep")]
+[node name="Enemy281" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2192)
 
-[node name="Enemy282" parent="Enemys" unique_id=391869532 instance=ExtResource("6_vg3ep")]
+[node name="Enemy282" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2171)
 
-[node name="Enemy285" parent="Enemys" unique_id=104464900 instance=ExtResource("6_vg3ep")]
+[node name="Enemy285" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2238)
 
-[node name="Enemy286" parent="Enemys" unique_id=1147547590 instance=ExtResource("6_vg3ep")]
+[node name="Enemy286" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2348)
 
-[node name="Enemy287" parent="Enemys" unique_id=1336834780 instance=ExtResource("6_vg3ep")]
+[node name="Enemy287" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2326)
 
-[node name="Enemy288" parent="Enemys" unique_id=894422446 instance=ExtResource("6_vg3ep")]
+[node name="Enemy288" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2305)
 
-[node name="Enemy289" parent="Enemys" unique_id=1952589200 instance=ExtResource("6_vg3ep")]
+[node name="Enemy289" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2409)
 
-[node name="Enemy290" parent="Enemys" unique_id=1383153880 instance=ExtResource("6_vg3ep")]
+[node name="Enemy290" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2387)
 
-[node name="Enemy291" parent="Enemys" unique_id=2134539532 instance=ExtResource("6_vg3ep")]
+[node name="Enemy291" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2366)
 
-[node name="Enemy292" parent="Enemys" unique_id=1708245281 instance=ExtResource("6_vg3ep")]
+[node name="Enemy292" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2476)
 
-[node name="Enemy293" parent="Enemys" unique_id=1656995601 instance=ExtResource("6_vg3ep")]
+[node name="Enemy293" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2454)
 
-[node name="Enemy294" parent="Enemys" unique_id=1631299467 instance=ExtResource("6_vg3ep")]
+[node name="Enemy294" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2433)
 
-[node name="Enemy295" parent="Enemys" unique_id=1708113304 instance=ExtResource("6_vg3ep")]
+[node name="Enemy295" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2543)
 
-[node name="Enemy296" parent="Enemys" unique_id=783782168 instance=ExtResource("6_vg3ep")]
+[node name="Enemy296" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2521)
 
-[node name="Enemy297" parent="Enemys" unique_id=828417601 instance=ExtResource("6_vg3ep")]
+[node name="Enemy297" parent="Enemys" instance=ExtResource("6_vg3ep")]
 position = Vector2(522, -2500)
 
-[node name="Endflag2" parent="." unique_id=193935332 instance=ExtResource("11_pn2v1")]
+[node name="Endflag2" parent="." instance=ExtResource("11_pn2v1")]
 position = Vector2(1241, -47)
 script = ExtResource("8_2thg8")
 
+<<<<<<< Updated upstream
 [node name="Black" type="Sprite2D" parent="Endflag2" unique_id=1059852209]
 visible = false
+=======
+[node name="Black" type="Sprite2D" parent="Endflag2"]
+>>>>>>> Stashed changes
 position = Vector2(-2, 3.0517578e-05)
 scale = Vector2(1.4359671, 1.9102564)
 texture = ExtResource("8_71r3i")
 script = ExtResource("10_nwjwq")
 
+<<<<<<< Updated upstream
 [node name="Black2" type="Sprite2D" parent="Endflag2" unique_id=445404718]
 visible = false
+=======
+[node name="Black2" type="Sprite2D" parent="Endflag2"]
+>>>>>>> Stashed changes
 position = Vector2(-3, -1)
 scale = Vector2(1.4359671, 1.9102564)
 texture = ExtResource("8_71r3i")
 script = ExtResource("10_nwjwq")
 
+<<<<<<< Updated upstream
 [node name="Black Finish" type="Sprite2D" parent="Endflag2" unique_id=2050932217]
 visible = false
+=======
+[node name="Black Finish" type="Sprite2D" parent="Endflag2"]
+>>>>>>> Stashed changes
 position = Vector2(-1452, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("8_71r3i")
 script = ExtResource("11_67jix")
 
+<<<<<<< Updated upstream
 [node name="Black Finish2" type="Sprite2D" parent="Endflag2" unique_id=954060565]
 visible = false
+=======
+[node name="Black Finish2" type="Sprite2D" parent="Endflag2"]
+>>>>>>> Stashed changes
 position = Vector2(-1452, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("8_71r3i")
 script = ExtResource("11_67jix")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Endflag2" unique_id=843007224]
-libraries/ = SubResource("AnimationLibrary_ccfm3")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Endflag2"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Endflag2" unique_id=1866088931]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Endflag2"]
 stream = ExtResource("12_67jix")
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Endflag2" unique_id=1991729682]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Endflag2"]
 stream = ExtResource("13_f3pwq")
 
-[node name="Healthpack" type="Node" parent="." unique_id=1387096644]
+[node name="Healthpack" type="Node" parent="."]
 
-[node name="Healthpack" parent="Healthpack" unique_id=1954389508 instance=ExtResource("14_ccfm3")]
+[node name="Healthpack" parent="Healthpack" instance=ExtResource("14_ccfm3")]
 position = Vector2(803, -12)
 
-[node name="Portal" parent="." unique_id=261329751 instance=ExtResource("15_nquh6")]
+[node name="Portal" parent="." instance=ExtResource("15_nquh6")]
 position = Vector2(-188, -176)
 
-[node name="Sprite2D2" type="Sprite2D" parent="Portal" unique_id=1119508601]
+[node name="Sprite2D2" type="Sprite2D" parent="Portal"]
 position = Vector2(-162, 199)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("17_g67xk")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1246756502]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-418, 23)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("17_g67xk")
 
+<<<<<<< Updated upstream
 [node name="Gun" parent="." unique_id=171838479 instance=ExtResource("18_st5wq")]
 position = Vector2(-457, 23)
 
@@ -1384,3 +1290,8 @@ position = Vector2(-654, -10)
 [connection signal="body_entered" from="Gun2" to="Gun2" method="_on_body_entered"]
 [connection signal="body_entered" from="Gun3" to="Gun3" method="_on_body_entered"]
 [connection signal="body_entered" from="Gun4" to="Gun4" method="_on_body_entered"]
+=======
+[node name="Background Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_st5wq")
+autoplay = true
+>>>>>>> Stashed changes
