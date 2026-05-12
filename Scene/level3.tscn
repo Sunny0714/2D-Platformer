@@ -790,6 +790,7 @@ position = Vector2(156, -19)
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile5" method="_on_enemy_boss_area_entered"]
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile6" method="_on_enemy_boss_area_entered"]
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile7" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile8" method="_on_enemy_boss_area_entered"]
 [connection signal="body_entered" from="EnemyBoss" to="Projectile/Perjectile2" method="_on_enemy_boss_body_entered"]
 [connection signal="body_entered" from="EnemyBoss" to="Projectile/Perjectile3" method="_on_enemy_boss_body_entered"]
 [connection signal="body_entered" from="EnemyBoss" to="Projectile/Perjectile" method="_on_enemy_boss_body_entered"]
