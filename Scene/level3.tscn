@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://b6qwewfjnw42s"]
+[gd_scene load_steps=25 format=4 uid="uid://b6qwewfjnw42s"]
 
 [ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="1_ci4mn"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_sotx7"]
@@ -18,19 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://btkn4anttr8c3" path="res://Scene/attackenemy.tscn" id="13_siwpi"]
 [ext_resource type="PackedScene" uid="uid://cp3fm463ie6jy" path="res://Scene/enemywave.tscn" id="15_gm3vy"]
 [ext_resource type="PackedScene" uid="uid://dvh2oa35qsuxg" path="res://Scene/enemyhoming.tscn" id="16_3jhx7"]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://cp6sakpjy6sj8" path="res://Scene/attackenemy1.gd" id="17_00w0g"]
 [ext_resource type="Texture2D" uid="uid://cb5owid16c3nj" path="res://Scene/Screenshot 2026-05-05 153316.png" id="18_c4s5l"]
 [ext_resource type="PackedScene" uid="uid://p5kclo767ovs" path="res://Scene/healthpack.tscn" id="19_8tpoo"]
-=======
-[ext_resource type="PackedScene" uid="uid://51u2wq7x45en" path="res://Scene/attackenemy2.tscn" id="17_00w0g"]
-[ext_resource type="AudioStream" uid="uid://du6idnsvwyqvk" path="res://Scene/nickpanekaiassets-chiptune-boss-fight-music-265080.mp3" id="18_c4s5l"]
->>>>>>> Stashed changes
-=======
-[ext_resource type="PackedScene" uid="uid://51u2wq7x45en" path="res://Scene/attackenemy2.tscn" id="17_00w0g"]
-[ext_resource type="AudioStream" uid="uid://du6idnsvwyqvk" path="res://Scene/nickpanekaiassets-chiptune-boss-fight-music-265080.mp3" id="18_c4s5l"]
->>>>>>> Stashed changes
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7oc4e"]
 
@@ -44,7 +34,7 @@ corner_radius_bottom_left = 12
 [sub_resource type="SystemFont" id="SystemFont_837br"]
 font_names = PackedStringArray("Agency FB")
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 
 [node name="Backgrounds" type="Node2D" parent="."]
 script = ExtResource("1_ci4mn")
@@ -59,23 +49,7 @@ position = Vector2(1, 1)
 collision_layer = 3
 collision_mask = 3
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[node name="ProgressBar" type="ProgressBar" parent="Player" unique_id=1086710734]
-=======
-=======
->>>>>>> Stashed changes
-[node name="Control" type="Control" parent="Player"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ProgressBar" type="ProgressBar" parent="Player/Control"]
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+[node name="ProgressBar" type="ProgressBar" parent="Player"]
 material = SubResource("ShaderMaterial_7oc4e")
 offset_left = -111.0
 offset_top = -102.0
@@ -86,15 +60,7 @@ value = 100.0
 show_percentage = false
 script = ExtResource("4_siwpi")
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[node name="Label" type="Label" parent="Player/ProgressBar" unique_id=1042635921]
-=======
-[node name="Label" type="Label" parent="Player/Control/ProgressBar"]
->>>>>>> Stashed changes
-=======
-[node name="Label" type="Label" parent="Player/Control/ProgressBar"]
->>>>>>> Stashed changes
+[node name="Label" type="Label" parent="Player/ProgressBar"]
 layout_mode = 0
 offset_left = 64.0
 offset_top = -26.0
@@ -103,30 +69,13 @@ offset_bottom = -3.0
 theme_override_fonts/font = SubResource("SystemFont_837br")
 text = "Lord Of The Night"
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[node name="Sprite2D" type="Sprite2D" parent="Player/ProgressBar" unique_id=974732296]
+[node name="Sprite2D" type="Sprite2D" parent="Player/ProgressBar"]
 modulate = Color(0.37, 0.1517, 0.1517, 0.31764707)
 self_modulate = Color(1, 0.39999998, 0.39999998, 1)
 position = Vector2(116.75, 63.75)
 scale = Vector2(1.1426593, 1.2136929)
 texture = ExtResource("5_bg65o")
 script = ExtResource("6_5p8bu")
-
-[node name="WaveEnemy" type="Node" parent="." unique_id=413077030]
-=======
-[node name="Homing" type="Node" parent="Player/Control/ProgressBar"]
->>>>>>> Stashed changes
-
-=======
-[node name="Homing" type="Node" parent="Player/Control/ProgressBar"]
-
->>>>>>> Stashed changes
-[node name="Enemyhome" parent="Player/Control/ProgressBar/Homing" instance=ExtResource("16_3jhx7")]
-position = Vector2(-96, -112)
-
-[node name="Enemyhome2" parent="Player/Control/ProgressBar/Homing" instance=ExtResource("16_3jhx7")]
-position = Vector2(-96, -112)
 
 [node name="WaveEnemy" type="Node" parent="."]
 
@@ -754,7 +703,7 @@ stream = ExtResource("9_l2pgs")
 stream = ExtResource("10_2272n")
 
 [node name="EnemyBoss" parent="." instance=ExtResource("12_ymh28")]
-position = Vector2(-1571, -1043)
+position = Vector2(-1558, -1049)
 collision_layer = 65281
 collision_mask = 65281
 move_direction = Vector2(0, 190)
@@ -802,15 +751,13 @@ move_direction = Vector2(0, 0)
 move_speed = 60.0
 wait_time = 45.0
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[node name="Perjectile8" parent="Projectile" unique_id=2051737187 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+[node name="Perjectile8" parent="Projectile" groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
 position = Vector2(-273, -380)
 move_direction = Vector2(0, 300)
 move_speed = 60.0
 wait_time = 30.0
 
-[node name="Random" parent="." unique_id=2079159576 instance=ExtResource("13_siwpi")]
+[node name="Random" parent="." instance=ExtResource("13_siwpi")]
 position = Vector2(954, -94)
 collision_layer = 2
 collision_mask = 2
@@ -818,41 +765,23 @@ script = ExtResource("17_00w0g")
 move_direction = Vector2(-10000, 0)
 move_speed = 3000.0
 
-[node name="Troll" type="Sprite2D" parent="." unique_id=636775905]
+[node name="Troll" type="Sprite2D" parent="."]
 position = Vector2(-273, -63.000004)
 scale = Vector2(0.07426778, 0.0742678)
 texture = ExtResource("18_c4s5l")
 
-[node name="Healthpack" parent="." unique_id=128681647 instance=ExtResource("19_8tpoo")]
+[node name="Healthpack" parent="." instance=ExtResource("19_8tpoo")]
 position = Vector2(-299, -102)
 
-[node name="Healthpack2" parent="." unique_id=885772131 instance=ExtResource("19_8tpoo")]
+[node name="Healthpack2" parent="." instance=ExtResource("19_8tpoo")]
 position = Vector2(-154, -126)
 
-[node name="Enemyhome" parent="." unique_id=1300109489 instance=ExtResource("16_3jhx7")]
+[node name="Enemyhome" parent="." instance=ExtResource("16_3jhx7")]
 position = Vector2(154, -19)
 wait_time = 5
 
-[node name="Enemyhome2" parent="." unique_id=400532083 instance=ExtResource("16_3jhx7")]
+[node name="Enemyhome2" parent="." instance=ExtResource("16_3jhx7")]
 position = Vector2(156, -19)
-=======
-[node name="Attack" parent="." instance=ExtResource("17_00w0g")]
-position = Vector2(-298, -77)
-move_speed = 50.0
-
-[node name="BossMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("18_c4s5l")
-autoplay = true
->>>>>>> Stashed changes
-=======
-[node name="Attack" parent="." instance=ExtResource("17_00w0g")]
-position = Vector2(-298, -77)
-move_speed = 50.0
-
-[node name="BossMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("18_c4s5l")
-autoplay = true
->>>>>>> Stashed changes
 
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile2" method="_on_enemy_boss_area_entered"]
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile3" method="_on_enemy_boss_area_entered"]
