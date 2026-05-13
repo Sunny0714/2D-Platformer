@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dajgcgoc7q1iu"
+path="res://.godot/imported/noahbroah-sweating-feathers-alternate-polly-the-platformer-2-455604.mp3-b6350c5dc49ea612fbe1e5e68656d576.mp3str"
+
+[deps]
+
+source_file="res://Audio 2/noahbroah-sweating-feathers-alternate-polly-the-platformer-2-455604.mp3"
+dest_files=["res://.godot/imported/noahbroah-sweating-feathers-alternate-polly-the-platformer-2-455604.mp3-b6350c5dc49ea612fbe1e5e68656d576.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

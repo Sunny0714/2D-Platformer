@@ -1,23 +1,24 @@
 [gd_scene format=4 uid="uid://blxp43lrr64p2"]
 
-[ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="1_nwjwq"]
+[ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scripts/backgrounds.gd" id="1_nwjwq"]
 [ext_resource type="Texture2D" uid="uid://bpkkj4i0lidm8" path="res://Sprites/Backgrounds/backgroundDesert.png" id="2_7sdqy"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="3_f3pwq"]
 [ext_resource type="Texture2D" uid="uid://cscvqsc66t82p" path="res://Background2.png" id="3_vg3ep"]
 [ext_resource type="PackedScene" uid="uid://bifeidvqnl2bb" path="res://Scene/player.tscn" id="4_ccfm3"]
 [ext_resource type="PackedScene" uid="uid://crd5r1e5j60mf" path="res://Scene/coin.tscn" id="5_nquh6"]
 [ext_resource type="PackedScene" uid="uid://7h60e8d1s6j1" path="res://Scene/enemy.tscn" id="6_vg3ep"]
-[ext_resource type="Script" uid="uid://bxg6cqie72gst" path="res://Scene/endflag2.gd" id="8_2thg8"]
+[ext_resource type="Script" uid="uid://bxg6cqie72gst" path="res://Scripts/endflag2.gd" id="8_2thg8"]
 [ext_resource type="Texture2D" uid="uid://ccailsty8t3y6" path="res://Sprites/Objects/download.webp" id="8_71r3i"]
-[ext_resource type="Script" uid="uid://fa7x5w01q1n2" path="res://Scene/black3.gd" id="10_nwjwq"]
-[ext_resource type="Script" uid="uid://by8je0uj81cfu" path="res://Scene/blackfinish3.gd" id="11_67jix"]
+[ext_resource type="Script" uid="uid://fa7x5w01q1n2" path="res://Scripts/black3.gd" id="10_nwjwq"]
+[ext_resource type="Script" uid="uid://by8je0uj81cfu" path="res://Scripts/blackfinish3.gd" id="11_67jix"]
 [ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="11_pn2v1"]
 [ext_resource type="AudioStream" uid="uid://byeutnbm7ob1o" path="res://SlideOpen.wav" id="12_67jix"]
 [ext_resource type="AudioStream" uid="uid://bsnd86lpwyadr" path="res://SlideClose.wav" id="13_f3pwq"]
 [ext_resource type="PackedScene" uid="uid://p5kclo767ovs" path="res://Scene/healthpack.tscn" id="14_ccfm3"]
 [ext_resource type="PackedScene" uid="uid://bnd87ldqnwx8y" path="res://Scene/portal.tscn" id="15_nquh6"]
-[ext_resource type="Texture2D" uid="uid://bujojlj613bi5" path="res://Scene/Screenshot 2026-04-23 114316.png" id="17_g67xk"]
+[ext_resource type="Texture2D" uid="uid://bujojlj613bi5" path="res://Sprites/Tiles/Screenshot 2026-04-23 114316.png" id="17_g67xk"]
 [ext_resource type="PackedScene" uid="uid://cnjti8a8iowsd" path="res://Scene/gun.tscn" id="18_st5wq"]
+[ext_resource type="AudioStream" uid="uid://bg6su8re5sikd" path="res://Scene/noahbroah-sweating-feathers-alternate-polly-the-platformer-2-455604.mp3" id="19_cyyqc"]
 
 [sub_resource type="Animation" id="Animation_nwjwq"]
 length = 0.001
@@ -1379,6 +1380,10 @@ position = Vector2(-583, 5)
 
 [node name="Gun4" parent="." unique_id=570777977 instance=ExtResource("18_st5wq")]
 position = Vector2(-654, -10)
+
+[node name="Level2Music" type="AudioStreamPlayer2D" parent="." unique_id=1924422928]
+stream = ExtResource("19_cyyqc")
+autoplay = true
 
 [connection signal="body_entered" from="Gun" to="Gun" method="_on_body_entered"]
 [connection signal="body_entered" from="Gun2" to="Gun2" method="_on_body_entered"]

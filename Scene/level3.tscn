@@ -1,16 +1,16 @@
 [gd_scene format=4 uid="uid://b6qwewfjnw42s"]
 
-[ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="1_ci4mn"]
+[ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scripts/backgrounds.gd" id="1_ci4mn"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_sotx7"]
 [ext_resource type="PackedScene" uid="uid://bifeidvqnl2bb" path="res://Scene/player.tscn" id="3_ymh28"]
 [ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="4_7oc4e"]
-[ext_resource type="Script" uid="uid://blfubn4nknes0" path="res://progress_bar.gd" id="4_siwpi"]
+[ext_resource type="Script" uid="uid://blfubn4nknes0" path="res://Scripts/progress_bar.gd" id="4_siwpi"]
 [ext_resource type="Texture2D" uid="uid://b53erifylsekp" path="res://Sprites/Objects/red.webp" id="5_bg65o"]
 [ext_resource type="PackedScene" uid="uid://blxp43lrr64p2" path="res://Scene/level_2.tscn" id="5_siwpi"]
 [ext_resource type="Texture2D" uid="uid://ccailsty8t3y6" path="res://Sprites/Objects/download.webp" id="6_0m7xm"]
-[ext_resource type="Script" uid="uid://bjaban7tesvik" path="res://Scene/sprite_2d.gd" id="6_5p8bu"]
-[ext_resource type="Script" uid="uid://bh3v74of4k6lg" path="res://black.gd" id="7_qoi87"]
-[ext_resource type="Script" uid="uid://dibca6mob3acl" path="res://black_finish10.gd" id="8_i6w5t"]
+[ext_resource type="Script" uid="uid://bjaban7tesvik" path="res://Scripts/sprite_2d.gd" id="6_5p8bu"]
+[ext_resource type="Script" uid="uid://1vu8l1pmruhx" path="res://Scripts/black.gd" id="7_qoi87"]
+[ext_resource type="Script" uid="uid://dibca6mob3acl" path="res://Scripts/black_finish10.gd" id="8_i6w5t"]
 [ext_resource type="AudioStream" uid="uid://byeutnbm7ob1o" path="res://SlideOpen.wav" id="9_l2pgs"]
 [ext_resource type="AudioStream" uid="uid://bsnd86lpwyadr" path="res://SlideClose.wav" id="10_2272n"]
 [ext_resource type="PackedScene" uid="uid://c7gua2le1ri2e" path="res://enemy_boss.tscn" id="12_ymh28"]
@@ -18,9 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://btkn4anttr8c3" path="res://Scene/attackenemy.tscn" id="13_siwpi"]
 [ext_resource type="PackedScene" uid="uid://cp3fm463ie6jy" path="res://Scene/enemywave.tscn" id="15_gm3vy"]
 [ext_resource type="PackedScene" uid="uid://dvh2oa35qsuxg" path="res://Scene/enemyhoming.tscn" id="16_3jhx7"]
-[ext_resource type="Script" uid="uid://cp6sakpjy6sj8" path="res://Scene/attackenemy1.gd" id="17_00w0g"]
-[ext_resource type="Texture2D" uid="uid://cb5owid16c3nj" path="res://Scene/Screenshot 2026-05-05 153316.png" id="18_c4s5l"]
+[ext_resource type="Script" uid="uid://cp6sakpjy6sj8" path="res://Scripts/attackenemy1.gd" id="17_00w0g"]
+[ext_resource type="Texture2D" uid="uid://cb5owid16c3nj" path="res://Sprites/Tiles/Screenshot 2026-05-05 153316.png" id="18_c4s5l"]
 [ext_resource type="PackedScene" uid="uid://p5kclo767ovs" path="res://Scene/healthpack.tscn" id="19_8tpoo"]
+[ext_resource type="AudioStream" uid="uid://btyjt0d8j35fl" path="res://Scene/nickpanekaiassets-chiptune-boss-fight-music-265080.mp3" id="22_ap2km"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7oc4e"]
 
@@ -782,6 +783,10 @@ wait_time = 5
 
 [node name="Enemyhome2" parent="." unique_id=400532083 instance=ExtResource("16_3jhx7")]
 position = Vector2(156, -19)
+
+[node name="BossMusic" type="AudioStreamPlayer2D" parent="." unique_id=833548715]
+stream = ExtResource("22_ap2km")
+autoplay = true
 
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile2" method="_on_enemy_boss_area_entered"]
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile3" method="_on_enemy_boss_area_entered"]

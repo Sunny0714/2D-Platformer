@@ -2,10 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://bs2pgrucpx0ku" path="res://menu.gd" id="1_ouk20"]
-[ext_resource type="Script" uid="uid://ch6vnil0oe47" path="res://Scene/background.gd" id="3_alu6o"]
-[ext_resource type="Script" uid="uid://du26blakr0hk7" path="res://Scene/title.gd" id="3_u2k45"]
-[ext_resource type="Script" uid="uid://cf5i12ewjgoth" path="res://Scene/quit_button.gd" id="5_ffxp3"]
-[ext_resource type="Script" uid="uid://c1884l304qoaj" path="res://Scene/play_button.gd" id="6_6hgn1"]
+[ext_resource type="Script" uid="uid://ch6vnil0oe47" path="res://Scripts/background.gd" id="3_alu6o"]
+[ext_resource type="Script" uid="uid://du26blakr0hk7" path="res://Scripts/title.gd" id="3_u2k45"]
+[ext_resource type="Script" uid="uid://cf5i12ewjgoth" path="res://Scripts/quit_button.gd" id="5_ffxp3"]
+[ext_resource type="Script" uid="uid://c1884l304qoaj" path="res://Scripts/play_button.gd" id="6_6hgn1"]
+
 
 [sub_resource type="SystemFont" id="SystemFont_fyf5i"]
 font_names = PackedStringArray("Bodoni MT")

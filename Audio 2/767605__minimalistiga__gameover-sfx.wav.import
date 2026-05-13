@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b461l37fp7dsw"
+path="res://.godot/imported/767605__minimalistiga__gameover-sfx.wav-929cf48e415f50ccf218ef5d9cac550e.sample"
+
+[deps]
+
+source_file="res://Audio 2/767605__minimalistiga__gameover-sfx.wav"
+dest_files=["res://.godot/imported/767605__minimalistiga__gameover-sfx.wav-929cf48e415f50ccf218ef5d9cac550e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

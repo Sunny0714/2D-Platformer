@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://p5kclo767ovs"]
 
-[ext_resource type="Script" uid="uid://uk20vttlsai" path="res://Scene/healthpack.gd" id="1_d6c66"]
+[ext_resource type="Script" uid="uid://uk20vttlsai" path="res://Scripts/healthpack.gd" id="1_d6c66"]
 [ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="2_d6c66"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ceuy"]
 radius = 7.0

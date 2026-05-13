@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bnd87ldqnwx8y"]
 
-[ext_resource type="Script" uid="uid://djfllx3vs7jnc" path="res://Scene/portal.gd" id="1_2k267"]
+[ext_resource type="Script" uid="uid://djfllx3vs7jnc" path="res://Scripts/portal.gd" id="1_2k267"]
 [ext_resource type="Texture2D" uid="uid://dhmx7kamaipnq" path="res://Portal.png" id="2_2k267"]
+
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xmf61"]
 radius = 4.0000005

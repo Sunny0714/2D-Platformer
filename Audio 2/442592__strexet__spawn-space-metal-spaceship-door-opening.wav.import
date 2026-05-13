@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bpc74qoe51tj5"
+path="res://.godot/imported/442592__strexet__spawn-space-metal-spaceship-door-opening.wav-f7856c1eec363081509a0ab8da80ae66.sample"
+
+[deps]
+
+source_file="res://Audio 2/442592__strexet__spawn-space-metal-spaceship-door-opening.wav"
+dest_files=["res://.godot/imported/442592__strexet__spawn-space-metal-spaceship-door-opening.wav-f7856c1eec363081509a0ab8da80ae66.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

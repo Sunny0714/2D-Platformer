@@ -1,158 +1,26 @@
 [gd_scene format=3 uid="uid://bifeidvqnl2bb"]
 
 [ext_resource type="Texture2D" uid="uid://dyq7dh6jlegru" path="res://Sprites/Characters/character_0000.png" id="1_kelma"]
-[ext_resource type="Script" uid="uid://dx1rw5uovjk7t" path="res://Scene/player.gd" id="1_y8w33"]
-[ext_resource type="Script" uid="uid://c11i21nmtjpwy" path="res://Scene/camera_2d.gd" id="3_r6jsd"]
-[ext_resource type="Texture2D" uid="uid://boym8rwk8fqpe" path="res://Sprites/Characters/character_0001.png" id="3_xa75v"]
-[ext_resource type="Texture2D" uid="uid://b3yok0ssiwjlf" path="res://Green character dashing in space (5) (1).png" id="4_2dof7"]
+[ext_resource type="Script" uid="uid://dx1rw5uovjk7t" path="res://Scripts/player.gd" id="1_y8w33"]
+[ext_resource type="Script" uid="uid://c11i21nmtjpwy" path="res://Scripts/camera_2d.gd" id="3_r6jsd"]
 [ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="4_58ae2"]
-[ext_resource type="Script" uid="uid://cy0vcue7kre2r" path="res://Scene/canvas_layer.gd" id="4_ivevv"]
-[ext_resource type="Script" uid="uid://dmki70nu0js5t" path="res://Scene/instructions.gd" id="7_p6qlh"]
+[ext_resource type="Script" uid="uid://cy0vcue7kre2r" path="res://Scripts/canvas_layer.gd" id="4_ivevv"]
+[ext_resource type="Script" uid="uid://dmki70nu0js5t" path="res://Scripts/instructions.gd" id="7_p6qlh"]
 [ext_resource type="Texture2D" uid="uid://khhveelo5mav" path="res://Double arrows with SHIFT key icon.png" id="8_2sw5t"]
 [ext_resource type="Texture2D" uid="uid://dkk7fginxv7gd" path="res://Dash mechanic icon with keypress提示.png" id="10_c31lq"]
-[ext_resource type="Script" uid="uid://himdhdas1bje" path="res://Scene/dash.gd" id="10_c68nv"]
-[ext_resource type="Script" uid="uid://whx0n4bl0sv4" path="res://Scene/double.gd" id="12_2dof7"]
-[ext_resource type="Script" uid="uid://biyefyesdahf" path="res://Scene/revive.gd" id="13_4ao7i"]
+[ext_resource type="Script" uid="uid://himdhdas1bje" path="res://Scripts/dash.gd" id="10_c68nv"]
+[ext_resource type="Script" uid="uid://whx0n4bl0sv4" path="res://Scripts/double.gd" id="12_2dof7"]
+[ext_resource type="Script" uid="uid://biyefyesdahf" path="res://Scripts/revive.gd" id="13_4ao7i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y8w33"]
 height = 26.0
 
-[sub_resource type="Animation" id="Animation_ivevv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_kelma")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Revive:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.44444445, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Revive:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
+[sub_resource type="Animation" id="Animation_c31lq"]
+resource_name = "BlobWalk"
 
-[sub_resource type="Animation" id="Animation_4ao7i"]
-resource_name = "dash"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("4_2dof7"), ExtResource("3_xa75v")]
-}
-
-[sub_resource type="Animation" id="Animation_58ae2"]
-resource_name = "idle"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_kelma")]
-}
-
-[sub_resource type="Animation" id="Animation_p6qlh"]
-resource_name = "jump"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_xa75v")]
-}
-
-[sub_resource type="Animation" id="Animation_r6jsd"]
-resource_name = "move"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("3_xa75v"), ExtResource("1_kelma"), ExtResource("3_xa75v"), ExtResource("1_kelma")]
-}
-
-[sub_resource type="Animation" id="Animation_2dof7"]
-resource_name = "revive"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Revive:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.44444445, 1), Vector2(0.35025588, 1.0631621), Vector2(0.31103304, 1.0430907)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Revive:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.31241393, -0.26703537]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2sw5t"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2dof7"]
 _data = {
-&"RESET": SubResource("Animation_ivevv"),
-&"dash": SubResource("Animation_4ao7i"),
-&"idle": SubResource("Animation_58ae2"),
-&"jump": SubResource("Animation_p6qlh"),
-&"move": SubResource("Animation_r6jsd"),
-&"revive": SubResource("Animation_2dof7")
+&"BlobWalk": SubResource("Animation_c31lq")
 }
 
 [sub_resource type="SystemFont" id="SystemFont_p6qlh"]
@@ -192,7 +60,7 @@ zoom = Vector2(3, 3)
 script = ExtResource("3_r6jsd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1938727954]
-libraries/ = SubResource("AnimationLibrary_2sw5t")
+libraries/ = SubResource("AnimationLibrary_2dof7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=926322480]
 

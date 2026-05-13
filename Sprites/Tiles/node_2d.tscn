@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://sru7f6586leo"]
+
+[ext_resource type="Script" uid="uid://bs07lyjdr1wtj" path="res://Scripts/control.gd" id="1_romgu"]
+
+[sub_resource type="GDScript" id="GDScript_wtcfe"]
+script/source = "extends Node2D
+
+@export var follow_speed := 10.0
+
+func _process(delta):
+	var mouse_pos = get_global_mouse_position()
+	position = position.lerp(mouse_pos, delta * follow_speed)
+"
+
+[sub_resource type="GDScript" id="GDScript_0e48y"]
+script/source = "extends Sprite2D
+
+@export var follow_speed := 10.0
+
+func _process(delta):
+	position = position.lerp(get_global_mouse_position(), delta * follow_speed)
+"
+
+[node name="MouseBlob" type="Node2D" unique_id=2058528682]
+script = SubResource("GDScript_wtcfe")
+
+[node name="Blob" type="Sprite2D" parent="." unique_id=1978649554]
+script = SubResource("GDScript_0e48y")
+
+[node name="Control" type="Control" parent="." unique_id=75532310]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_romgu")
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1864638834]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

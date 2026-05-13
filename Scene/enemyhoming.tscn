@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dvh2oa35qsuxg"]
 
-[ext_resource type="Script" uid="uid://bm8guhho74pbh" path="res://Scene/enemyhoming.gd" id="1_rk8jc"]
+[ext_resource type="Script" uid="uid://bm8guhho74pbh" path="res://Scripts/enemyhoming.gd" id="1_rk8jc"]
 [ext_resource type="Texture2D" uid="uid://cw8ve08co5tms" path="res://Sprites/Characters/character_0024.png" id="2_a0eng"]
 [ext_resource type="Texture2D" uid="uid://7j5f58v817vc" path="res://Sprites/Characters/character_0025.png" id="3_p6itp"]
 [ext_resource type="Texture2D" uid="uid://ccpqftl2qj5by" path="res://Sprites/Characters/character_0026.png" id="4_6vdjy"]
+
 
 [sub_resource type="Animation" id="Animation_246mo"]
 length = 0.001
