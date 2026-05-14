@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778781583
+::res://::1778782149
 abydos_music-fun-retro-game-175468.mp3::AudioStreamMP3::2212771829579435472::1778612106::1778612106::1::::<><><>0<>0<>a0841dacae857e86b97240b74b655651<>res://.godot/imported/abydos_music-fun-retro-game-175468.mp3-128605df1da29ce9780d699aed2e7c7a.mp3str::
 Background2.png::CompressedTexture2D::6041673887890100497::1777574521::1777574521::1::::<><><>0<>0<>83d93107b095367ca9944e3d3effe7a3<>res://.godot/imported/Background2.png-7197ab623eb653a63603ede5a0031047.ctex::
 black.gd::GDScript::2936878913596830008::1777574521::0::1::::<>Sprite2D<><>0<>0<><>::
@@ -21,6 +21,7 @@ nickpanekaiassets-chiptune-boss-fight-music-265080.mp3::AudioStreamMP3::13024813
 node_2d10.tscn::PackedScene::3082121665223081868::1777574521::0::1::::<><><>0<>0<><>::uid://behkd3wdoe6ya::::res://node_2d10.gd
 node_2d.gd::GDScript::2906466962391524430::1777574521::0::1::::<>Node2D<><>0<>0<><>::
 node_2d.tscn::PackedScene::6809175080843618823::1777574521::0::1::::<><><>0<>0<><>::uid://bs07lyjdr1wtj::::res://control.gd
+Player.png::CompressedTexture2D::9195766468098467614::1778782149::1778782149::1::::<><><>0<>0<>1d8e854812f3ba8b29283dbc19475e74<>res://.godot/imported/Player.png-3b381e068d1d74cc2895fb9be41402b0.ctex::
 PlayerIdleAnimation-Sheet.png::CompressedTexture2D::7808101743138927321::1777574521::1777574521::1::::<><><>0<>0<>79ad40fe26bcf7b0438954d13c22493a<>res://.godot/imported/PlayerIdleAnimation-Sheet.png-430d2fdc81de84cda588445213efab3a.ctex::
 PlayerProjectileAnimation-Sheet.png::CompressedTexture2D::7182442943932028942::1777574521::1777574521::1::::<><><>0<>0<>80f47a5bc50695e4abd66d77c9cf57ba<>res://.godot/imported/PlayerProjectileAnimation-Sheet.png-c73c385a0017a9460397a95097689cf3.ctex::
 PlayerWalking-Sheet.png::CompressedTexture2D::4648600161799472511::1777574521::1777574521::1::::<><><>0<>0<>249317092c1b155345c36345721acd9e<>res://.godot/imported/PlayerWalking-Sheet.png-ec6c29c9f1864e9762619b16e3da2e58.ctex::
@@ -32,6 +33,19 @@ universfield-gunshot-352466.mp3::AudioStreamMP3::2175080125188868095::1778608970
 ::res://Audio 2/::1777574521
 coin.wav::AudioStreamWAV::1104865704300170623::1777574521::1777574521::1::::<><><>0<>0<>2195b88fb4839c34a57a7d24cb3d0d76<>res://.godot/imported/coin.wav-9f8e4e6bbdfd40586b1cda69e0c213b5.sample::
 take_damage.wav::AudioStreamWAV::1043996174712648341::1777574521::1777574521::1::::<><><>0<>0<>591f8d6b0f3c3977d37d3d1a95536b80<>res://.godot/imported/take_damage.wav-0c45971781dd7fe65b0beb472a96497f.sample::
+::res://Final/::1778782102
+Background_0.png::CompressedTexture2D::3482877127105267085::1778782101::1778782102::1::::<><><>0<>0<>4250ca8c1f05b41b675c85abb1974ee3<>res://.godot/imported/Background_0.png-80440a2e5bdfae02751683b4b331332c.ctex::
+Background_1.png::CompressedTexture2D::4507567003760641972::1778782101::1778782102::1::::<><><>0<>0<>38d3ac066ca9ab9047b4b754da057645<>res://.godot/imported/Background_1.png-91ed911927c7cba70a81338d249583a1.ctex::
+brush.png::CompressedTexture2D::6253755512193159291::1778782101::1778782102::1::::<><><>0<>0<>d1e2081bbeec35f804416cdfe23325af<>res://.godot/imported/brush.png-48608c22c0167606d4581c191403da4c.ctex::
+Grass_background_1.png::CompressedTexture2D::7387406412614441837::1778782101::1778782102::1::::<><><>0<>0<>eb8f33174a74089ad69158f462258324<>res://.godot/imported/Grass_background_1.png-ff074cc974226ea7a27bea2c89661e78.ctex::
+Grass_background_2.png::CompressedTexture2D::3754913863848102726::1778782101::1778782102::1::::<><><>0<>0<>d1d283ef88fe4e4c19dabda5d16320cd<>res://.godot/imported/Grass_background_2.png-ba2169c08872f8cf454c577fff19c5c0.ctex::
+Salt.png::CompressedTexture2D::3499856126601255602::1778782101::1778782102::1::::<><><>0<>0<>f48b74c4c1594b2fe09b9fc1acd830a5<>res://.godot/imported/Salt.png-23f39d7c9692936aaf6e2be1ad812ba9.ctex::
+Tiles.png::CompressedTexture2D::2682594828821489634::1778782102::1778782102::1::::<><><>0<>0<>7f1313c2a2bc88c2d5dcda036d137c12<>res://.godot/imported/Tiles.png-434d75a3de05f7ca041e0418c98a5580.ctex::
+::res://Final/Social/::1778782102
+Autor_note.txt::TextFile::-1::1778782101::0::1::::<><><>0<>0<><>::
+moon.png::CompressedTexture2D::604269157041374893::1778782101::1778782102::1::::<><><>0<>0<>2bffbadd7392d492237a37a170ffe87f<>res://.godot/imported/moon.png-cd1ad87c62679def076d419f799a6f4c.ctex::
+test_1.png::CompressedTexture2D::8877184199567156::1778782101::1778782102::1::::<><><>0<>0<>a0228d0075152a41718e36e4160af9d1<>res://.godot/imported/test_1.png-27d51fa37a53e6dfa85ee2d0c18d6f8b.ctex::
+test_2.png::CompressedTexture2D::1001082843691250451::1778782101::1778782102::1::::<><><>0<>0<>9cb2151e6b8e39bef8f43b7b859ff9bd<>res://.godot/imported/test_2.png-c70193cc8d45dbad344de2524ef111cb.ctex::
 ::res://Scene/::1778612514
 442592__strexet__spawn-space-metal-spaceship-door-opening.wav::AudioStreamWAV::7362875112894677320::1778608970::1778608970::1::::<><><>0<>0<>5b823e1d7236059f4567e1c0fe7e1088<>res://.godot/imported/442592__strexet__spawn-space-metal-spaceship-door-opening.wav-60c6628b69553d9cb5f0b1dc75be4029.sample::
 767605__minimalistiga__gameover-sfx.wav::AudioStreamWAV::624733262529571508::1778608970::1778608970::1::::<><><>0<>0<>e6fa9a8208c6cdfdda18a5ad50083754<>res://.godot/imported/767605__minimalistiga__gameover-sfx.wav-2970ac794f56c7c6d9b4a7a86e63c08b.sample::
