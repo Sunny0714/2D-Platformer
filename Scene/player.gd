@@ -49,7 +49,12 @@ func _ready():
 	var sender = get_parent().get_node("EnemyBoss")
 	if sender:
 		sender.connect("stop", Callable(self, "_on_stop"))
+	for p in get_tree().get_nodes_in_group("Healthpack"):
+		p.connect("hp", Callable(self, "_hp"))
 	
+func _hp():
+	health += 1 
+	OnUpdateHealth.emit(PlayerStats.health)
 
 func _on_stop():
 	var camera = get_viewport().get_camera_2d()
@@ -217,7 +222,7 @@ func increase_score (amount : int):
 func increase_health (amount : int):
 	if health < 3:
 		PlayerStats.health += amount
-		health += amount
+		#health += amount
 		OnUpdateHealth.emit(PlayerStats.health)
 
 func _damage_flash ():

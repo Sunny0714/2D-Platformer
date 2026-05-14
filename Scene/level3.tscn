@@ -1,17 +1,17 @@
 [gd_scene format=4 uid="uid://b6qwewfjnw42s"]
 
-[ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="1_ci4mn"]
+[ext_resource type="Script" path="res://Scene/backgrounds.gd" id="1_ci4mn"]
 [ext_resource type="Texture2D" uid="uid://ce67cb0wu72uo" path="res://Scene/ChatGPT Image May 12, 2026, 12_00_38 PM.png" id="2_ap2km"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_sotx7"]
 [ext_resource type="PackedScene" uid="uid://bifeidvqnl2bb" path="res://Scene/player.tscn" id="3_ymh28"]
 [ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="4_7oc4e"]
-[ext_resource type="Script" uid="uid://blfubn4nknes0" path="res://progress_bar.gd" id="4_siwpi"]
+[ext_resource type="Script" path="res://progress_bar.gd" id="4_siwpi"]
 [ext_resource type="Texture2D" uid="uid://b53erifylsekp" path="res://Sprites/Objects/red.webp" id="5_bg65o"]
 [ext_resource type="PackedScene" uid="uid://blxp43lrr64p2" path="res://Scene/level_2.tscn" id="5_siwpi"]
 [ext_resource type="Texture2D" uid="uid://ccailsty8t3y6" path="res://Sprites/Objects/download.webp" id="6_0m7xm"]
-[ext_resource type="Script" uid="uid://bjaban7tesvik" path="res://Scene/sprite_2d.gd" id="6_5p8bu"]
-[ext_resource type="Script" uid="uid://bh3v74of4k6lg" path="res://black.gd" id="7_qoi87"]
-[ext_resource type="Script" uid="uid://dibca6mob3acl" path="res://black_finish10.gd" id="8_i6w5t"]
+[ext_resource type="Script" path="res://Scene/sprite_2d.gd" id="6_5p8bu"]
+[ext_resource type="Script" path="res://black.gd" id="7_qoi87"]
+[ext_resource type="Script" path="res://black_finish10.gd" id="8_i6w5t"]
 [ext_resource type="AudioStream" uid="uid://byeutnbm7ob1o" path="res://SlideOpen.wav" id="9_l2pgs"]
 [ext_resource type="AudioStream" uid="uid://bsnd86lpwyadr" path="res://SlideClose.wav" id="10_2272n"]
 [ext_resource type="PackedScene" uid="uid://c7gua2le1ri2e" path="res://enemy_boss.tscn" id="12_ymh28"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://btkn4anttr8c3" path="res://Scene/attackenemy.tscn" id="13_siwpi"]
 [ext_resource type="PackedScene" uid="uid://cp3fm463ie6jy" path="res://Scene/enemywave.tscn" id="15_gm3vy"]
 [ext_resource type="PackedScene" uid="uid://dvh2oa35qsuxg" path="res://Scene/enemyhoming.tscn" id="16_3jhx7"]
-[ext_resource type="Script" uid="uid://cp6sakpjy6sj8" path="res://Scene/attackenemy1.gd" id="17_00w0g"]
+[ext_resource type="Script" path="res://Scene/attackenemy1.gd" id="17_00w0g"]
 [ext_resource type="Texture2D" uid="uid://cb5owid16c3nj" path="res://Scene/Screenshot 2026-05-05 153316.png" id="18_c4s5l"]
 [ext_resource type="PackedScene" uid="uid://p5kclo767ovs" path="res://Scene/healthpack.tscn" id="19_8tpoo"]
 [ext_resource type="AudioStream" uid="uid://ss6xbgl6o3vk" path="res://nickpanekaiassets-chiptune-boss-fight-music-265080.mp3" id="22_ap2km"]
@@ -777,10 +777,10 @@ position = Vector2(-273, -63.000004)
 scale = Vector2(0.07426778, 0.0742678)
 texture = ExtResource("18_c4s5l")
 
-[node name="Healthpack" parent="." unique_id=128681647 instance=ExtResource("19_8tpoo")]
+[node name="Healthpack" parent="." unique_id=128681647 groups=["Healthpack"] instance=ExtResource("19_8tpoo")]
 position = Vector2(-299, -102)
 
-[node name="Healthpack2" parent="." unique_id=885772131 instance=ExtResource("19_8tpoo")]
+[node name="Healthpack2" parent="." unique_id=885772131 groups=["Healthpack"] instance=ExtResource("19_8tpoo")]
 position = Vector2(-154, -126)
 
 [node name="Enemyhome" parent="." unique_id=1300109489 instance=ExtResource("16_3jhx7")]

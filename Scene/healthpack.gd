@@ -3,11 +3,13 @@ extends Area2D
 var bob_height : float = 5
 var bob_speed : float = 5
 
+signal hp
 signal OnUpdateHealth
 
 @onready var start_pos : Vector2 = global_position
 
 @onready var sprite : Sprite2D = $Sprite
+
 
 func _physics_process(delta):
 	var time = Time.get_unix_time_from_system()
@@ -22,5 +24,5 @@ func _on_body_entered(body):
 		return
 	
 	
-	body.increase_health(1)
+	emit_signal("hp")
 	queue_free()
