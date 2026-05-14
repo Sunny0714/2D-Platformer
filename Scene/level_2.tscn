@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bnd87ldqnwx8y" path="res://Scene/portal.tscn" id="15_nquh6"]
 [ext_resource type="Texture2D" uid="uid://bujojlj613bi5" path="res://Scene/Screenshot 2026-04-23 114316.png" id="17_g67xk"]
 [ext_resource type="PackedScene" uid="uid://cnjti8a8iowsd" path="res://Scene/gun.tscn" id="18_st5wq"]
+[ext_resource type="AudioStream" uid="uid://6r5a8hyr2f17" path="res://abydos_music-fun-retro-game-175468.mp3" id="19_cyyqc"]
 
 [sub_resource type="Animation" id="Animation_nwjwq"]
 length = 0.001
@@ -1379,6 +1380,9 @@ position = Vector2(-583, 5)
 
 [node name="Gun4" parent="." unique_id=570777977 instance=ExtResource("18_st5wq")]
 position = Vector2(-654, -10)
+
+[node name="Level2Music" type="AudioStreamPlayer2D" parent="." unique_id=1823219763]
+stream = ExtResource("19_cyyqc")
 
 [connection signal="body_entered" from="Gun" to="Gun" method="_on_body_entered"]
 [connection signal="body_entered" from="Gun2" to="Gun2" method="_on_body_entered"]
