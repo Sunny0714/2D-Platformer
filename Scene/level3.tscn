@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://b6qwewfjnw42s"]
 
 [ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="1_ci4mn"]
+[ext_resource type="Texture2D" uid="uid://ce67cb0wu72uo" path="res://Scene/ChatGPT Image May 12, 2026, 12_00_38 PM.png" id="2_ap2km"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_sotx7"]
 [ext_resource type="PackedScene" uid="uid://bifeidvqnl2bb" path="res://Scene/player.tscn" id="3_ymh28"]
 [ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="4_7oc4e"]
@@ -38,6 +39,10 @@ font_names = PackedStringArray("Agency FB")
 
 [node name="Backgrounds" type="Node2D" parent="." unique_id=1493275177]
 script = ExtResource("1_ci4mn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds" unique_id=1397946314]
+position = Vector2(413, -197)
+texture = ExtResource("2_ap2km")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1422804116]
 position = Vector2(2, 1)
