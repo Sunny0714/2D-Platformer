@@ -13,6 +13,8 @@ func _ready ():
 	$AnimationPlayer.play("fly")
 	connect("hit", Callable(self, "_hit"))
 	connect("dead", Callable(self, "_dead"))
+	for p in get_tree().get_nodes_in_group("enemy"):
+		p.connect("dead", Callable(self, "_dead"))
 
 func _physics_process(delta):
 	get_tree().call_group("Player", "set_physics_process", false)

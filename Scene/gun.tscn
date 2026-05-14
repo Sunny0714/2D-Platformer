@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnjti8a8iowsd"]
 
-[ext_resource type="Script" uid="uid://0eij30ce6yvl" path="res://gun.gd" id="1_0fcgr"]
+[ext_resource type="Script" path="res://gun.gd" id="1_0fcgr"]
 [ext_resource type="Texture2D" uid="uid://c5ovxkbhcnxql" path="res://Scene/gun.png" id="2_gjdbb"]
 [ext_resource type="AudioStream" uid="uid://58vitf3sraep" path="res://universfield-gunshot-352466.mp3" id="3_gjdbb"]
 [ext_resource type="Texture2D" uid="uid://ifd2w22ryql1" path="res://ChatGPT Image May 7, 2026, 04_35_43 PM (1).png" id="4_ikln6"]
@@ -106,7 +106,7 @@ shape = SubResource("CircleShape2D_ikln6")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=456444238]
 position = Vector2(2.0000014, 16)
 rotation = 1.5707964
-scale = Vector2(1.546875, 1.515625)
+scale = Vector2(1.3, 1.274)
 texture = ExtResource("2_gjdbb")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=971583213]

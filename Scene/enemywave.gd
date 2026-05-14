@@ -20,6 +20,11 @@ func _ready():
 	start_pos = global_position
 	start_y = global_position.y
 	hide()
+	for p in get_tree().get_nodes_in_group("enemy"):
+		p.connect("dead", Callable(self, "_dead"))
+
+func _dead():
+	queue_free()
 
 func _physics_process(delta):
 	timer += delta

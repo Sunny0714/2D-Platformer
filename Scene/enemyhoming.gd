@@ -9,11 +9,17 @@ var chase_player = false
 @export var wait_time : int
 
 func _ready() -> void:
+	$AnimationPlayer.play("fly")
 	hide()
 	var sender = get_parent().get_children()[2].get_node("ProgressBar")
 	await get_tree().create_timer(wait_time).timeout
 	if sender:
 		sender.connect("half", Callable(self, "_on_half"))
+	for p in get_tree().get_nodes_in_group("enemy"):
+		p.connect("dead", Callable(self, "_dead"))
+
+func _dead():
+	queue_free()
 
 func _on_half():
 	chase_player = true
