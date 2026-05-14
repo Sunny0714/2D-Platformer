@@ -21,6 +21,8 @@
 [ext_resource type="Script" uid="uid://cp6sakpjy6sj8" path="res://Scene/attackenemy1.gd" id="17_00w0g"]
 [ext_resource type="Texture2D" uid="uid://cb5owid16c3nj" path="res://Scene/Screenshot 2026-05-05 153316.png" id="18_c4s5l"]
 [ext_resource type="PackedScene" uid="uid://p5kclo767ovs" path="res://Scene/healthpack.tscn" id="19_8tpoo"]
+[ext_resource type="AudioStream" uid="uid://ss6xbgl6o3vk" path="res://nickpanekaiassets-chiptune-boss-fight-music-265080.mp3" id="22_ap2km"]
+[ext_resource type="Script" uid="uid://chs356wch0hu5" path="res://Scene/boss_music.gd" id="23_hn3jj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7oc4e"]
 
@@ -34,7 +36,7 @@ corner_radius_bottom_left = 12
 [sub_resource type="SystemFont" id="SystemFont_837br"]
 font_names = PackedStringArray("Agency FB")
 
-[node name="Main" type="Node2D" unique_id=1372394327]
+[node name="Main2" type="Node2D" unique_id=1372394327]
 
 [node name="Backgrounds" type="Node2D" parent="." unique_id=1493275177]
 script = ExtResource("1_ci4mn")
@@ -782,6 +784,11 @@ wait_time = 5
 
 [node name="Enemyhome2" parent="." unique_id=400532083 instance=ExtResource("16_3jhx7")]
 position = Vector2(156, -19)
+
+[node name="BossMusic" type="AudioStreamPlayer2D" parent="." unique_id=1558429411]
+stream = ExtResource("22_ap2km")
+autoplay = true
+script = ExtResource("23_hn3jj")
 
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile2" method="_on_enemy_boss_area_entered"]
 [connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile3" method="_on_enemy_boss_area_entered"]
