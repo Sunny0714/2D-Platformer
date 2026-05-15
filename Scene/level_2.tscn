@@ -1,17 +1,16 @@
-[gd_scene format=4 uid="uid://blxp43lrr64p2"]
+[gd_scene format=4 uid="uid://q8dnle253h28"]
 
-[ext_resource type="Script" path="res://Scene/backgrounds.gd" id="1_nwjwq"]
+[ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="1_nwjwq"]
 [ext_resource type="Texture2D" uid="uid://bpkkj4i0lidm8" path="res://Sprites/Backgrounds/backgroundDesert.png" id="2_7sdqy"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="3_f3pwq"]
 [ext_resource type="Texture2D" uid="uid://cscvqsc66t82p" path="res://Background2.png" id="3_vg3ep"]
 [ext_resource type="PackedScene" uid="uid://bifeidvqnl2bb" path="res://Scene/player.tscn" id="4_ccfm3"]
 [ext_resource type="PackedScene" uid="uid://crd5r1e5j60mf" path="res://Scene/coin.tscn" id="5_nquh6"]
 [ext_resource type="PackedScene" uid="uid://7h60e8d1s6j1" path="res://Scene/enemy.tscn" id="6_vg3ep"]
-[ext_resource type="Script" path="res://Scene/endflag2.gd" id="8_2thg8"]
+[ext_resource type="Script" uid="uid://bxg6cqie72gst" path="res://Scene/endflag2.gd" id="8_2thg8"]
 [ext_resource type="Texture2D" uid="uid://ccailsty8t3y6" path="res://Sprites/Objects/download.webp" id="8_71r3i"]
-[ext_resource type="PackedScene" uid="uid://b6qwewfjnw42s" path="res://Scene/level3.tscn" id="10_jg8n8"]
-[ext_resource type="Script" path="res://Scene/black3.gd" id="10_nwjwq"]
-[ext_resource type="Script" path="res://Scene/blackfinish3.gd" id="11_67jix"]
+[ext_resource type="Script" uid="uid://fa7x5w01q1n2" path="res://Scene/black3.gd" id="10_nwjwq"]
+[ext_resource type="Script" uid="uid://by8je0uj81cfu" path="res://Scene/blackfinish3.gd" id="11_67jix"]
 [ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="11_pn2v1"]
 [ext_resource type="AudioStream" uid="uid://byeutnbm7ob1o" path="res://SlideOpen.wav" id="12_67jix"]
 [ext_resource type="AudioStream" uid="uid://bsnd86lpwyadr" path="res://SlideClose.wav" id="13_f3pwq"]
@@ -1314,7 +1313,6 @@ position = Vector2(522, -2500)
 [node name="Endflag2" parent="." unique_id=193935332 instance=ExtResource("11_pn2v1")]
 position = Vector2(1241, -47)
 script = ExtResource("8_2thg8")
-scene_to_load = ExtResource("10_jg8n8")
 
 [node name="Black" type="Sprite2D" parent="Endflag2" unique_id=1059852209]
 visible = false

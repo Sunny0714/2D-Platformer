@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://d0emwf1mfh12k"]
+[gd_scene format=4 uid="uid://cr7g0v4ajw3vw"]
 
 [ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_5exfe"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="1_8ko5r"]
@@ -7,11 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://crd5r1e5j60mf" path="res://Scene/coin.tscn" id="9_2ceuy"]
 [ext_resource type="Texture2D" uid="uid://ccailsty8t3y6" path="res://Sprites/Objects/download.webp" id="9_246mo"]
 [ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="10_246mo"]
-[ext_resource type="Script" path="res://Scene/black.gd" id="10_q8blv"]
-[ext_resource type="Script" path="res://Scene/backgrounds.gd" id="10_sq6mb"]
-[ext_resource type="Script" path="res://Scene/black_2.gd" id="11_sq6mb"]
+[ext_resource type="Script" uid="uid://1vu8l1pmruhx" path="res://Scene/black.gd" id="10_q8blv"]
+[ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="10_sq6mb"]
+[ext_resource type="Script" uid="uid://bmtks638g1cmi" path="res://Scene/black_2.gd" id="11_sq6mb"]
 [ext_resource type="AudioStream" uid="uid://byeutnbm7ob1o" path="res://SlideOpen.wav" id="12_a6c3k"]
-[ext_resource type="PackedScene" uid="uid://blxp43lrr64p2" path="res://Scene/level_2.tscn" id="12_q8blv"]
 [ext_resource type="AudioStream" uid="uid://bsnd86lpwyadr" path="res://SlideClose.wav" id="13_a6c3k"]
 [ext_resource type="Texture2D" uid="uid://bujojlj613bi5" path="res://Scene/Screenshot 2026-04-23 114316.png" id="14_y4apx"]
 
@@ -248,7 +247,6 @@ move_speed = 2000.0
 
 [node name="Endflag" parent="." unique_id=193935332 instance=ExtResource("10_246mo")]
 position = Vector2(686, -26)
-scene_to_load = ExtResource("12_q8blv")
 
 [node name="Black" type="Sprite2D" parent="Endflag" unique_id=1457144582]
 scale = Vector2(1.4359671, 1.9102564)
