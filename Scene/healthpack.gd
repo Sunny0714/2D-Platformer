@@ -4,7 +4,6 @@ var bob_height : float = 5
 var bob_speed : float = 5
 
 signal hp
-signal OnUpdateHealth
 
 @onready var start_pos : Vector2 = global_position
 

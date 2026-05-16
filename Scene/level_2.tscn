@@ -1,6 +1,6 @@
-[gd_scene format=4 uid="uid://q8dnle253h28"]
+[gd_scene format=4 uid="uid://g1c5xeuxmdqc"]
 
-[ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scene/backgrounds.gd" id="1_nwjwq"]
+[ext_resource type="Script" path="res://Scene/backgrounds.gd" id="1_nwjwq"]
 [ext_resource type="Texture2D" uid="uid://bpkkj4i0lidm8" path="res://Sprites/Backgrounds/backgroundDesert.png" id="2_7sdqy"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="3_f3pwq"]
 [ext_resource type="Texture2D" uid="uid://cscvqsc66t82p" path="res://Background2.png" id="3_vg3ep"]
@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://7h60e8d1s6j1" path="res://Scene/enemy.tscn" id="6_vg3ep"]
 [ext_resource type="Script" uid="uid://bxg6cqie72gst" path="res://Scene/endflag2.gd" id="8_2thg8"]
 [ext_resource type="Texture2D" uid="uid://ccailsty8t3y6" path="res://Sprites/Objects/download.webp" id="8_71r3i"]
-[ext_resource type="Script" uid="uid://fa7x5w01q1n2" path="res://Scene/black3.gd" id="10_nwjwq"]
-[ext_resource type="Script" uid="uid://by8je0uj81cfu" path="res://Scene/blackfinish3.gd" id="11_67jix"]
+[ext_resource type="Script" path="res://Scene/black3.gd" id="10_nwjwq"]
+[ext_resource type="Script" path="res://Scene/blackfinish3.gd" id="11_67jix"]
 [ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="11_pn2v1"]
 [ext_resource type="AudioStream" uid="uid://byeutnbm7ob1o" path="res://SlideOpen.wav" id="12_67jix"]
 [ext_resource type="AudioStream" uid="uid://bsnd86lpwyadr" path="res://SlideClose.wav" id="13_f3pwq"]
@@ -1313,30 +1313,27 @@ position = Vector2(522, -2500)
 [node name="Endflag2" parent="." unique_id=193935332 instance=ExtResource("11_pn2v1")]
 position = Vector2(1241, -47)
 script = ExtResource("8_2thg8")
+scene_to_load = &"res://Scene/level3.tscn"
 
 [node name="Black" type="Sprite2D" parent="Endflag2" unique_id=1059852209]
-visible = false
 position = Vector2(-2, 3.0517578e-05)
 scale = Vector2(1.4359671, 1.9102564)
 texture = ExtResource("8_71r3i")
 script = ExtResource("10_nwjwq")
 
 [node name="Black2" type="Sprite2D" parent="Endflag2" unique_id=445404718]
-visible = false
 position = Vector2(-3, -1)
 scale = Vector2(1.4359671, 1.9102564)
 texture = ExtResource("8_71r3i")
 script = ExtResource("10_nwjwq")
 
 [node name="Black Finish" type="Sprite2D" parent="Endflag2" unique_id=2050932217]
-visible = false
 position = Vector2(-1452, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("8_71r3i")
 script = ExtResource("11_67jix")
 
 [node name="Black Finish2" type="Sprite2D" parent="Endflag2" unique_id=954060565]
-visible = false
 position = Vector2(-1452, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("8_71r3i")

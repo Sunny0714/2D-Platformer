@@ -1,6 +1,7 @@
 extends Area2D
 
 signal stop
+signal ded
 
 @export var move_direction : Vector2
 @export var move_speed : float = 50
@@ -34,4 +35,5 @@ func _hit():
 	sprite.modulate = Color.WHITE
 
 func _dead():
+	emit_signal("ded")
 	queue_free()
