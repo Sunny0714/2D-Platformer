@@ -1,15 +1,14 @@
 [gd_scene format=3 uid="uid://c6kycbk87ufp8"]
 
-[ext_resource type="Script" uid="uid://ukm2avdu6d7i" path="res://Scripts/level1.gd" id="1_or6n4"]
+[ext_resource type="Script" path="res://Scene/level1.gd" id="1_or6n4"]
 [ext_resource type="Texture2D" uid="uid://bpkkj4i0lidm8" path="res://Sprites/Backgrounds/backgroundDesert.png" id="2_p7rx0"]
-[ext_resource type="Script" uid="uid://oats8un1qkrf" path="res://Scripts/background1.gd" id="3_tut6d"]
-[ext_resource type="Script" uid="uid://v6obpte4k3n2" path="res://Scripts/easy_1.gd" id="4_iysjp"]
-[ext_resource type="Script" uid="uid://dx0cq083p67uf" path="res://Scripts/normal_1.gd" id="5_hdt71"]
-[ext_resource type="Script" uid="uid://d1m4gdd6f8w7p" path="res://Scripts/normal.gd" id="5_tut6d"]
-[ext_resource type="Script" uid="uid://con5vr4huyg7o" path="res://Scripts/hard_1.gd" id="6_637vb"]
-[ext_resource type="Script" uid="uid://drqtwq5q4s2hs" path="res://Scripts/easy.gd" id="6_p7rx0"]
-[ext_resource type="Script" uid="uid://bqwk0fl7ylyok" path="res://Scripts/hard.gd" id="7_iysjp"]
-
+[ext_resource type="Script" path="res://Scene/background1.gd" id="3_tut6d"]
+[ext_resource type="Script" path="res://Scene/easy_1.gd" id="4_iysjp"]
+[ext_resource type="Script" path="res://Scene/normal_1.gd" id="5_hdt71"]
+[ext_resource type="Script" path="res://Scene/normal.gd" id="5_tut6d"]
+[ext_resource type="Script" path="res://Scene/hard_1.gd" id="6_637vb"]
+[ext_resource type="Script" path="res://Scene/easy.gd" id="6_p7rx0"]
+[ext_resource type="Script" path="res://Scene/hard.gd" id="7_iysjp"]
 
 [sub_resource type="SystemFont" id="SystemFont_637vb"]
 font_names = PackedStringArray("Cursive")
@@ -52,6 +51,7 @@ offset_top = 257.0
 offset_right = 446.0
 offset_bottom = 434.0
 theme_override_colors/font_color = Color(0.99, 0.99, 0.99, 1)
+theme_override_constants/line_spacing = 0
 theme_override_fonts/font = SubResource("SystemFont_637vb")
 theme_override_font_sizes/font_size = 40
 text = "- Health 3x
@@ -148,13 +148,13 @@ script = ExtResource("7_iysjp")
 
 [connection signal="mouse_entered" from="Easy" to="." method="_on_easy_mouse_entered"]
 [connection signal="mouse_exited" from="Easy" to="." method="_on_easy_mouse_exited"]
-[connection signal="pressed" from="Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="Easy" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Easy" to="." method="_on_easy_pressed"]
 [connection signal="mouse_entered" from="Normal" to="." method="_on_normal_mouse_entered"]
 [connection signal="mouse_exited" from="Normal" to="." method="_on_normal_mouse_exited"]
-[connection signal="pressed" from="Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="Normal" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Normal" to="." method="_on_normal_pressed"]
 [connection signal="mouse_entered" from="Hard" to="." method="_on_hard_mouse_entered"]
 [connection signal="mouse_exited" from="Hard" to="." method="_on_hard_mouse_exited"]
-[connection signal="pressed" from="Hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="Hard" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Hard" to="." method="_on_hard_pressed"]

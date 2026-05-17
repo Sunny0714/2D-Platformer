@@ -7,14 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://crd5r1e5j60mf" path="res://Scene/coin.tscn" id="9_2ceuy"]
 [ext_resource type="Texture2D" uid="uid://ccailsty8t3y6" path="res://Sprites/Objects/download.webp" id="9_246mo"]
 [ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="10_246mo"]
-[ext_resource type="Script" uid="uid://1vu8l1pmruhx" path="res://Scripts/black.gd" id="10_q8blv"]
-[ext_resource type="Script" uid="uid://cm6825nxebq1h" path="res://Scripts/backgrounds.gd" id="10_sq6mb"]
-[ext_resource type="Script" uid="uid://bmtks638g1cmi" path="res://Scripts/black_2.gd" id="11_sq6mb"]
+[ext_resource type="Script" path="res://Scene/black.gd" id="10_q8blv"]
+[ext_resource type="Script" path="res://Scene/backgrounds.gd" id="10_sq6mb"]
+[ext_resource type="Script" path="res://Scene/black_2.gd" id="11_sq6mb"]
 [ext_resource type="AudioStream" uid="uid://byeutnbm7ob1o" path="res://SlideOpen.wav" id="12_a6c3k"]
-[ext_resource type="PackedScene" uid="uid://blxp43lrr64p2" path="res://Scene/level_2.tscn" id="12_q8blv"]
 [ext_resource type="AudioStream" uid="uid://bsnd86lpwyadr" path="res://SlideClose.wav" id="13_a6c3k"]
-[ext_resource type="Texture2D" uid="uid://bujojlj613bi5" path="res://Sprites/Tiles/Screenshot 2026-04-23 114316.png" id="14_y4apx"]
-[ext_resource type="AudioStream" uid="uid://b8hy8rj3do5l8" path="res://Scene/abydos_music-fun-retro-game-175468.mp3" id="15_8rh1u"]
+[ext_resource type="Texture2D" uid="uid://bujojlj613bi5" path="res://Scene/Screenshot 2026-04-23 114316.png" id="14_y4apx"]
 
 [sub_resource type="Animation" id="Animation_a6c3k"]
 resource_name = "Finish"
@@ -134,10 +132,6 @@ _data = {
 &"finish": SubResource("Animation_y4apx")
 }
 
-[sub_resource type="GDScript" id="GDScript_o65i7"]
-script/source = "extends AudioStreamPlayer2D
-"
-
 [node name="Main" type="Node2D" unique_id=178737448]
 
 [node name="Backgrounds" type="Node2D" parent="." unique_id=1766874012]
@@ -218,6 +212,7 @@ position = Vector2(506, -62)
 [node name="Enemys" type="Node" parent="." unique_id=1706314073 groups=["enemies"]]
 
 [node name="Enemy" parent="Enemys" unique_id=1927757934 groups=["enemies"] instance=ExtResource("4_2ceuy")]
+move_direction = Vector2(0, -100)
 
 [node name="Enemy9" parent="Enemys" unique_id=1609066602 groups=["enemies"] instance=ExtResource("4_2ceuy")]
 position = Vector2(411, -132)
@@ -252,7 +247,7 @@ move_speed = 2000.0
 
 [node name="Endflag" parent="." unique_id=193935332 instance=ExtResource("10_246mo")]
 position = Vector2(686, -26)
-scene_to_load = ExtResource("12_q8blv")
+scene_to_load = &"res://Scene/level_2.tscn"
 
 [node name="Black" type="Sprite2D" parent="Endflag" unique_id=1457144582]
 scale = Vector2(1.4359671, 1.9102564)
@@ -265,12 +260,14 @@ texture = ExtResource("9_246mo")
 script = ExtResource("11_sq6mb")
 
 [node name="Black Finish" type="Sprite2D" parent="Endflag" unique_id=1186652503]
+visible = false
 position = Vector2(-686, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("9_246mo")
 script = ExtResource("10_q8blv")
 
 [node name="Black Finish2" type="Sprite2D" parent="Endflag" unique_id=1049473845]
+visible = false
 position = Vector2(-686, 0)
 scale = Vector2(1.4441415, 1.9017092)
 texture = ExtResource("9_246mo")
@@ -294,8 +291,3 @@ texture = ExtResource("14_y4apx")
 position = Vector2(-187, -9)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_y4apx")
-
-[node name="Level1Music" type="AudioStreamPlayer2D" parent="." unique_id=1587728776]
-stream = ExtResource("15_8rh1u")
-autoplay = true
-script = SubResource("GDScript_o65i7")

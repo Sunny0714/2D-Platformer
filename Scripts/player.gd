@@ -49,7 +49,25 @@ func _ready():
 	var sender = get_parent().get_node("EnemyBoss")
 	if sender:
 		sender.connect("stop", Callable(self, "_on_stop"))
-	
+	if sender:
+		sender.connect("ded", Callable(self, "_ded"))
+	for p in get_tree().get_nodes_in_group("Healthpack"):
+		p.connect("hp", Callable(self, "_hp"))
+
+func _ded():
+	var camera = get_viewport().get_camera_2d()
+	var tween = create_tween()
+	camera.global_position = Vector2(150,-275)
+	await get_tree().create_timer(10).timeout
+	tween.kill()
+	process_mode = Node.PROCESS_MODE_INHERIT
+	shake = 0
+	camera.offset = Vector2.ZERO
+	camera.global_position = global_position + Vector2(0,-23)
+
+func _hp():
+	health += 1 
+	OnUpdateHealth.emit(health)
 
 func _on_stop():
 	var camera = get_viewport().get_camera_2d()
@@ -130,6 +148,7 @@ func _process(delta):
 		
 
 		if not Input.is_action_pressed("false"):
+			revive = 100000000
 			PlayerStats.score += 500
 			OnUpdateScore.emit(PlayerStats.score)
 			combo_active = true
@@ -193,9 +212,9 @@ func flash_red():
 
 func game_over():
 	flash_red()
-	get_tree().paused = true
+	process_mode = Node.PROCESS_MODE_DISABLED
 	await get_tree().create_timer(0.8).timeout
-	get_tree().paused = false
+	process_mode = Node.PROCESS_MODE_INHERIT
 	get_tree().change_scene_to_file("res://Scene/menu.tscn")
 	
 func _on_finish():
@@ -217,7 +236,7 @@ func increase_score (amount : int):
 func increase_health (amount : int):
 	if health < 3:
 		PlayerStats.health += amount
-		health += amount
+		#health += amount
 		OnUpdateHealth.emit(PlayerStats.health)
 
 func _damage_flash ():

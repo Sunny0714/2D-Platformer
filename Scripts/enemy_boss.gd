@@ -1,6 +1,7 @@
 extends Area2D
 
 signal stop
+signal ded
 
 @export var move_direction : Vector2
 @export var move_speed : float = 50
@@ -13,6 +14,8 @@ func _ready ():
 	$AnimationPlayer.play("fly")
 	connect("hit", Callable(self, "_hit"))
 	connect("dead", Callable(self, "_dead"))
+	for p in get_tree().get_nodes_in_group("enemy"):
+		p.connect("dead", Callable(self, "_dead"))
 
 func _physics_process(delta):
 	get_tree().call_group("Player", "set_physics_process", false)
@@ -32,4 +35,5 @@ func _hit():
 	sprite.modulate = Color.WHITE
 
 func _dead():
+	emit_signal("ded")
 	queue_free()

@@ -1,0 +1,832 @@
+[gd_scene format=4 uid="uid://b6qwewfjnw42s"]
+
+[ext_resource type="Script" path="res://Scene/backgrounds.gd" id="1_ci4mn"]
+[ext_resource type="Texture2D" uid="uid://ce67cb0wu72uo" path="res://Scene/ChatGPT Image May 12, 2026, 12_00_38 PM.png" id="2_ap2km"]
+[ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_sotx7"]
+[ext_resource type="PackedScene" uid="uid://bifeidvqnl2bb" path="res://Scene/player.tscn" id="3_ymh28"]
+[ext_resource type="PackedScene" uid="uid://cwai0j58yjsr4" path="res://Scene/endflag.tscn" id="4_7oc4e"]
+[ext_resource type="Script" uid="uid://blfubn4nknes0" path="res://progress_bar.gd" id="4_siwpi"]
+[ext_resource type="Texture2D" uid="uid://b53erifylsekp" path="res://Sprites/Objects/red.webp" id="5_bg65o"]
+[ext_resource type="PackedScene" uid="uid://blxp43lrr64p2" path="res://Scene/level_2.tscn" id="5_siwpi"]
+[ext_resource type="Texture2D" uid="uid://ccailsty8t3y6" path="res://Sprites/Objects/download.webp" id="6_0m7xm"]
+[ext_resource type="Script" path="res://Scene/sprite_2d.gd" id="6_5p8bu"]
+[ext_resource type="Script" path="res://black.gd" id="7_qoi87"]
+[ext_resource type="Script" path="res://black_finish10.gd" id="8_i6w5t"]
+[ext_resource type="AudioStream" uid="uid://byeutnbm7ob1o" path="res://SlideOpen.wav" id="9_l2pgs"]
+[ext_resource type="AudioStream" uid="uid://bsnd86lpwyadr" path="res://SlideClose.wav" id="10_2272n"]
+[ext_resource type="PackedScene" uid="uid://c7gua2le1ri2e" path="res://enemy_boss.tscn" id="12_ymh28"]
+[ext_resource type="PackedScene" uid="uid://d22pnnvhcqxwb" path="res://Scene/perjectile.tscn" id="13_7oc4e"]
+[ext_resource type="PackedScene" uid="uid://btkn4anttr8c3" path="res://Scene/attackenemy.tscn" id="13_siwpi"]
+[ext_resource type="PackedScene" uid="uid://cp3fm463ie6jy" path="res://Scene/enemywave.tscn" id="15_gm3vy"]
+[ext_resource type="PackedScene" uid="uid://dvh2oa35qsuxg" path="res://Scene/enemyhoming.tscn" id="16_3jhx7"]
+[ext_resource type="Script" uid="uid://cp6sakpjy6sj8" path="res://Scene/attackenemy1.gd" id="17_00w0g"]
+[ext_resource type="Texture2D" uid="uid://cb5owid16c3nj" path="res://Scene/Screenshot 2026-05-05 153316.png" id="18_c4s5l"]
+[ext_resource type="PackedScene" uid="uid://p5kclo767ovs" path="res://Scene/healthpack.tscn" id="19_8tpoo"]
+[ext_resource type="AudioStream" uid="uid://ss6xbgl6o3vk" path="res://nickpanekaiassets-chiptune-boss-fight-music-265080.mp3" id="22_ap2km"]
+[ext_resource type="Script" path="res://Scene/boss_music.gd" id="23_hn3jj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7oc4e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_siwpi"]
+bg_color = Color(0.36, 0.079200014, 0.11663999, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="SystemFont" id="SystemFont_837br"]
+font_names = PackedStringArray("Agency FB")
+
+[node name="Main2" type="Node2D" unique_id=1372394327]
+
+[node name="Backgrounds" type="Node2D" parent="." unique_id=1493275177]
+script = ExtResource("1_ci4mn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds" unique_id=1397946314]
+position = Vector2(413, -197)
+texture = ExtResource("2_ap2km")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1422804116]
+position = Vector2(2, 1)
+tile_map_data = PackedByteArray("AAD0/wAAAAACAAYAAAD1/wAAAAACAAYAAAD2/wAAAAACAAYAAAD3/wAAAAACAAYAAAD4/wAAAAACAAYAAAD4/wEAAAACAAYAAAD5/wEAAAACAAYAAAD5/wAAAAACAAYAAAD6/wAAAAACAAYAAAD7/wAAAAACAAYAAAD8/wAAAAACAAYAAAD9/wAAAAACAAYAAAD+/wAAAAACAAYAAAD//wAAAAACAAYAAAAAAAAAAAACAAYAAAABAAAAAAACAAYAAAACAAAAAAACAAYAAAADAAAAAAACAAYAAAAEAAAAAAACAAYAAAAFAAAAAAACAAYAAAAGAAAAAAACAAYAAAAHAAAAAAACAAYAAAAIAAAAAAACAAYAAAAIAAEAAAACAAYAAAAHAAEAAAACAAYAAAAGAAEAAAACAAYAAAAFAAEAAAACAAYAAAAEAAEAAAACAAYAAAADAAEAAAACAAYAAAACAAEAAAACAAYAAAACAAIAAAACAAYAAAABAAIAAAACAAYAAAAAAAIAAAACAAYAAAD//wIAAAACAAYAAAD+/wIAAAACAAYAAAD9/wIAAAACAAYAAAD9/wEAAAACAAYAAAD8/wEAAAACAAYAAAD7/wEAAAACAAYAAAD6/wEAAAACAAYAAAD3/wEAAAACAAYAAAD2/wEAAAACAAYAAAD1/wEAAAACAAYAAAD0/wEAAAACAAYAAADz/wEAAAACAAYAAADz/wAAAAACAAYAAADz/wIAAAACAAYAAADz/wMAAAACAAYAAAD0/wMAAAACAAYAAAD1/wMAAAACAAYAAAD2/wMAAAACAAYAAAD3/wMAAAACAAYAAAD4/wMAAAACAAYAAAD5/wMAAAACAAYAAAD6/wMAAAACAAYAAAD7/wMAAAACAAYAAAD8/wMAAAACAAYAAAD9/wMAAAACAAYAAAD+/wMAAAACAAYAAAD//wMAAAACAAYAAAAAAAMAAAACAAYAAAABAAMAAAACAAYAAAACAAMAAAACAAYAAAADAAMAAAACAAYAAAAEAAMAAAACAAYAAAAFAAMAAAACAAYAAAAGAAMAAAACAAYAAAAHAAMAAAACAAYAAAAIAAMAAAACAAYAAAAIAAIAAAACAAYAAAAHAAIAAAACAAYAAAAGAAIAAAACAAYAAAAFAAIAAAACAAYAAAAEAAIAAAACAAYAAAADAAIAAAACAAYAAAABAAEAAAACAAYAAAAAAAEAAAACAAYAAAD//wEAAAACAAYAAAD+/wEAAAACAAYAAAD7/wIAAAACAAYAAAD0/wIAAAACAAYAAAD1/wIAAAACAAYAAAD2/wIAAAACAAYAAAD3/wIAAAACAAYAAAD4/wIAAAACAAYAAAD5/wIAAAACAAYAAAD6/wIAAAACAAYAAAD8/wIAAAACAAYAAAAJAAAAAAACAAYAAAAKAAAAAAACAAYAAAALAAAAAAACAAYAAAAMAAAAAAACAAYAAAANAAAAAAACAAYAAAAOAAAAAAACAAYAAAAPAAAAAAACAAYAAAAQAAAAAAACAAYAAAARAAAAAAACAAYAAAASAAAAAAACAAYAAAATAAAAAAACAAYAAAAUAAAAAAACAAYAAAAVAAAAAAACAAYAAAAJAAMAAAACAAYAAAAKAAMAAAACAAYAAAALAAMAAAACAAYAAAAMAAMAAAACAAYAAAANAAMAAAACAAYAAAAOAAMAAAACAAYAAAAPAAMAAAACAAYAAAAQAAMAAAACAAYAAAARAAMAAAACAAYAAAASAAMAAAACAAYAAAATAAMAAAACAAYAAAAUAAMAAAACAAYAAAAVAAMAAAACAAYAAAAVAAIAAAACAAYAAAAVAAEAAAACAAYAAAAJAAEAAAACAAYAAAAKAAEAAAACAAYAAAASAAEAAAACAAYAAAATAAEAAAACAAYAAAAUAAEAAAACAAYAAAARAAEAAAACAAYAAAAQAAIAAAACAAYAAAAPAAIAAAACAAYAAAAOAAIAAAACAAYAAAANAAIAAAACAAYAAAAMAAIAAAACAAYAAAALAAIAAAACAAYAAAAKAAIAAAACAAYAAAALAAEAAAACAAYAAAAMAAEAAAACAAYAAAANAAEAAAACAAYAAAAOAAEAAAACAAYAAAAPAAEAAAACAAYAAAAQAAEAAAACAAYAAAAUAAIAAAACAAYAAAATAAIAAAACAAYAAAASAAIAAAACAAYAAAARAAIAAAACAAYAAAAJAAIAAAACAAYAAAD4//3/AAACAAYAAAD5//3/AAACAAYAAAD6//3/AAACAAYAAAAAAP3/AAACAAYAAAABAP3/AAACAAYAAAACAP3/AAACAAYAAAD1//z/AAACAAYAAAD0//z/AAACAAYAAADz//z/AAACAAYAAAD9////AAACAAYAAAAWAAAAAAACAAYAAAAXAAAAAAACAAYAAAAYAAAAAAACAAYAAAAZAAAAAAACAAYAAAAaAAAAAAACAAYAAAAbAAAAAAACAAYAAAAcAAAAAAACAAYAAAAdAAAAAAACAAYAAAAeAAAAAAACAAYAAAAfAAAAAAACAAYAAAAgAAAAAAACAAYAAAAhAAAAAAACAAYAAAAiAAAAAAACAAYAAAAjAAAAAAACAAYAAAAkAAAAAAACAAYAAAAlAAAAAAACAAYAAAAmAAAAAAACAAYAAAAmAAEAAAACAAYAAAAmAAIAAAACAAYAAAAlAAMAAAACAAYAAAAlAAQAAAACAAYAAAAmAAMAAAACAAYAAAAmAAQAAAACAAYAAAAkAAQAAAACAAYAAAAjAAQAAAACAAYAAAAiAAQAAAACAAYAAAAhAAQAAAACAAYAAAAgAAQAAAACAAYAAAAfAAQAAAACAAYAAAAeAAQAAAACAAYAAAAdAAQAAAACAAYAAAAcAAQAAAACAAYAAAAcAAMAAAACAAYAAAAbAAMAAAACAAYAAAAaAAMAAAACAAYAAAAZAAMAAAACAAYAAAAYAAMAAAACAAYAAAAXAAMAAAACAAYAAAAWAAMAAAACAAYAAAAWAAIAAAACAAYAAAAWAAEAAAACAAYAAAAXAAEAAAACAAYAAAAYAAEAAAACAAYAAAAZAAEAAAACAAYAAAAaAAEAAAACAAYAAAAbAAEAAAACAAYAAAAcAAEAAAACAAYAAAAdAAEAAAACAAYAAAAeAAEAAAACAAYAAAAfAAEAAAACAAYAAAAgAAEAAAACAAYAAAAhAAEAAAACAAYAAAAiAAEAAAACAAYAAAAlAAEAAAACAAYAAAAkAAIAAAACAAYAAAAkAAEAAAACAAYAAAAjAAEAAAACAAYAAAAlAAIAAAACAAYAAAAkAAMAAAACAAYAAAAjAAMAAAACAAYAAAAiAAMAAAACAAYAAAAiAAIAAAACAAYAAAAhAAIAAAACAAYAAAAgAAIAAAACAAYAAAAfAAIAAAACAAYAAAAeAAIAAAACAAYAAAAdAAIAAAACAAYAAAAcAAIAAAACAAYAAAAbAAIAAAACAAYAAAAaAAIAAAACAAYAAAAZAAIAAAACAAYAAAAYAAIAAAACAAYAAAAXAAIAAAACAAYAAAAdAAMAAAACAAYAAAAeAAMAAAACAAYAAAAfAAMAAAACAAYAAAAgAAMAAAACAAYAAAAhAAMAAAACAAYAAAAjAAIAAAACAAYAAAAbAAQAAAACAAYAAAAaAAQAAAACAAYAAAAZAAQAAAACAAYAAAAYAAQAAAACAAYAAAAXAAQAAAACAAYAAAAWAAQAAAACAAYAAAAVAAQAAAACAAYAAAAUAAQAAAACAAYAAAATAAQAAAACAAYAAAASAAQAAAACAAYAAAARAAQAAAACAAYAAAAQAAQAAAACAAYAAADz/wQAAAACAAYAAAD0/wQAAAACAAYAAAD1/wQAAAACAAYAAAD2/wQAAAACAAYAAAD3/wQAAAACAAYAAAD4/wQAAAACAAYAAAD5/wQAAAACAAYAAAD6/wQAAAACAAYAAAD7/wQAAAACAAYAAAD8/wQAAAACAAYAAAAPAAQAAAACAAYAAAAOAAQAAAACAAYAAAANAAQAAAACAAYAAAAMAAQAAAACAAYAAAALAAQAAAACAAYAAAAKAAQAAAACAAYAAAAJAAQAAAACAAYAAAAIAAQAAAACAAYAAAAHAAQAAAACAAYAAAAGAAQAAAACAAYAAAAFAAQAAAACAAYAAAAEAAQAAAACAAYAAAADAAQAAAACAAYAAAACAAQAAAACAAYAAAABAAQAAAACAAYAAAAAAAQAAAACAAYAAAD//wQAAAACAAYAAAD+/wQAAAACAAYAAAD9/wQAAAACAAYAAAA=")
+tile_set = ExtResource("2_sotx7")
+
+[node name="Player" parent="." unique_id=1188005712 groups=["Player"] instance=ExtResource("3_ymh28")]
+position = Vector2(1, 1)
+collision_layer = 3
+collision_mask = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="Player" unique_id=1086710734 groups=["enemy"]]
+material = SubResource("ShaderMaterial_7oc4e")
+offset_left = -111.0
+offset_top = -102.0
+offset_right = 106.0
+offset_bottom = -86.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_siwpi")
+value = 100.0
+show_percentage = false
+script = ExtResource("4_siwpi")
+
+[node name="Label" type="Label" parent="Player/ProgressBar" unique_id=1042635921]
+layout_mode = 0
+offset_left = 64.0
+offset_top = -26.0
+offset_right = 201.0
+offset_bottom = -3.0
+theme_override_fonts/font = SubResource("SystemFont_837br")
+text = "Lord Of The Night"
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ProgressBar" unique_id=974732296]
+modulate = Color(0.37, 0.1517, 0.1517, 0.31764707)
+self_modulate = Color(1, 0.39999998, 0.39999998, 1)
+position = Vector2(116.75, 63.75)
+scale = Vector2(1.1426593, 1.2136929)
+texture = ExtResource("5_bg65o")
+script = ExtResource("6_5p8bu")
+
+[node name="WaveEnemy" type="Node" parent="." unique_id=413077030]
+
+[node name="EnemyWave4" parent="WaveEnemy" unique_id=532860929 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 60.0
+amplitude = 15.0
+frequency = 60.0
+direction = Vector2(-2, 0)
+wait_time = 7.0
+reset_time = 30.0
+
+[node name="EnemyWave5" parent="WaveEnemy" unique_id=1879951951 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 60.0
+amplitude = 15.0
+frequency = 60.0
+direction = Vector2(-2, 0)
+wait_time = 7.5
+reset_time = 30.0
+
+[node name="EnemyWave6" parent="WaveEnemy" unique_id=159558666 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 60.0
+amplitude = 15.0
+frequency = 60.0
+direction = Vector2(-2, 0)
+wait_time = 8.0
+reset_time = 30.0
+
+[node name="EnemyWave7" parent="WaveEnemy" unique_id=680184649 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 60.0
+amplitude = 15.0
+frequency = 60.0
+direction = Vector2(-2, 0)
+wait_time = 8.5
+reset_time = 30.0
+
+[node name="EnemyWave8" parent="WaveEnemy" unique_id=690765898 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 60.0
+amplitude = 15.0
+frequency = 60.0
+direction = Vector2(-2, 0)
+wait_time = 9.0
+reset_time = 30.0
+
+[node name="EnemyWave9" parent="WaveEnemy" unique_id=868300932 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 60.0
+amplitude = 15.0
+frequency = 60.0
+direction = Vector2(-2, 0)
+wait_time = 9.5
+reset_time = 30.0
+
+[node name="EnemyWave" parent="WaveEnemy" unique_id=2078977254 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -113)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 10.0
+direction = Vector2(-2, 0)
+wait_time = 11.0
+reset_time = 30.0
+
+[node name="EnemyWave2" parent="WaveEnemy" unique_id=802896589 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 10.0
+direction = Vector2(-2, 0)
+wait_time = 11.2
+reset_time = 30.0
+
+[node name="EnemyWave3" parent="WaveEnemy" unique_id=812283734 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 10.0
+direction = Vector2(-2, 0)
+wait_time = 11.4
+reset_time = 30.0
+
+[node name="EnemyWave10" parent="WaveEnemy" unique_id=1053185770 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -113)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 15.0
+direction = Vector2(-2, 0)
+wait_time = 23.0
+reset_time = 30.0
+
+[node name="EnemyWave11" parent="WaveEnemy" unique_id=147409910 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 15.0
+direction = Vector2(-2, 0)
+wait_time = 23.1
+reset_time = 30.0
+
+[node name="EnemyWave12" parent="WaveEnemy" unique_id=1762302917 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 15.0
+direction = Vector2(-2, 0)
+wait_time = 23.2
+reset_time = 30.0
+
+[node name="EnemyWave13" parent="WaveEnemy" unique_id=541299241 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -113)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 15.0
+direction = Vector2(-2, 0)
+wait_time = 23.3
+reset_time = 30.0
+
+[node name="EnemyWave14" parent="WaveEnemy" unique_id=1429067870 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 15.0
+direction = Vector2(-2, 0)
+wait_time = 23.4
+reset_time = 30.0
+
+[node name="EnemyWave15" parent="WaveEnemy" unique_id=1911047388 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 15.0
+direction = Vector2(-2, 0)
+wait_time = 23.5
+reset_time = 30.0
+
+[node name="EnemyWave2316" parent="WaveEnemy" unique_id=134227664 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -113)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 15.0
+direction = Vector2(-2, 0)
+wait_time = 18.0
+reset_time = 30.0
+
+[node name="EnemyWave17" parent="WaveEnemy" unique_id=181368726 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 15.0
+direction = Vector2(-2, 0)
+wait_time = 18.1
+reset_time = 30.0
+
+[node name="EnemyWave18" parent="WaveEnemy" unique_id=2049536741 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 15.0
+direction = Vector2(-2, 0)
+wait_time = 18.2
+reset_time = 30.0
+
+[node name="EnemyWave19" parent="WaveEnemy" unique_id=67579744 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -113)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 15.0
+direction = Vector2(-2, 0)
+wait_time = 18.3
+reset_time = 30.0
+
+[node name="EnemyWave20" parent="WaveEnemy" unique_id=1640289317 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 15.0
+direction = Vector2(-2, 0)
+wait_time = 18.4
+reset_time = 30.0
+
+[node name="EnemyWave21" parent="WaveEnemy" unique_id=1042721141 instance=ExtResource("15_gm3vy")]
+position = Vector2(-97, -112)
+collision_layer = 2
+collision_mask = 2
+speed = 150.0
+amplitude = 30.0
+frequency = 15.0
+direction = Vector2(-2, 0)
+wait_time = 18.5
+reset_time = 30.0
+
+[node name="Enemy" type="Node" parent="." unique_id=395089872]
+
+[node name="Enemy15" parent="Enemy" unique_id=1254409699 instance=ExtResource("13_siwpi")]
+position = Vector2(-488, -106)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(600, 0)
+move_speed = 200.0
+_wait_time = 30.0
+
+[node name="Enemy6" parent="Enemy" unique_id=1328656551 instance=ExtResource("13_siwpi")]
+position = Vector2(-75, -218)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-300, 150)
+move_speed = 200.0
+_wait_time = 25.0
+
+[node name="Enemy" parent="Enemy" unique_id=461845922 instance=ExtResource("13_siwpi")]
+position = Vector2(-465, -56)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(0, -200)
+move_speed = 200.0
+_wait_time = 20.0
+
+[node name="Enemy2" parent="Enemy" unique_id=308893051 instance=ExtResource("13_siwpi")]
+position = Vector2(-440, -56)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(0, -200)
+move_speed = 200.0
+_wait_time = 20.0
+
+[node name="Enemy3" parent="Enemy" unique_id=1396341245 instance=ExtResource("13_siwpi")]
+position = Vector2(-387, -56)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(0, -200)
+move_speed = 200.0
+_wait_time = 20.0
+
+[node name="Enemy4" parent="Enemy" unique_id=358964567 instance=ExtResource("13_siwpi")]
+position = Vector2(-303, -56)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(0, -200)
+move_speed = 200.0
+_wait_time = 20.0
+
+[node name="Enemy5" parent="Enemy" unique_id=1706766212 instance=ExtResource("13_siwpi")]
+position = Vector2(-279, -56)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(0, -200)
+move_speed = 200.0
+_wait_time = 20.0
+
+[node name="Enemy7" parent="Enemy" unique_id=1939889383 instance=ExtResource("13_siwpi")]
+position = Vector2(-488, -194)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(600, 300)
+move_speed = 200.0
+_wait_time = 25.0
+
+[node name="Enemy8" parent="Enemy" unique_id=1006863326 instance=ExtResource("13_siwpi")]
+position = Vector2(-89, -232)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-600, 300)
+move_speed = 200.0
+_wait_time = 25.0
+
+[node name="Enemy9" parent="Enemy" unique_id=360392435 instance=ExtResource("13_siwpi")]
+position = Vector2(-498, -181)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(600, 300)
+move_speed = 200.0
+_wait_time = 25.0
+
+[node name="Enemy10" parent="Enemy" unique_id=860183833 instance=ExtResource("13_siwpi")]
+position = Vector2(-391, -221)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(0, 600)
+move_speed = 200.0
+_wait_time = 30.0
+
+[node name="Enemy11" parent="Enemy" unique_id=236160945 instance=ExtResource("13_siwpi")]
+position = Vector2(-315, -219)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(0, 600)
+move_speed = 200.0
+_wait_time = 30.0
+
+[node name="Enemy12" parent="Enemy" unique_id=1987841897 instance=ExtResource("13_siwpi")]
+position = Vector2(-225, -218)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(0, 600)
+move_speed = 200.0
+_wait_time = 30.0
+
+[node name="Enemy13" parent="Enemy" unique_id=747827152 instance=ExtResource("13_siwpi")]
+position = Vector2(-148, -218)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(0, 600)
+move_speed = 200.0
+_wait_time = 30.0
+
+[node name="Enemy14" parent="Enemy" unique_id=9589175 instance=ExtResource("13_siwpi")]
+position = Vector2(-487, -93)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(600, 0)
+move_speed = 200.0
+_wait_time = 28.0
+
+[node name="Enemy16" parent="Enemy" unique_id=321387851 instance=ExtResource("13_siwpi")]
+position = Vector2(-55, -105)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-600, 0)
+move_speed = 200.0
+_wait_time = 30.0
+
+[node name="Enemy18" parent="Enemy" unique_id=2098176515 instance=ExtResource("13_siwpi")]
+position = Vector2(-29, -153)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-600, 300)
+move_speed = 200.0
+_wait_time = 25.0
+
+[node name="Enemy19" parent="Enemy" unique_id=1167992106 instance=ExtResource("13_siwpi")]
+position = Vector2(-19, -136)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-600, 300)
+move_speed = 200.0
+_wait_time = 25.0
+
+[node name="Enemy20" parent="Enemy" unique_id=237024885 instance=ExtResource("13_siwpi")]
+position = Vector2(-100, -243)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-600, 300)
+move_speed = 200.0
+_wait_time = 25.0
+
+[node name="Enemy21" parent="Enemy" unique_id=253457198 instance=ExtResource("13_siwpi")]
+position = Vector2(-147, -293)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-600, 300)
+move_speed = 200.0
+_wait_time = 40.0
+
+[node name="Enemy22" parent="Enemy" unique_id=1496067510 instance=ExtResource("13_siwpi")]
+position = Vector2(-477, -208)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(600, 300)
+move_speed = 200.0
+_wait_time = 25.0
+
+[node name="Enemy23" parent="Enemy" unique_id=2093842483 instance=ExtResource("13_siwpi")]
+position = Vector2(-508, -168)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(600, 300)
+move_speed = 200.0
+_wait_time = 25.0
+
+[node name="Enemy24" parent="Enemy" unique_id=72990031 instance=ExtResource("13_siwpi")]
+position = Vector2(-443, -251)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(600, 300)
+move_speed = 200.0
+_wait_time = 25.0
+
+[node name="Enemy25" parent="Enemy" unique_id=1800319768 instance=ExtResource("13_siwpi")]
+position = Vector2(-403, -296)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(600, 300)
+move_speed = 200.0
+_wait_time = 25.0
+
+[node name="Enemy26" parent="Enemy" unique_id=1221566032 instance=ExtResource("13_siwpi")]
+position = Vector2(-216, -56)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(0, -200)
+move_speed = 200.0
+_wait_time = 20.0
+
+[node name="Enemy27" parent="Enemy" unique_id=96430000 instance=ExtResource("13_siwpi")]
+position = Vector2(-183, -58)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(0, -200)
+move_speed = 200.0
+_wait_time = 20.0
+
+[node name="Enemy28" parent="Enemy" unique_id=1320078709 instance=ExtResource("13_siwpi")]
+position = Vector2(-136, -58)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(0, -200)
+move_speed = 200.0
+_wait_time = 20.0
+
+[node name="Enemy29" parent="Enemy" unique_id=303956978 instance=ExtResource("13_siwpi")]
+position = Vector2(-130, -269)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-600, 300)
+move_speed = 200.0
+_wait_time = 40.0
+
+[node name="Enemyd" parent="Enemy" unique_id=1214988475 instance=ExtResource("13_siwpi")]
+position = Vector2(-4, -199)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-300, 150)
+move_speed = 300.0
+_wait_time = 14.0
+
+[node name="Enemy31" parent="Enemy" unique_id=774957355 instance=ExtResource("13_siwpi")]
+position = Vector2(-38, -199)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(300, 150)
+move_speed = 300.0
+_wait_time = 15.0
+
+[node name="Enemy32" parent="Enemy" unique_id=1963257707 instance=ExtResource("13_siwpi")]
+position = Vector2(-70, -198)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-300, 150)
+move_speed = 300.0
+_wait_time = 14.0
+
+[node name="Enemy33" parent="Enemy" unique_id=1856326495 instance=ExtResource("13_siwpi")]
+position = Vector2(-104, -198)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(300, 150)
+move_speed = 300.0
+_wait_time = 15.0
+
+[node name="Enemy34" parent="Enemy" unique_id=1433425909 instance=ExtResource("13_siwpi")]
+position = Vector2(-140, -198)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-300, 150)
+move_speed = 300.0
+_wait_time = 14.0
+
+[node name="Enemy35" parent="Enemy" unique_id=463716949 instance=ExtResource("13_siwpi")]
+position = Vector2(-174, -198)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(300, 150)
+move_speed = 300.0
+_wait_time = 15.0
+
+[node name="Enemy36" parent="Enemy" unique_id=1790020195 instance=ExtResource("13_siwpi")]
+position = Vector2(-206, -197)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-300, 150)
+move_speed = 300.0
+_wait_time = 14.0
+
+[node name="Enemy37" parent="Enemy" unique_id=1680412997 instance=ExtResource("13_siwpi")]
+position = Vector2(-240, -197)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(300, 150)
+move_speed = 300.0
+_wait_time = 15.0
+
+[node name="Enemy38" parent="Enemy" unique_id=1284796892 instance=ExtResource("13_siwpi")]
+position = Vector2(-277, -197)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-300, 150)
+move_speed = 300.0
+_wait_time = 14.0
+
+[node name="Enemy39" parent="Enemy" unique_id=826807765 instance=ExtResource("13_siwpi")]
+position = Vector2(-311, -197)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(300, 150)
+move_speed = 300.0
+_wait_time = 15.0
+
+[node name="Enemy40" parent="Enemy" unique_id=1202055315 instance=ExtResource("13_siwpi")]
+position = Vector2(-343, -196)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-300, 150)
+move_speed = 300.0
+_wait_time = 14.0
+
+[node name="Enemy41" parent="Enemy" unique_id=1722539472 instance=ExtResource("13_siwpi")]
+position = Vector2(-377, -196)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(300, 150)
+move_speed = 300.0
+_wait_time = 15.0
+
+[node name="Enemy42" parent="Enemy" unique_id=1137167428 instance=ExtResource("13_siwpi")]
+position = Vector2(-413, -196)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-300, 150)
+move_speed = 300.0
+_wait_time = 14.0
+
+[node name="Enemy43" parent="Enemy" unique_id=208411086 instance=ExtResource("13_siwpi")]
+position = Vector2(-447, -196)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(300, 150)
+move_speed = 300.0
+_wait_time = 15.0
+
+[node name="Enemy44" parent="Enemy" unique_id=1103887810 instance=ExtResource("13_siwpi")]
+position = Vector2(-479, -195)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(-300, 150)
+move_speed = 300.0
+_wait_time = 14.0
+
+[node name="Enemy45" parent="Enemy" unique_id=1765477259 instance=ExtResource("13_siwpi")]
+position = Vector2(-513, -195)
+collision_layer = 2
+collision_mask = 2
+move_direction = Vector2(300, 150)
+move_speed = 300.0
+_wait_time = 15.0
+
+[node name="Endflag" parent="." unique_id=1075355339 instance=ExtResource("4_7oc4e")]
+position = Vector2(686, -26)
+scene_to_load = ExtResource("5_siwpi")
+
+[node name="Black" type="Sprite2D" parent="Endflag" unique_id=1827909352]
+visible = false
+scale = Vector2(1.4359671, 1.9102564)
+texture = ExtResource("6_0m7xm")
+script = ExtResource("7_qoi87")
+
+[node name="Black2" type="Sprite2D" parent="Endflag" unique_id=68721726]
+visible = false
+scale = Vector2(1.4359671, 1.9102564)
+texture = ExtResource("6_0m7xm")
+script = ExtResource("7_qoi87")
+
+[node name="Black Finish" type="Sprite2D" parent="Endflag" unique_id=1930913770]
+visible = false
+position = Vector2(-686, 0)
+scale = Vector2(1.4441415, 1.9017092)
+texture = ExtResource("6_0m7xm")
+script = ExtResource("8_i6w5t")
+
+[node name="Black Finish2" type="Sprite2D" parent="Endflag" unique_id=932984294]
+visible = false
+position = Vector2(-686, 0)
+scale = Vector2(1.4441415, 1.9017092)
+texture = ExtResource("6_0m7xm")
+script = ExtResource("8_i6w5t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Endflag" unique_id=1775917705]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Endflag" unique_id=2112464502]
+stream = ExtResource("9_l2pgs")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Endflag" unique_id=988601300]
+stream = ExtResource("10_2272n")
+
+[node name="EnemyBoss" parent="." unique_id=601344382 instance=ExtResource("12_ymh28")]
+position = Vector2(-1571, -1043)
+collision_layer = 65281
+collision_mask = 65281
+move_direction = Vector2(0, 190)
+
+[node name="Projectile" type="Node" parent="." unique_id=766033449]
+
+[node name="Perjectile2" parent="Projectile" unique_id=2032719106 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(28, -362)
+move_direction = Vector2(0, 300)
+move_speed = 60.0
+wait_time = 15.0
+
+[node name="Perjectile3" parent="Projectile" unique_id=1871819292 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(-166, -314)
+move_direction = Vector2(0, 300)
+move_speed = 60.0
+wait_time = 20.0
+
+[node name="Perjectile" parent="Projectile" unique_id=298325252 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(-116, -362)
+move_direction = Vector2(0, 300)
+move_speed = 60.0
+
+[node name="Perjectile4" parent="Projectile" unique_id=1617397065 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(-226, -385)
+move_direction = Vector2(0, 0)
+move_speed = 60.0
+wait_time = 25.0
+
+[node name="Perjectile5" parent="Projectile" unique_id=186663447 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(-43, -326)
+move_direction = Vector2(0, 0)
+move_speed = 60.0
+wait_time = 35.0
+
+[node name="Perjectile6" parent="Projectile" unique_id=407864399 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(-185, -383)
+move_direction = Vector2(0, 0)
+move_speed = 60.0
+wait_time = 40.0
+
+[node name="Perjectile7" parent="Projectile" unique_id=2078021643 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(-17, -310)
+move_direction = Vector2(0, 0)
+move_speed = 60.0
+wait_time = 45.0
+
+[node name="Perjectile8" parent="Projectile" unique_id=2051737187 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(-273, -380)
+move_direction = Vector2(0, 300)
+move_speed = 60.0
+wait_time = 30.0
+
+[node name="Perjectile9" parent="Projectile" unique_id=1299298629 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(-16, -309)
+move_direction = Vector2(0, 300)
+move_speed = 60.0
+wait_time = 55.0
+
+[node name="Perjectile10" parent="Projectile" unique_id=1246289081 groups=["Perjectile"] instance=ExtResource("13_7oc4e")]
+position = Vector2(-184, -383)
+move_direction = Vector2(0, 300)
+move_speed = 60.0
+wait_time = 50.0
+
+[node name="Random" parent="." unique_id=2079159576 instance=ExtResource("13_siwpi")]
+position = Vector2(954, -94)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("17_00w0g")
+move_direction = Vector2(-10000, 0)
+move_speed = 3000.0
+
+[node name="Troll" type="Sprite2D" parent="." unique_id=636775905]
+position = Vector2(-273, -63.000004)
+scale = Vector2(0.07426778, 0.0742678)
+texture = ExtResource("18_c4s5l")
+
+[node name="Healthpack" parent="." unique_id=128681647 groups=["Healthpack"] instance=ExtResource("19_8tpoo")]
+position = Vector2(-299, -102)
+
+[node name="Healthpack2" parent="." unique_id=885772131 groups=["Healthpack"] instance=ExtResource("19_8tpoo")]
+position = Vector2(-154, -126)
+
+[node name="Enemyhome" parent="." unique_id=1300109489 instance=ExtResource("16_3jhx7")]
+position = Vector2(154, -19)
+wait_time = 5
+
+[node name="Enemyhome2" parent="." unique_id=400532083 instance=ExtResource("16_3jhx7")]
+position = Vector2(156, -19)
+
+[node name="BossMusic" type="AudioStreamPlayer2D" parent="." unique_id=1558429411]
+stream = ExtResource("22_ap2km")
+autoplay = true
+script = ExtResource("23_hn3jj")
+
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile2" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile3" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile4" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile5" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile6" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile7" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile8" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile9" method="_on_enemy_boss_area_entered"]
+[connection signal="area_entered" from="EnemyBoss" to="Projectile/Perjectile10" method="_on_enemy_boss_area_entered"]
+[connection signal="body_entered" from="EnemyBoss" to="Projectile/Perjectile2" method="_on_enemy_boss_body_entered"]
+[connection signal="body_entered" from="EnemyBoss" to="Projectile/Perjectile3" method="_on_enemy_boss_body_entered"]
+[connection signal="body_entered" from="EnemyBoss" to="Projectile/Perjectile" method="_on_enemy_boss_body_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile2" to="Projectile/Perjectile2" method="_on_area_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile3" to="Projectile/Perjectile3" method="_on_area_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile" to="Projectile/Perjectile" method="_on_area_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile4" to="Projectile/Perjectile4" method="_on_area_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile5" to="Projectile/Perjectile5" method="_on_area_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile6" to="Projectile/Perjectile6" method="_on_area_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile7" to="Projectile/Perjectile7" method="_on_area_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile8" to="Projectile/Perjectile8" method="_on_area_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile9" to="Projectile/Perjectile9" method="_on_area_entered"]
+[connection signal="area_entered" from="Projectile/Perjectile10" to="Projectile/Perjectile10" method="_on_area_entered"]
