@@ -1,4 +1,3 @@
-Node
 AudioStreamPlayer2D
 Sprite2D
 AudioStreamPlayer
@@ -6,6 +5,7 @@ Label
 CollisionShape2D
 AnimationPlayer
 Area2D
+Node
 Node2D
 Control
 ProgressBar

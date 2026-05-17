@@ -8,8 +8,6 @@ extends Area2D
 
 func _ready (): 
 	$AnimationPlayer.play("fly")
-	for p in get_tree().get_nodes_in_group("enemy"):
-		p.connect("dead", Callable(self, "_dead"))
 
 func _physics_process(delta):
 	global_position = global_position.move_toward(target_pos, move_speed * delta)
@@ -20,8 +18,6 @@ func _physics_process(delta):
 		else:
 			target_pos = start_pos
 
-func _dead():
-	queue_free()
 
 func _on_body_entered(body):
 	if not body.is_in_group("Player"):

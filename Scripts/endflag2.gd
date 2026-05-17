@@ -3,7 +3,7 @@ extends Area2D
 signal finish1
 signal start1
 @onready var anim = $AnimationPlayer
-@export var scene_to_load : StringName
+@export var scene_to_load : PackedScene
 
 func _ready():
 	get_tree().call_group("enemies","set","process_mode", Node.PROCESS_MODE_DISABLED)
@@ -25,6 +25,5 @@ func _on_body_entered(body):
 	anim.play("start")
 	$AudioStreamPlayer2.stream = load("res://SlideClose.wav")
 	$AudioStreamPlayer2.play()
-	await get_tree().create_timer(0.7).timeout
-	var next_scene : PackedScene = load(scene_to_load)
-	get_tree().change_scene_to_packed(next_scene)
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_packed(scene_to_load)
